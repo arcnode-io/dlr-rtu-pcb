@@ -8,6 +8,7 @@ def build_battery_connector(vbat: skidl.Net, gnd: skidl.Net) -> None:
     j = skidl.Part(
         "Connector_Generic",
         "Conn_01x02",
+        ref="J3",
         footprint="TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",
     )
     j.value = "BAT"
@@ -22,6 +23,7 @@ def build_debug_header(
     j = skidl.Part(
         "Connector_Generic",
         "Conn_01x04",
+        ref="J11",
         footprint="Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical",
     )
     j.value = "DEBUG_UART"
@@ -50,13 +52,16 @@ def build_commissioning_usbc(
     j = skidl.Part(
         "Connector",
         "USB_C_Receptacle_USB2.0_14P",
+        ref="J12",
         footprint="Connector_USB:USB_C_Receptacle_GCT_USB4085",
     )
     j.value = "USBC_COMMISSIONING"
 
-    # GND pins + shield
-    for pin_num in ("A1", "A12", "B1", "B12", "S1"):
+    # GND pins + shield. Reason: the shield's pin *number* changed between KiCad
+    # symbol-library releases (S1 -> SH); its name is stable, so connect by name.
+    for pin_num in ("A1", "A12", "B1", "B12"):
         gnd += j[pin_num]
+    gnd += j["SHIELD"]
 
     # VBUS pins NC — carrier is self-powered, doesn't accept laptop power
     for pin_num in ("A4", "A9", "B4", "B9"):
@@ -69,10 +74,11 @@ def build_commissioning_usbc(
     usb_dm += j["B7"]
 
     # CC1/CC2 — 5.1k Rd pull-downs for UFP (device) advertisement
-    for cc_pin in ("A5", "B5"):
+    for ref, cc_pin in (("R12", "A5"), ("R13", "B5")):
         r = skidl.Part(
             "Device",
             "R",
+            ref=ref,
             value="5.1k",
             footprint="Resistor_SMD:R_0402_1005Metric",
         )

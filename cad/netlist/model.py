@@ -23,18 +23,13 @@ import skidl  # noqa: E402
 
 from cad.netlist.anemometer import build_anemometer  # noqa: E402
 from cad.netlist.cellular import build_cellular  # noqa: E402
+from cad.netlist.charger import build_mppt_charger, build_solar_input  # noqa: E402
 from cad.netlist.connectors import (  # noqa: E402
     build_battery_connector,
     build_commissioning_usbc,
     build_debug_header,
 )
-from cad.netlist.power import (  # noqa: E402
-    build_buck_5v,
-    build_ldo_3v3,
-    build_ldo_3v8,
-    build_mppt_charger,
-    build_solar_input,
-)
+from cad.netlist.power import build_buck_5v, build_ldo_3v3, build_ldo_3v8  # noqa: E402
 from cad.netlist.sensors import build_sensors  # noqa: E402
 from cad.netlist.som import build_cm4  # noqa: E402
 
@@ -78,10 +73,12 @@ def build_netlist() -> None:
     anemo_uart_tx = skidl.Net("ANEMO_UART_TX")
     anemo_uart_rx = skidl.Net("ANEMO_UART_RX")
     anemo_de_n = skidl.Net("ANEMO_DE")
+    chg_stat1 = skidl.Net("CHG_STAT1")
+    chg_stat2 = skidl.Net("CHG_STAT2")
 
     # Power chain
     build_solar_input(pv_in, gnd)
-    build_mppt_charger(pv_in, vbat, gnd)
+    build_mppt_charger(pv_in, vbat, gnd, v3v3, chg_stat1, chg_stat2)
     build_battery_connector(vbat, gnd)
     build_buck_5v(vbat, v5_rail, gnd)
     build_ldo_3v3(v5_rail, v3v3, gnd)
@@ -117,6 +114,8 @@ def build_netlist() -> None:
         anemo_uart_tx=anemo_uart_tx,
         anemo_uart_rx=anemo_uart_rx,
         anemo_de_n=anemo_de_n,
+        chg_stat1=chg_stat1,
+        chg_stat2=chg_stat2,
     )
     build_cellular(
         v3v8=v3v8,

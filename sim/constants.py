@@ -28,15 +28,52 @@ BMS_LOW_TEMP_CUTOFF: Final = 0.0  # degC; charging below this destroys LiFePO4 c
 BMS_QUIESCENT: Final = 150 * ureg.uA  # 0.046 Wh/day continuous battery drain
 
 # === Buck (5V) — TI LMR33630ADDAR, HSOIC-8 ===
-# Reason: LMR33630 datasheet SNVSAQ8B Table 7-1; 3.8-36V Vin, 3A integrated FETs
+# Reason: LMR33630 datasheet SNVSAN3F (Aug 2017, rev Nov 2020) §7.5; 3.8-36V Vin, 3A FETs
 V_RAIL_5V: Final = 5.0 * ureg.V
 LMR33630_VIN_MIN: Final = 3.8 * ureg.V
 LMR33630_VIN_MAX: Final = 36.0 * ureg.V
 LMR33630_IOUT_RATED: Final = 3.0 * ureg.A
-LMR33630_FSW: Final = 400 * ureg.kHz  # programmable; 400kHz max efficiency
+LMR33630_FSW: Final = 400 * ureg.kHz  # "A" version, §7.5 OSCILLATOR: 340/400/460 kHz
 BUCK_EFFICIENCY: Final = ufloat(0.90, 0.03)  # LMR33630 typical curve at 12V->5V/1.5A
+# §7.5 CURRENT LIMITS (open-loop production test): high-side peak ISC, low-side valley ILIMIT
+LMR33630_ISC_MIN: Final = 3.85 * ureg.A
+LMR33630_ISC_MAX: Final = 5.05 * ureg.A
+LMR33630_ILIMIT_MIN: Final = 2.9 * ureg.A
+LMR33630_ILIMIT_MAX: Final = 4.1 * ureg.A
+# Reason: §8.3.? Eq 1 — Vout drops out of regulation above IOUT_max ≈ (ILIMIT + ISC) / 2
+LMR33630_IOUT_MAX_MIN: Final = (LMR33630_ILIMIT_MIN + LMR33630_ISC_MIN) / 2  # 3.375 A
+LMR33630_RIPPLE_K: Final = 0.3  # §9.2.2.4 recommended inductor ripple ratio
+LMR33630_T_SS: Final = 4 * ureg.ms  # §7.5 SOFT START typ (2.9-6 ms)
+# --- Buck passives exactly as placed in cad/netlist/power.py ---
+# Reason: Bourns SRN8040TA-100M (bourns.com/docs/product-datasheets/srn8040ta.pdf) 10 uH
+# ±20%, DCR 33 mΩ, Irms 4.6 A, Isat 5.0 A (L -30%). §9.2.2.4 requires Isat ≥ ILIMIT,
+# ideally ≥ ISC — the earlier SRN8040-100M (Isat 3.4 A) failed that rule (ADR-014).
+L_BUCK: Final = ufloat(10.0, 2.0) * ureg.uH
+L_BUCK_DCR: Final = 33 * ureg.mohm
+L_BUCK_ISAT: Final = 5.0 * ureg.A
+L_BUCK_IRMS: Final = 4.6 * ureg.A
 # Reason: 5V bulk cap absorbs CM4 boot inrush (3.92A peak) while buck stays <3A
-C_BULK_5V: Final = 470 * ureg.uF
+# Nichicon PCL1A471MCL1GS: 470 uF ±20%, 10 V polymer, φ8x10 (= CP_Elec_8x10), ESR 17 mΩ @100 kHz
+C_BULK_5V: Final = ufloat(470, 94) * ureg.uF
+C_BULK_5V_ESR: Final = 17 * ureg.mohm
+C_OUT_CER_5V: Final = 22 * ureg.uF  # 0805 X7R ceramic on the 5V rail
+# Reason: assumption — 0805 22 uF X7R loses ~50% at 5 V DC bias (generic MLCC bias curve)
+C_OUT_CER_DC_BIAS_DERATE: Final = 0.5
+C_OUT_CER_ESR: Final = 5 * ureg.mohm  # assumption: typical 0805 MLCC at 400 kHz
+C_OUT_HF_5V: Final = 100 * ureg.nF
+V_RIPPLE_5V_BUDGET: Final = 50 * ureg.mV  # assumption: 1% pk-pk on the CM4 rail
+
+# === CM4 SoM 5V input — CM4 Datasheet, Raspberry Pi Ltd, Release 4 (2026-06-30) ===
+# Reason: §3.3 pin table "+5V (Input) 4.75V-5.25V"; §5.1 "+5V ... stay above 4.75V for the
+# entire operation"; §6.1 hardware checklist "ideally > +4.9V including any noise"
+V_5V_CM4_MIN: Final = 4.75 * ureg.V
+V_5V_CM4_IDEAL_MIN: Final = 4.9 * ureg.V
+I_5V_IDLE: Final = 240 * ureg.mA  # readme power budget, idle (PSM) column total
+I_CM4_BOOT_PEAK: Final = (
+    3000 * ureg.mA
+)  # readme power budget; RPi publishes no inrush figure
+# Reason: assumption — duration of the coincident boot peak (RPi unspecified); swept in theory.ipynb
+T_CM4_BOOT_PEAK: Final = 1 * ureg.ms
 
 # === LDO (3V3) — Diodes Inc AP2112K-3.3 ===
 V_RAIL_3V3: Final = 3.3 * ureg.V

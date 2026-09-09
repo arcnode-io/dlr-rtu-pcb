@@ -13,23 +13,24 @@ FP_R_0402 = "Resistor_SMD:R_0402_1005Metric"
 FP_HEADER_2_54 = "Connector_PinHeader_2.54mm:PinHeader_1x{n}_P2.54mm_Vertical"
 
 
-def _cap(value: str, fp: str, n1: skidl.Net, n2: skidl.Net) -> None:
-    c = skidl.Part("Device", "C", value=value, footprint=fp)
+def _cap(ref: str, value: str, fp: str, n1: skidl.Net, n2: skidl.Net) -> None:
+    c = skidl.Part("Device", "C", ref=ref, value=value, footprint=fp)
     n1 += c[1]
     n2 += c[2]
 
 
-def _res(value: str, fp: str, n1: skidl.Net, n2: skidl.Net) -> None:
-    r = skidl.Part("Device", "R", value=value, footprint=fp)
+def _res(ref: str, value: str, fp: str, n1: skidl.Net, n2: skidl.Net) -> None:
+    r = skidl.Part("Device", "R", ref=ref, value=value, footprint=fp)
     n1 += r[1]
     n2 += r[2]
 
 
-def _module_header(n_pins: int, label: str) -> skidl.Part:
+def _module_header(ref: str, n_pins: int, label: str) -> skidl.Part:
     """Single-row 2.54mm pin header for off-board sensor breakout modules."""
     p = skidl.Part(
         "Connector_Generic",
         f"Conn_01x{n_pins:02d}",
+        ref=ref,
         footprint=FP_HEADER_2_54.format(n=f"{n_pins:02d}"),
     )
     p.value = label
@@ -64,6 +65,7 @@ def build_flir_lepton(
     j = skidl.Part(
         "Connector_Generic",
         "Conn_01x14",
+        ref="J8",
         footprint=(
             "Connector_FFC-FPC:" "Hirose_FH12-14S-0.5SH_1x14-1MP_P0.50mm_Horizontal"
         ),
@@ -79,23 +81,25 @@ def build_flir_lepton(
     sda += j[8]
     scl += j[9]
     # PWR_DN_L and RESET_L pulled high through FFC (active-low, default-deasserted)
-    _res("10k", FP_R_0402, j[10], v3v3)
-    _res("10k", FP_R_0402, j[11], v3v3)
+    _res("R7", "10k", FP_R_0402, j[10], v3v3)
+    _res("R8", "10k", FP_R_0402, j[11], v3v3)
     gnd += j[12]
     v3v3 += j[13]
     v3v3 += j[14]  # VIN tied to 3V3 (daughterboard powered from main 3V3 rail)
-    _cap("100nF", FP_C_0402, v3v3, gnd)
+    _cap("C25", "100nF", FP_C_0402, v3v3, gnd)
 
 
 def build_dht22(v3v3: skidl.Net, gnd: skidl.Net, gpio4: skidl.Net) -> None:
     """DHT22 ambient temp/humidity — 4-pin module + 10k pull-up on data line."""
-    u = skidl.Part("Sensor", "DHT11", footprint="Sensor:Aosong_DHT11_5.5x12.0_P2.54mm")
+    u = skidl.Part(
+        "Sensor", "DHT11", ref="U5", footprint="Sensor:Aosong_DHT11_5.5x12.0_P2.54mm"
+    )
     u.value = "DHT22"
     v3v3 += u["VDD"]
     gnd += u["GND"]
     gpio4 += u["DATA"]
-    _res("10k", FP_R_0402, gpio4, v3v3)
-    _cap("100nF", FP_C_0402, v3v3, gnd)
+    _res("R9", "10k", FP_R_0402, gpio4, v3v3)
+    _cap("C26", "100nF", FP_C_0402, v3v3, gnd)
 
 
 def build_si1145(
@@ -105,13 +109,13 @@ def build_si1145(
 
     1=VIN  2=GND  3=SCL  4=SDA  5=INT (NC)
     """
-    j = _module_header(5, "SI1145")
+    j = _module_header("J9", 5, "SI1145")
     v3v3 += j[1]
     gnd += j[2]
     scl += j[3]
     sda += j[4]
     skidl.Net("SI1145_INT") & j[5]
-    _cap("100nF", FP_C_0402, v3v3, gnd)
+    _cap("C27", "100nF", FP_C_0402, v3v3, gnd)
 
 
 def build_ads1115_yl83(
@@ -121,6 +125,7 @@ def build_ads1115_yl83(
     u_ads = skidl.Part(
         "Analog_ADC",
         "ADS1115IDGS",
+        ref="U6",
         footprint="Package_SO:MSOP-10_3x3mm_P0.5mm",
     )
     u_ads.value = "ADS1115"
@@ -136,11 +141,11 @@ def build_ads1115_yl83(
     skidl.Net("NC_ADS_AIN2") & u_ads["AIN2"]
     skidl.Net("NC_ADS_AIN3") & u_ads["AIN3"]
     skidl.Net("NC_ADS_ALERT") & u_ads["ALERT/RDY"]
-    _cap("100nF", FP_C_0402, v3v3, gnd)
-    _cap("10nF", FP_C_0402, rain_ao, gnd)  # anti-aliasing on analog input
+    _cap("C28", "100nF", FP_C_0402, v3v3, gnd)
+    _cap("C29", "10nF", FP_C_0402, rain_ao, gnd)  # anti-aliasing on analog input
 
     # YL-83 rain sensor 4-pin module: VCC, GND, AO, DO
-    j = _module_header(4, "YL-83")
+    j = _module_header("J10", 4, "YL-83")
     v3v3 += j[1]
     gnd += j[2]
     rain_ao += j[3]
@@ -166,5 +171,5 @@ def build_sensors(
     build_ads1115_yl83(v3v3, gnd, sda, scl)
 
     # I2C pull-ups — 2.2k to 3V3 (per theory section 3, ADR-005)
-    _res("2.2k", FP_R_0402, sda, v3v3)
-    _res("2.2k", FP_R_0402, scl, v3v3)
+    _res("R10", "2.2k", FP_R_0402, sda, v3v3)
+    _res("R11", "2.2k", FP_R_0402, scl, v3v3)

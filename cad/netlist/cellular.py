@@ -13,8 +13,8 @@ FP_C_0402 = "Capacitor_SMD:C_0402_1005Metric"
 FP_R_0402 = "Resistor_SMD:R_0402_1005Metric"
 
 
-def _cap(value: str, fp: str, n1: skidl.Net, n2: skidl.Net) -> None:
-    c = skidl.Part("Device", "C", value=value, footprint=fp)
+def _cap(ref: str, value: str, fp: str, n1: skidl.Net, n2: skidl.Net) -> None:
+    c = skidl.Part("Device", "C", ref=ref, value=value, footprint=fp)
     n1 += c[1]
     n2 += c[2]
 
@@ -52,6 +52,7 @@ def build_cellular(
     u_modem = skidl.Part(
         "RF_GSM",
         "BG95-M1",
+        ref="U3",
         footprint="RF_GSM:Quectel_BG95",
     )
     u_modem.value = "BG770A-NA"
@@ -85,9 +86,9 @@ def build_cellular(
     cell_net_1v8 += u_modem["NET_STATUS"]
 
     # 4.7uF + 100nF VBAT decoupling (BG770A datasheet)
-    _cap("4.7uF", FP_C_0402, v3v8, gnd)
-    _cap("100nF", FP_C_0402, v3v8, gnd)
-    _cap("100nF", FP_C_0402, v1v8, gnd)
+    _cap("C18", "4.7uF", FP_C_0402, v3v8, gnd)
+    _cap("C19", "100nF", FP_C_0402, v3v8, gnd)
+    _cap("C20", "100nF", FP_C_0402, v1v8, gnd)
 
     # Antenna chain: BG770A ANT_MAIN -> Pi-network -> u.FL
     ant_in = skidl.Net("ANT_IN")
@@ -96,16 +97,16 @@ def build_cellular(
 
     # Pi-network footprints — series + 2 shunts; default 0R series, NC shunts (ADR-012)
     r_series = skidl.Part(
-        "Device", "R", value="0R", footprint="Resistor_SMD:R_0402_1005Metric"
+        "Device", "R", ref="R5", value="0R", footprint="Resistor_SMD:R_0402_1005Metric"
     )
     ant_in += r_series[1]
     ant_match += r_series[2]
     # Shunt input (NC by default, footprint reserved)
-    c_shunt_in = skidl.Part("Device", "C", value="DNP", footprint=FP_C_0402)
+    c_shunt_in = skidl.Part("Device", "C", ref="C21", value="DNP", footprint=FP_C_0402)
     ant_in += c_shunt_in[1]
     gnd += c_shunt_in[2]
     # Shunt output (NC by default)
-    c_shunt_out = skidl.Part("Device", "C", value="DNP", footprint=FP_C_0402)
+    c_shunt_out = skidl.Part("Device", "C", ref="C22", value="DNP", footprint=FP_C_0402)
     ant_match += c_shunt_out[1]
     gnd += c_shunt_out[2]
 
@@ -113,6 +114,7 @@ def build_cellular(
     j_ufl = skidl.Part(
         "Connector",
         "Conn_Coaxial",
+        ref="J6",
         footprint="Connector_Coaxial:U.FL_Hirose_U.FL-R-SMT-1_Vertical",
     )
     j_ufl.value = "U.FL"
@@ -123,6 +125,7 @@ def build_cellular(
     j_sim = skidl.Part(
         "Connector",
         "SIM_Card",
+        ref="J7",
         footprint="Connector_Card:microSIM_JAE_SF53S006VCBR2000",
     )
     j_sim.value = "SIM"
@@ -139,6 +142,7 @@ def build_cellular(
     u_lvl = skidl.Part(
         "Logic_LevelTranslator",
         "TXS0108EPW",
+        ref="U4",
         footprint="Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm",
     )
     u_lvl.value = "TXS0108E"
@@ -171,10 +175,10 @@ def build_cellular(
         skidl.Net(f"NC_LVL_A{ch}") & u_lvl[f"A{ch}"]
         skidl.Net(f"NC_LVL_B{ch}") & u_lvl[f"B{ch}"]
 
-    _cap("100nF", FP_C_0402, v1v8, gnd)
-    _cap("100nF", FP_C_0402, v3v3, gnd)
+    _cap("C23", "100nF", FP_C_0402, v1v8, gnd)
+    _cap("C24", "100nF", FP_C_0402, v3v3, gnd)
 
     # OE pull-down for boot-time isolation (ADR-011)
-    r_oe = skidl.Part("Device", "R", value="100k", footprint=FP_R_0402)
+    r_oe = skidl.Part("Device", "R", ref="R6", value="100k", footprint=FP_R_0402)
     shifter_oe += r_oe[1]
     gnd += r_oe[2]

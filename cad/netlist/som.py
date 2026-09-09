@@ -37,6 +37,8 @@ def build_cm4(
     anemo_uart_tx: skidl.Net,
     anemo_uart_rx: skidl.Net,
     anemo_de_n: skidl.Net,
+    chg_stat1: skidl.Net,
+    chg_stat2: skidl.Net,
 ) -> None:
     """Wire CM4 J2 (GPIO/UART/I2C/SPI/USB2) to the carrier.
 
@@ -47,6 +49,7 @@ def build_cm4(
     j_cm4 = skidl.Part(
         "Connector_Generic",
         "Conn_02x20_Odd_Even",
+        ref="J5",
         footprint="Connector_Hirose_DF40:Hirose_DF40HC(3.0)-40DS-0.4V_2x20_P0.4mm",
     )
     j_cm4.value = "CM4_J2"
@@ -94,6 +97,10 @@ def build_cm4(
     anemo_uart_rx += j_cm4[28]  # GPIO1 / RXD2
     anemo_de_n += j_cm4[31]  # GPIO6 — SP3485EN DE/~RE direction control
 
+    # BQ24650 charge status (open drain, pulled up to 3V3 in charger.py) — telemetry
+    chg_stat1 += j_cm4[12]  # GPIO18 — STAT1 low = charging
+    chg_stat2 += j_cm4[26]  # GPIO7 — STAT2 low = charge complete
+
     # USB2 to BG770A — placeholder pins (real CM4 USB lives on J1, not GPIO header)
     usb_dp += j_cm4[38]
     usb_dm += j_cm4[40]
@@ -105,16 +112,17 @@ def build_cm4(
     cmsn_dm += j_cm4[37]
 
     # 4x 100nF decoupling near connector
-    for _ in range(4):
+    for ref in ("C14", "C15", "C16", "C17"):
         c = skidl.Part(
             "Device",
             "C",
+            ref=ref,
             value="100nF",
             footprint="Capacitor_SMD:C_0402_1005Metric",
         )
         v5_in += c[1]
         gnd += c[2]
 
-    # Truly unused pins
-    for pin in (12, 26, 31, 35, 38, 40):
-        skidl.Net(f"NC_CM4_{pin}") & j_cm4[pin]
+    # Truly unused pins. Reason: listing a pin here that is wired above merges the
+    # NC_ net into the real one and SKiDL may keep the NC_ name (ANEMO_DE became NC_CM4_31)
+    skidl.Net("NC_CM4_35") & j_cm4[35]

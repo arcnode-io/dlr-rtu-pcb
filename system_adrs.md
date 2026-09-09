@@ -19,6 +19,10 @@ Captures architectural and component decisions for the DLR PCB. New decisions ap
 | 011 | Level shifter — TI TXS0108E | Component |
 | 012 | u.FL connector — Hirose U.FL-R-SMT-1(10) | Component |
 | 013 | Lepton daughterboard for aim flexibility | Architecture |
+| 014 | 5V buck inductor — Bourns SRN8040TA-100M | Component |
+| 015 | MPPT charger support network — BQ24650 per SLUSA75B | Architecture |
+| 016 | Layer stack — 4-layer SIG / GND / 5V / SIG | Architecture |
+| 017 | 5V rail load sequencing — firmware constraint | Architecture |
 
 ---
 
@@ -380,3 +384,122 @@ ADR-001's spirit was to avoid stacked compute (Pi 5 HAT). A passive sensor daugh
 - Aim is set once at integration with lockwasher + Loctite 243; no field-accessible knob (an external knob would be an IP55 / O-ring / corrosion-over-30-yrs liability).
 - Sealed industrial USB-C commissioning port (J12) is mandatory — without it the integrator can't see the live thermal frame to set aim.
 - ADR-001 retains force for compute and the bulk of sensor / power circuitry; ADR-013 is a scoped exception covering only the Lepton optical chain.
+
+---
+
+## ADR-014: 5V Buck Inductor — Bourns SRN8040TA-100M
+
+**Status:** Accepted **Date:** 2026-09-08 **Amends:** ADR-007 (passive selection only)
+
+### Context
+The LMR33630 datasheet (SNVSAN3F §9.2.2.4) requires the inductor saturation current to be no less than the low-side current limit I_LIMIT (4.1 A max over temperature) and ideally at least the high-side limit I_SC (5.05 A max). theory.ipynb §7 checked the placed Bourns SRN8040-100M against those numbers: Isat 3.4 A, and the peak inductor current at the rated 3 A load is already 3.41 A at V_BAT_MAX. The core saturates before the regulator can limit current.
+
+### Decision
+Bourns SRN8040TA-100M: 10 µH ±20 %, Isat 5.0 A, Irms 4.6 A, DCR 33 mΩ, AEC-Q200, same 8 × 8 × 4 mm family; KiCad footprint `Inductor_SMD:L_Bourns_SRN8040TA`.
+
+### Rationale
+Same inductance, so the ripple / transient analysis in theory.ipynb §7 is unchanged; lower DCR; Isat clears the hard rule with margin and sits within 1 % of the "ideal" I_SC bound. One footprint swap, no layout topology change.
+
+### Alternatives Considered
+| Option | Tradeoff |
+|---|---|
+| Keep SRN8040-100M | Violates the datasheet rule; saturates at rated load |
+| Coilcraft XAL7030-103 / Würth WE-LHMI 10 µH | Higher Isat, but new footprint and vendor; not needed |
+| 6.8 µH in the same family | Higher Isat at lower L, but K = 0.44 ripple ratio and a re-run of §7 |
+
+### Consequences
+- `sim/constants.py` L_BUCK_* and `sim/test_spice.py::TestInductorRating` encode the rule; the test fails the build if a future BOM change regresses it.
+- The 3.92 A coincident boot peak still exceeds the worst-case-silicon I_OUT,max (3.375 A) — that is a load-sequencing requirement on firmware (ADR-017), not an inductor problem.
+
+---
+
+## ADR-015: MPPT Charger Support Network — BQ24650 per SLUSA75B
+
+**Status:** Accepted **Date:** 2026-09-08 **Completes:** ADR-008
+
+### Context
+ADR-008 selected the BQ24650, but the netlist stood it up as a generic 16-pin connector symbol on an HVQFN footprint with a bootstrap cap, an inductor and a sense resistor — and nothing else. The BQ24650 is a *controller*, not a converter: it has no internal power FETs. As captured, the part had no switching devices, no feedback divider on VFB, no MPPSET divider, no VCC/VREF/REGN bypass, no bootstrap diode, no TS bias and a floating TERM_EN. It could not have charged a battery, and the pin numbering in the placeholder did not match the real device either.
+
+### Decision
+Real `Battery_Management:BQ24650` symbol on the TI VQFN-16 thermal-pad footprint, plus the support network the datasheet requires (`cad/netlist/charger.py`, split out of `power.py`):
+
+| Function | Parts | Datasheet basis |
+|---|---|---|
+| Power stage | Q1/Q2 DMN4035L-7 (40 V, 4.6 A, SOT-23) | §9.2.2.4 — ≥40 V for a 20–28 V input |
+| Bootstrap | C2 100 nF PH→BTST, D4 BAT54W REGN→BTST | pin table, REGN / BTST |
+| Charge voltage | R20 297k / R21 49.9k (0.1%) → 14.60 V | Eq 1, V_FB = 2.1 V |
+| MPPT set point | R18 130k / R19 10k → 16.8 V (~80% Voc) | Eq 2, V_MPPSET = 1.2 V |
+| Charge current | R1 20 mΩ → 2 A; I_PRE = I_TERM = 0.2 A | Eq 3/4/5, 40 mV full-scale |
+| Bias / bypass | R17 10 Ω + C31 on VCC, C32 VREF, C33 REGN | pin table |
+| TS window | R22 10k / R23 15k from VREF → 0.60·VREF | §7.5 thresholds (V_HTF 47.5%, V_LTF 73.5%) |
+| Termination | TERM_EN tied to VREF | pin table — must not float |
+| Telemetry | STAT1/STAT2 → 10k pull-ups → CM4 GPIO18 / GPIO7 | §8.3.20 open-drain outputs |
+| Output filter | L1 6.8 µH SRN8040TA (Isat 5.6 A) + C3 22 µF | Eq 12/13; §9.2.2.3 wants the LC pole in 12–17 kHz — 6.8 µH / 22 µF = 13.1 kHz |
+
+### Rationale
+Every one of these is load-bearing per the datasheet; none is decoration. The 0.1% divider on VFB is the one deliberate upgrade over the datasheet example: a 1% pair puts the LiFePO4 top-of-charge at ±150 mV, and over-voltage on LiFePO4 is a cell-life problem, not a rounding error.
+
+### Alternatives Considered
+| Option | Tradeoff |
+|---|---|
+| Keep the placeholder | Non-functional; hides the missing FETs behind a plausible-looking netlist |
+| Integrated-FET charger (e.g. BQ25703) | No external FETs, but I²C-configured and 2× the pin count for no gain here |
+| AO3400A (30 V) for Q1/Q2 | Cheaper and in the KiCad library, but under-rated for a 21 V Voc panel |
+
+### Consequences
+- Charger moves to its own SKiDL module and its own schematic sheet (`SOLAR MPPT CHARGER`).
+- KiCad has no symbol for the DMN4035L-7; the generic `Q_NMOS_GSD` symbol carries the MPN as its value, the same convention already used for the BG770A.
+- TS is biased mid-window rather than reading a pack thermistor — ADR-009 leaves low-temperature cutoff to the on-pack BMS. If a pack NTC is ever wired to the carrier, R22/R23 become the 103AT divider from the datasheet.
+
+---
+
+## ADR-016: Layer Stack — 4-Layer SIG / GND / 5V / SIG
+
+**Status:** Accepted **Date:** 2026-09-08 **Formalizes:** the 4-layer intent in ADR-001
+
+### Context
+ADR-001 and the readme describe a 4-layer 1.6 mm board with an unbroken GND plane under the Lepton SPI and a 90 Ω USB pair referenced to In1 at 0.20 mm (theory.ipynb §5). The board file that was actually routed was 2-layer with F/B ground pours, so those claims were not true of the artifact, and the 0.4 mm-pitch DF40 CM4 connector left 13 nets unrouted.
+
+### Decision
+F.Cu signal / In1.Cu full GND plane / In2.Cu full 5V_RAIL plane / B.Cu signal. 1.6 mm FR4, controlled-impedance order with 0.20 mm F.Cu→In1 prepreg. VBAT, 3V3 and the other supply nets are 0.6 mm traces on the outer layers (`power` net class). `cad/drawing/board_setup.py` applies the stack, rules and planes programmatically so every regeneration produces the same board.
+
+### Rationale
+A solid GND plane is what the SPI / USB / RF analyses assume; a 5 V plane makes the highest-current, most-distributed rail (CM4, both LDOs, Lepton) a via-drop instead of a routed trace, and lets Freerouting escape the DF40 with vias to planes rather than traces between 0.4 mm pads.
+
+### Alternatives Considered
+| Option | Tradeoff |
+|---|---|
+| 2-layer with pours | Cheapest fab, but the readme's impedance and plane claims are false and the DF40 does not fully route |
+| 4-layer GND / GND | Better for signal integrity, but 5 V distribution reverts to traces at 3–4 A |
+| 6-layer | Unnecessary for ~70 parts at this density |
+
+### Consequences
+- Fab: 4-layer order with stack-up specified; ~2× bare-board cost at prototype volume.
+- DRC is run with `--refill-zones` so plane fills are part of the check.
+- Ground pours on F/B are kept for stitching; islands are pruned by KiCad's island removal.
+
+---
+
+## ADR-017: 5V Rail Load Sequencing — Firmware Constraint
+
+**Status:** Accepted **Date:** 2026-09-08
+
+### Context
+theory.ipynb §7 and `sim/test_spice.py` (ngspice, averaged current-mode model of the LMR33630 with SNVSAN3F §7.5 current limits and the placed 470 µF polymer bank) show that the readme's coincident 3.92 A peak — CM4 boot + Lepton shutter + modem TX — exceeds the regulator's worst-case I_OUT,max of 3.375 A. The rail falls to ≈ 3.86 V and sits under the CM4's 4.75 V floor (CM4 datasheet §5.1) for ≈ 0.9 ms of every 1 ms of coincidence. The CM4 boot peak alone (3.0 A) holds ≈ 4.95 V.
+
+### Decision
+The hardware guarantees 3.0 A transients on the 5 V rail, not 3.92 A. Firmware in `dlr-operating-envelope` must (1) keep the BG770A disabled (LP5907 EN, GPIO17) and never trigger a Lepton shutter until CM4 boot is complete, and (2) never schedule a Lepton shutter concurrently with a modem TX burst. Handed off to the embedded engineer (`/tmp/handoff_embedded-engineer_load-sequencing.md`).
+
+### Rationale
+More output capacitance cannot fix a sustained deficit — the cap only buys time (≈ 0.2 ms per 250 mV at 0.55 A). A larger regulator (4 A-class) or a second stage would add cost and board area for a peak that is entirely avoidable in software.
+
+### Alternatives Considered
+| Option | Tradeoff |
+|---|---|
+| 4 A-class buck (e.g. LMR36540 / TPS5450) | Solves it in hardware; larger inductor, respin of the power block, more idle loss |
+| Second bulk stage (≥ 2 mF) | Only stretches the brown-out to ~2 ms; still fails a 5 ms coincidence |
+| Reduce Lepton shutter current | Not controllable — FLIR module behaviour |
+
+### Consequences
+- The readme power-budget table's "Peak" column is a worst-case sum, not a supported operating point; annotated accordingly.
+- The LMR33630 internal loop crossover with ~9× the recommended C_out is unpublished; bench Bode / load-step test before production is a hard requirement (SNVSAN3F §9.2.2.5).

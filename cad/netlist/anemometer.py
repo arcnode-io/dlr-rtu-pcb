@@ -26,19 +26,20 @@ import skidl
 FP_C_0402 = "Capacitor_SMD:C_0402_1005Metric"
 FP_R_0402 = "Resistor_SMD:R_0402_1005Metric"
 FP_POLYFUSE = "Resistor_SMD:R_1206_3216Metric"  # miniSMDC-class polyfuse
-FP_TVS = "Package_TO_SOT_SMD:SOT-23"
+FP_TVS = "Package_TO_SOT_SMD:SOT-23"  # SM712 dual TVS
+FP_TVS_SMB = "Diode_SMD:D_SMB"  # SMBJ series = DO-214AA (SMB), 2-terminal
 FP_CONN_5 = "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical"  # placeholder; M12-5P at fab
 FP_SOIC8 = "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
 
 
-def _cap(value: str, fp: str, n1: skidl.Net, n2: skidl.Net) -> None:
-    c = skidl.Part("Device", "C", value=value, footprint=fp)
+def _cap(ref: str, value: str, fp: str, n1: skidl.Net, n2: skidl.Net) -> None:
+    c = skidl.Part("Device", "C", ref=ref, value=value, footprint=fp)
     n1 += c[1]
     n2 += c[2]
 
 
-def _res(value: str, fp: str, n1: skidl.Net, n2: skidl.Net) -> None:
-    r = skidl.Part("Device", "R", value=value, footprint=fp)
+def _res(ref: str, value: str, fp: str, n1: skidl.Net, n2: skidl.Net) -> None:
+    r = skidl.Part("Device", "R", ref=ref, value=value, footprint=fp)
     n1 += r[1]
     n2 += r[2]
 
@@ -61,7 +62,7 @@ def build_anemometer(
         uart_rx: SP3485 RO -> CM4 UART RX.
         de_n: CM4 GPIO -> SP3485 DE (and ~RE tied together for half-duplex).
     """
-    u = skidl.Part("Interface_UART", "SP3485EN", footprint=FP_SOIC8)
+    u = skidl.Part("Interface_UART", "SP3485EN", ref="U7", footprint=FP_SOIC8)
     u.value = "SP3485EN"
 
     rs485_a = skidl.Net("ANEMO_RS485_A")
@@ -78,17 +79,17 @@ def build_anemometer(
     rs485_a += u[6]
     rs485_b += u[7]
     v3v3 += u[8]
-    _cap("100nF", FP_C_0402, v3v3, gnd)
+    _cap("C30", "100nF", FP_C_0402, v3v3, gnd)
 
     # 120 Ohm termination across the differential pair (receiver end)
-    _res("120", FP_R_0402, rs485_a, rs485_b)
+    _res("R14", "120", FP_R_0402, rs485_a, rs485_b)
 
     # Bias network — keeps idle state defined when no driver enabled
-    _res("680", FP_R_0402, v3v3, rs485_a)
-    _res("680", FP_R_0402, rs485_b, gnd)
+    _res("R15", "680", FP_R_0402, v3v3, rs485_a)
+    _res("R16", "680", FP_R_0402, rs485_b, gnd)
 
     # Differential TVS on A/B to GND for surge protection
-    tvs = skidl.Part("Device", "D_TVS_Dual_AAC", footprint=FP_TVS)
+    tvs = skidl.Part("Device", "D_TVS_Dual_AAC", ref="D2", footprint=FP_TVS)
     tvs.value = "SM712-like"
     rs485_a += tvs[1]
     gnd += tvs[2]
@@ -96,14 +97,16 @@ def build_anemometer(
 
     # Polyfuse on sensor V+ — 250 mA hold covers Calypso (~5 mA) and
     # Vaisala WMT702 (~30 mA) with margin.
-    f = skidl.Part("Device", "Polyfuse", value="250mA", footprint=FP_POLYFUSE)
+    f = skidl.Part("Device", "Polyfuse", ref="F1", value="250mA", footprint=FP_POLYFUSE)
     vbat += f[1]
     v_sensor += f[2]
 
     # Lightning / surge clamp on V+ to GND — IEC 61000-4-5 2 kV combination
     # wave (42 Ω source) per utility-tower deployment. SMBJ24CA bidirectional,
     # 24 V stand-off, 38.9 V clamp @ 1 A — well below WMT702 max input 36 V.
-    tvs_v = skidl.Part("Device", "D_TVS", value="SMBJ24CA", footprint=FP_TVS)
+    tvs_v = skidl.Part(
+        "Device", "D_TVS", ref="D3", value="SMBJ24CA", footprint=FP_TVS_SMB
+    )
     v_sensor += tvs_v[1]
     gnd += tvs_v[2]
 
@@ -113,6 +116,7 @@ def build_anemometer(
     j = skidl.Part(
         "Connector_Generic",
         "Conn_01x05",
+        ref="J13",
         footprint=FP_CONN_5,
     )
     j.value = "ANEMO_M12_5P"
