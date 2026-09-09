@@ -50,10 +50,12 @@ layout-asm = [
     "route-asm", "stitch-asm", "close-gaps", "validate-asm",
 ]
 inspect-model = "bash -c 'nohup eeschema cad/dlr_carrier.kicad_sch &>/dev/null &'"
-# --severity-error: a runner without KiCad's library tables configured reports every
-# symbol and footprint link as a warning, and --exit-code-violations counts warnings
-validate-model = "kicad-cli sch erc cad/dlr_carrier.kicad_sch --severity-error --exit-code-violations"
-validate-asm = "bash -c 'if [ -f cad/dlr_carrier.kicad_pcb ]; then kicad-cli pcb drc cad/dlr_carrier.kicad_pcb --refill-zones --severity-error --exit-code-violations; else echo \"No .kicad_pcb yet — run poe layout-asm first\"; fi'"
+# Count "; error" lines in the report rather than trusting --exit-code-violations:
+# that flag counts warnings too, and its exit codes differ between kicad-cli builds.
+# A runner with no KiCad library tables reports every symbol and footprint link as a
+# warning, which must not fail the build; real errors must.
+validate-model = "bash -c 'kicad-cli sch erc cad/dlr_carrier.kicad_sch -o dlr_carrier-erc.rpt >/dev/null; n=$(grep -c \"; error\" dlr_carrier-erc.rpt || true); echo \"ERC errors: $n\"; [ \"$n\" -eq 0 ]'"
+validate-asm = "bash -c 'if [ ! -f cad/dlr_carrier.kicad_pcb ]; then echo \"No .kicad_pcb yet — run poe layout-asm first\"; exit 0; fi; kicad-cli pcb drc cad/dlr_carrier.kicad_pcb --refill-zones -o dlr_carrier-drc.rpt >/dev/null; n=$(grep -c \"; error\" dlr_carrier-drc.rpt || true); echo \"DRC errors: $n\"; [ \"$n\" -eq 0 ]'"
 inspect-asm = "bash -c 'nohup kicad cad/dlr_carrier.kicad_pro &>/dev/null &'"
 generate-model = ["build", { cmd = "bash -c 'mkdir -p output/drawings && kicad-cli sch export svg cad/dlr_carrier.kicad_sch -b -e -n -o output/drawings/ && mv output/drawings/dlr_carrier.svg output/drawings/dlr_carrier_web.svg && python cad/drawing/svg_dark.py output/drawings/dlr_carrier_web.svg output/drawings/dlr_carrier_web_dark.svg && kicad-cli sch export pdf cad/dlr_carrier.kicad_sch -b --drawing-sheet cad/drawing-sheet.kicad_wks -o output/drawings/dlr_carrier_drawing.pdf'" }]
 generate-asm = "bash -c 'if [ -f cad/dlr_carrier.kicad_pcb ]; then mkdir -p output/gerbers output/fab && kicad-cli pcb export gerbers cad/dlr_carrier.kicad_pcb -o output/gerbers/ && kicad-cli pcb export drill cad/dlr_carrier.kicad_pcb -o output/gerbers/ && kicad-cli pcb export step cad/dlr_carrier.kicad_pcb -o output/dlr_carrier_pcb.step && kicad-cli pcb export svg cad/dlr_carrier.kicad_pcb -l F.Cu,B.Cu,Edge.Cuts,F.Silkscreen --black-and-white --exclude-drawing-sheet --page-size-mode 2 --mode-single -o output/drawings/dlr_carrier_pcb.svg && kicad-cli sch export bom cad/dlr_carrier.kicad_sch -o output/fab/bom.csv --fields \"Reference,Value,Footprint,\\${QUANTITY}\" --labels \"Designator,Comment,Footprint,Quantity\" --group-by \"Value,Footprint\" --exclude-dnp && kicad-cli pcb export pos cad/dlr_carrier.kicad_pcb -o output/fab/cpl.csv --format csv --units mm --side both --smd-only --exclude-dnp; else echo \"No .kicad_pcb yet — route in pcbnew first\"; fi'"
