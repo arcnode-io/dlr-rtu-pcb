@@ -271,21 +271,17 @@ finest-pitch parts, where Freerouting and `close_gaps` both run out of room:
 | GND | 197.80, 94.46 | J5 pin 20 |
 | BAT_SRP | 140.06, 101.20 | U8 (BQ24650, VQFN) pin 10 |
 
-`close_gaps` refuses to force copper through another net, so these are left for a
-human pass in pcbnew (`uv run poe inspect-asm`) rather than closed unsafely. Until
-they are routed the gerbers in `output/` are a preview, not a fab release.
+Until these are routed the gerbers in `output/` are a preview, not a fab release.
 
-### Toolchain versions
+### Toolchain
 
-The board is written in KiCad 10 format (`20260206`); the schematic is KiCad 9
-format (`20250114`), which both versions read. **DRC therefore only runs on KiCad
-10** — the CI runner currently has 9.0.2, where `poe validate-asm` reports that it
-could not read the board rather than pretending to pass. ERC runs on both and is
-gated in CI.
+**KiCad 10 required.** The board is KiCad 10 format (`20260206`); on KiCad 9
+`poe validate-asm` says DRC could not run rather than passing silently. The CI
+runner gets 10.x from Flatpak. The schematic is format `20250114`, which both
+versions read.
 
-Cross-sheet nets connect through global labels rather than hierarchical sheet pins:
-KiCad 9 rejected every sheet-pin/label pairing that KiCad 10 accepted, and the flat
-label style is what this project's schematic generator was designed around anyway.
+ERC is a blocking gate in CI. DRC runs and reports but does not gate yet — the
+punch list above is real errors; the `|| true` comes off once they are routed.
 
 ## Layer Stack
 
