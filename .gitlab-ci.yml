@@ -15,11 +15,17 @@ checks:
     # ERC is a hard gate. DRC is reported but not gated yet: the board still carries
     # the 5-connection routing punch list documented in readme.md — flip it to a gate
     # (drop the "|| true") once those are routed.
-    - if command -v kicad-cli >/dev/null; then uv run poe validate-model; else echo "kicad-cli not on this runner — ERC not checked in CI"; fi
+    - if command -v kicad-cli >/dev/null; then kicad-cli version; else echo "kicad-cli not on this runner — ERC/DRC not checked in CI"; fi
+    - if command -v kicad-cli >/dev/null; then uv run poe validate-model; fi
     - if command -v kicad-cli >/dev/null; then uv run poe validate-asm || echo "DRC not clean — see the board-status punch list in readme.md"; fi
   coverage: '/(?i)total.*? (100(?:\.0+)?\%|[1-9]?\d(?:\.\d+)?\%)$/'
   artifacts:
     when: always
+    # Keep the ERC/DRC reports: when a gate fails, the counts alone do not say which
+    # rule fired, and the runner's KiCad may not match a developer's.
+    paths:
+      - dlr_carrier-erc.rpt
+      - dlr_carrier-drc.rpt
     reports:
       junit: junit.xml
       coverage_report:
