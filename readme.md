@@ -275,6 +275,18 @@ finest-pitch parts, where Freerouting and `close_gaps` both run out of room:
 human pass in pcbnew (`uv run poe inspect-asm`) rather than closed unsafely. Until
 they are routed the gerbers in `output/` are a preview, not a fab release.
 
+### Toolchain versions
+
+The board is written in KiCad 10 format (`20260206`); the schematic is KiCad 9
+format (`20250114`), which both versions read. **DRC therefore only runs on KiCad
+10** — the CI runner currently has 9.0.2, where `poe validate-asm` reports that it
+could not read the board rather than pretending to pass. ERC runs on both and is
+gated in CI.
+
+Cross-sheet nets connect through global labels rather than hierarchical sheet pins:
+KiCad 9 rejected every sheet-pin/label pairing that KiCad 10 accepted, and the flat
+label style is what this project's schematic generator was designed around anyway.
+
 ## Layer Stack
 
 4-layer, 1.6 mm FR4, controlled impedance (ADR-016). Applied by `cad/drawing/board_setup.py`, so a regenerated board always has the same stack.

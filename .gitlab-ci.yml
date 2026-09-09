@@ -17,7 +17,9 @@ checks:
     # (drop the "|| true") once those are routed.
     - if command -v kicad-cli >/dev/null; then kicad-cli version; else echo "kicad-cli not on this runner — ERC/DRC not checked in CI"; fi
     - if command -v kicad-cli >/dev/null; then uv run poe validate-model; fi
-    - if command -v kicad-cli >/dev/null; then uv run poe validate-asm || echo "DRC not clean — see the board-status punch list in readme.md"; fi
+    # DRC is informational: the runner's KiCad 9 cannot open a KiCad 10 board file,
+    # and the board still carries the routing punch list documented in readme.md.
+    - if command -v kicad-cli >/dev/null; then uv run poe validate-asm || echo "DRC not gated — see the message above and the board-status section of readme.md"; fi
   coverage: '/(?i)total.*? (100(?:\.0+)?\%|[1-9]?\d(?:\.\d+)?\%)$/'
   artifacts:
     when: always
