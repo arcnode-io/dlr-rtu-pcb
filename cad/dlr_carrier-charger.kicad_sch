@@ -2,7 +2,7 @@
 	(version 20250114)
 	(generator "eeschema")
 	(generator_version "9.0")
-	(uuid "40c61e59-64f7-482c-bac7-2bc5cddc1686")
+	(uuid "d9659de3-5829-484a-82b7-53bebe63b378")
 	(paper "A3")
 	(title_block
 		(title "DLR Carrier — SOLAR MPPT CHARGER")
@@ -2072,7 +2072,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "c8c77063-837a-45b2-8a7a-6cf9ca4ea652")
+		(uuid "706a8b8e-a885-4472-a6c8-5203ab409805")
 		(property "Reference" "C1"
 			(at 64.135 72.39 0.0000)
 			(effects
@@ -2101,14 +2101,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "f20f451c-fed1-4055-b8cf-f3b6767dbfb9")
+			(uuid "b0f60b6e-88d4-4a87-af70-d6cccadcbd20")
 		)
 		(pin "2"
-			(uuid "95fe15f6-76db-4336-8f30-f92630ddb88d")
+			(uuid "9cc04bee-4be2-4aa7-ba21-145d9dd8234b")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "C1")
 					(unit 1)
 				)
@@ -2124,7 +2124,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "44b294d7-b47e-4078-aa5f-22b9003320e7")
+		(uuid "d7ab4ad3-7155-484f-b6ac-46b15f87cd75")
 		(property "Reference" "C2"
 			(at 114.935 72.39 0.0000)
 			(effects
@@ -2153,14 +2153,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "c5dc8a01-c309-47fa-9d7b-45fdcfd4163c")
+			(uuid "0dedb732-0d48-49d6-a5e6-da4cf288cca0")
 		)
 		(pin "2"
-			(uuid "c0a95da8-961a-4a5a-a3ff-cb203f3537c3")
+			(uuid "ef7ea724-a1d8-4df1-a8c0-7a85f3b34eb0")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "C2")
 					(unit 1)
 				)
@@ -2176,7 +2176,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "772801c1-a4f4-4474-8a14-00fdae2f4dda")
+		(uuid "5e60d0bd-fbaf-4003-863f-79208579a113")
 		(property "Reference" "C3"
 			(at 165.735 72.39 0.0000)
 			(effects
@@ -2205,14 +2205,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "f993b708-e29e-4272-8eef-4ae299c9687f")
+			(uuid "9f8512fb-840d-4545-8b5f-64fbaf614b57")
 		)
 		(pin "2"
-			(uuid "2cb94a53-5bc2-4dcb-8fd5-3496d10b8f88")
+			(uuid "34281603-bffc-424e-a255-55c1da46d749")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "C3")
 					(unit 1)
 				)
@@ -2228,7 +2228,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "56c759a1-4e3e-4607-837a-168f07a9db20")
+		(uuid "1b6bc5b6-7228-432d-9542-169b84842dd8")
 		(property "Reference" "C31"
 			(at 216.535 72.39 0.0000)
 			(effects
@@ -2257,14 +2257,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "9270183f-084a-467e-8526-2a5883e43477")
+			(uuid "838121ee-18da-4b1d-9b9c-0b28e7d83efb")
 		)
 		(pin "2"
-			(uuid "052001fa-7f7b-486d-9cde-881b7a94dd1f")
+			(uuid "75777350-163d-47c2-bc88-a346e893133c")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "C31")
 					(unit 1)
 				)
@@ -2280,7 +2280,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "899bdd48-6940-459e-bb20-ddd01a083973")
+		(uuid "976de6b4-d3de-4bc5-b9bc-bf95d34e9fb6")
 		(property "Reference" "C32"
 			(at 267.335 72.39 0.0000)
 			(effects
@@ -2309,14 +2309,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "fad64cfc-8551-4eac-b0e3-6e276e998e2f")
+			(uuid "92fac54f-6d56-4e5f-9bf9-7cc9465b5e78")
 		)
 		(pin "2"
-			(uuid "c6992f60-9a7b-4fb6-8a8c-3f3f65f09858")
+			(uuid "9d946667-8fcf-48b6-abca-49c34a8f520b")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "C32")
 					(unit 1)
 				)
@@ -2332,7 +2332,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "0b5e2793-aeb0-4b75-b334-72f5a786ee12")
+		(uuid "f9e23d66-ce59-468c-9802-a34209d86b5c")
 		(property "Reference" "C33"
 			(at 318.135 72.39 0.0000)
 			(effects
@@ -2361,14 +2361,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "40eb6780-4a09-457e-8448-0fbd11b87367")
+			(uuid "1e717f2b-cbf6-4267-a8f2-ecd32742dc05")
 		)
 		(pin "2"
-			(uuid "1e05aff7-fa3c-423e-8b80-1d5f845e4220")
+			(uuid "8ff87f6e-2127-4102-97ae-471256a03c18")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "C33")
 					(unit 1)
 				)
@@ -2384,7 +2384,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "705bb872-aa21-494b-bb9b-c130c4237290")
+		(uuid "9fc43790-b07b-442e-9be9-1e89cd04f303")
 		(property "Reference" "C34"
 			(at 368.935 72.39 0.0000)
 			(effects
@@ -2413,14 +2413,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "05f816d5-9105-4786-b886-f4a66f158004")
+			(uuid "63eaf718-a9a9-4601-b334-59cbc0059923")
 		)
 		(pin "2"
-			(uuid "43027bfb-29da-4e2d-939f-f8ca058b6028")
+			(uuid "37330e6a-f0a7-4d72-8473-28ea7f0f7033")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "C34")
 					(unit 1)
 				)
@@ -2436,7 +2436,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "90206c16-b03f-40ba-ba98-4f131231c004")
+		(uuid "f94628d5-0d4d-4f80-a0a4-3b42b4e2b921")
 		(property "Reference" "C35"
 			(at 64.135 135.89 0.0000)
 			(effects
@@ -2465,14 +2465,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "fc21e882-93cd-4dba-87ee-8da7104d59af")
+			(uuid "3fe1f19f-13be-4e54-a8ed-9f0ac760377c")
 		)
 		(pin "2"
-			(uuid "ec8f62f5-548d-4a1e-b36a-fb790a4577a4")
+			(uuid "0ecd56a7-e4a5-4419-844e-cb8e1fbb0daf")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "C35")
 					(unit 1)
 				)
@@ -2488,7 +2488,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "a3633003-0f36-472b-a96d-ec80e54bdf83")
+		(uuid "f58d6470-ab2f-4ba8-a0ec-20d549bf6600")
 		(property "Reference" "D1"
 			(at 114.3 135.89 0.0000)
 			(effects
@@ -2517,14 +2517,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "1b2a7574-d255-4e7a-aba5-07c85309c69e")
+			(uuid "a7623a96-edf8-4ab6-840c-5cfeb1032486")
 		)
 		(pin "2"
-			(uuid "62fe76fa-8106-4858-86c6-53da1b834323")
+			(uuid "0adfb315-5d00-44a3-b67b-b9850d983b43")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "D1")
 					(unit 1)
 				)
@@ -2540,7 +2540,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "b63b7517-f6fa-4afe-bd2c-08a9433d0b1f")
+		(uuid "40793eb3-204b-4555-b9a3-e72492de6c91")
 		(property "Reference" "D4"
 			(at 165.1 135.89 0.0000)
 			(effects
@@ -2569,17 +2569,17 @@
 			)
 		)
 		(pin "1"
-			(uuid "984fffd9-eeca-4a34-94c0-0e186f5dacfd")
+			(uuid "07112008-7da6-4dd5-a6f7-9368aaa4cb22")
 		)
 		(pin "2"
-			(uuid "d7754ffe-88f8-405b-8858-028debd83c05")
+			(uuid "d4fd9750-d62c-4cf2-8c5b-ca7ccb4ecfed")
 		)
 		(pin "3"
-			(uuid "ea528861-708a-416d-80bd-90d6b34f93c3")
+			(uuid "670cfa81-da40-49a7-a519-61175e51450a")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "D4")
 					(unit 1)
 				)
@@ -2595,7 +2595,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "89b620d6-ef3b-4ea4-ac4e-d2629bffcd6d")
+		(uuid "a046b9c3-8092-4818-b5c8-18616e20433a")
 		(property "Reference" "J1"
 			(at 215.9 135.89 0.0000)
 			(effects
@@ -2624,14 +2624,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "5a3de033-587f-4a1f-af5f-ceb3b8a8b258")
+			(uuid "f24ceb23-d981-402e-9607-9b2c6ab19066")
 		)
 		(pin "2"
-			(uuid "b76780fa-7150-4c64-92fb-bc480228bb42")
+			(uuid "dabf07f5-4010-41fc-a813-dc06b36eb01a")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "J1")
 					(unit 1)
 				)
@@ -2647,7 +2647,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "8bdaceda-e7a7-42e0-9a5f-251746759530")
+		(uuid "21edbe19-3ee0-47c3-935c-9b1bf7613d2f")
 		(property "Reference" "L1"
 			(at 265.43 133.35 90)
 			(effects
@@ -2676,14 +2676,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "a0f05cd2-3856-4684-aa20-c4a702159391")
+			(uuid "12489932-8eeb-445f-a667-d342846a8cda")
 		)
 		(pin "2"
-			(uuid "ad2c2ae7-d1dc-47d0-9dde-e7266b34cae6")
+			(uuid "f0d92b66-c1f3-493b-a660-7de02cbc7d64")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "L1")
 					(unit 1)
 				)
@@ -2699,7 +2699,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "94cdbf0d-baf0-42a7-ac17-ef747a9346f0")
+		(uuid "1ddd05da-13eb-41e5-b72d-4ae457710dfb")
 		(property "Reference" "Q1"
 			(at 322.58 135.255 0.0000)
 			(effects
@@ -2728,17 +2728,17 @@
 			)
 		)
 		(pin "1"
-			(uuid "aeb5e111-32ce-46d1-a3ab-19a946974ebe")
+			(uuid "a6b5b5e2-e8e6-4492-a194-aa0623e90e84")
 		)
 		(pin "2"
-			(uuid "7bee8883-0823-4500-8732-a5bea4a83111")
+			(uuid "8f12c3da-ad81-4727-84ee-7415e83ca153")
 		)
 		(pin "3"
-			(uuid "5d818831-fe76-454c-b893-0454bb2421f2")
+			(uuid "83423af5-829b-4411-a67c-0834ce29ac02")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "Q1")
 					(unit 1)
 				)
@@ -2754,7 +2754,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "e8c08cc0-37b3-4ac6-bda8-bdaa83a93e5c")
+		(uuid "361fe774-b893-4676-b6cc-1eb01ae4fea6")
 		(property "Reference" "Q2"
 			(at 373.38 135.255 0.0000)
 			(effects
@@ -2783,17 +2783,17 @@
 			)
 		)
 		(pin "1"
-			(uuid "2dceb4ec-21e7-4033-93cb-ed11ff0f5388")
+			(uuid "74c4470b-4b16-4787-acd5-ee6b7e3ba06d")
 		)
 		(pin "2"
-			(uuid "f476f4de-3df7-4711-bf3f-1a148356f6bb")
+			(uuid "1e01f5e1-e6a1-4af4-bb33-14f3677d2589")
 		)
 		(pin "3"
-			(uuid "65a9f603-2ff6-4d6c-b2eb-fbbfbec77979")
+			(uuid "5ab8259b-5747-44f8-a58a-03f55ebe2919")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "Q2")
 					(unit 1)
 				)
@@ -2809,7 +2809,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "9249273c-6b9a-472c-a1df-83f2ae5cc9dc")
+		(uuid "b3517502-4df7-4e96-9e94-f8992e191f8d")
 		(property "Reference" "R1"
 			(at 65.532 196.85 90)
 			(effects
@@ -2838,14 +2838,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "9b6ae10b-7e44-4c07-8592-05f9f9f43fe5")
+			(uuid "f7216cfd-7478-40db-ae7e-904d50af7b91")
 		)
 		(pin "2"
-			(uuid "05fca131-6c32-4297-9be3-ecf6c556be41")
+			(uuid "40e4c9f7-518e-45b5-a8c9-92d29dfb44ce")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "R1")
 					(unit 1)
 				)
@@ -2861,7 +2861,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "2813ae2c-90ab-4e9b-95f8-f83b430d864a")
+		(uuid "f900cc7b-68ae-435f-9c2c-4250d1d0503d")
 		(property "Reference" "R17"
 			(at 116.332 196.85 90)
 			(effects
@@ -2890,14 +2890,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "6faa0461-0268-4f86-adb4-3a945f476fb4")
+			(uuid "f7cdff83-7d3b-44e9-b447-5fa04243f6f4")
 		)
 		(pin "2"
-			(uuid "fc174cf8-0b45-489a-afd4-0644468145d6")
+			(uuid "3d1c30d2-31bf-480b-a006-f8f70b845e25")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "R17")
 					(unit 1)
 				)
@@ -2913,7 +2913,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "ce7a449c-af86-4995-a526-df43aa6393d7")
+		(uuid "5dfdb378-7796-404a-9c6c-ca2a9c5f7d23")
 		(property "Reference" "R18"
 			(at 167.132 196.85 90)
 			(effects
@@ -2942,14 +2942,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "02230ca3-ae25-4156-a000-3c0b9a6e1399")
+			(uuid "58fbad44-6320-47aa-9b99-0a15280f8284")
 		)
 		(pin "2"
-			(uuid "4b7ec215-4a94-44de-ae86-f0b2f9d5d6d7")
+			(uuid "0fc87bef-0b71-4fca-97ec-1065b02e6ce7")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "R18")
 					(unit 1)
 				)
@@ -2965,7 +2965,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "5e46979b-6a19-45d4-915a-03197b3de7e5")
+		(uuid "819c1d40-2ea8-4c82-bbce-f3b5df6b5dbe")
 		(property "Reference" "R19"
 			(at 217.932 196.85 90)
 			(effects
@@ -2994,14 +2994,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "d7952163-c631-4c9a-a10b-fc62fa890054")
+			(uuid "ab12f411-ff50-4476-b1dc-71970e421361")
 		)
 		(pin "2"
-			(uuid "cea7337f-4ca2-4200-a910-36bdc56a19e1")
+			(uuid "a69c2b03-8f43-44c8-97bb-500f70a01e5a")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "R19")
 					(unit 1)
 				)
@@ -3017,7 +3017,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "1c0c5c40-8862-4280-8018-673a2fd43270")
+		(uuid "c924239b-0601-4afd-b1dc-8908c00861a0")
 		(property "Reference" "R20"
 			(at 268.732 196.85 90)
 			(effects
@@ -3046,14 +3046,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "7564053e-aa31-4f0c-aa64-733e74c0de6f")
+			(uuid "2add3d84-9377-47f5-8329-8b7b2c4dd991")
 		)
 		(pin "2"
-			(uuid "04dcc5d3-ee67-4640-822f-2dbb154530cb")
+			(uuid "ee6fca2c-7aac-4da5-8e66-dfef04c08767")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "R20")
 					(unit 1)
 				)
@@ -3069,7 +3069,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "16230550-d0bb-4d76-a9c7-ddb8c917d04d")
+		(uuid "17d40514-3e4b-483c-a4c1-d9ce4781d176")
 		(property "Reference" "R21"
 			(at 319.532 196.85 90)
 			(effects
@@ -3098,14 +3098,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "e46e4b62-7491-4c1a-b37c-25b4b47d8ef3")
+			(uuid "99abaeb6-498d-4f5d-8f81-fdbd0c5a51a1")
 		)
 		(pin "2"
-			(uuid "707b0670-5c91-4bdc-b71d-8d9b908d3c56")
+			(uuid "a6f374be-12a3-4349-a173-9f0b091466af")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "R21")
 					(unit 1)
 				)
@@ -3121,7 +3121,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "f06ad724-a8a9-403d-8e23-b1eb61d59b7b")
+		(uuid "a9876695-f230-4b55-a730-ca8782b56038")
 		(property "Reference" "R22"
 			(at 370.332 196.85 90)
 			(effects
@@ -3150,14 +3150,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "3855f4a8-121d-4420-babc-91df5ab4138c")
+			(uuid "c0ec186a-9322-4c0d-b70c-109ed229fd55")
 		)
 		(pin "2"
-			(uuid "84cb7278-c306-4c8b-9c3b-db92c3afad1d")
+			(uuid "91a5a22e-a98f-4829-a3d9-152c7114f34b")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "R22")
 					(unit 1)
 				)
@@ -3173,7 +3173,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "8af3898f-9093-413d-8b3c-ef6cef2208d6")
+		(uuid "15e80826-9f05-4eb8-a856-c0f60e095560")
 		(property "Reference" "R23"
 			(at 65.532 260.35 90)
 			(effects
@@ -3202,14 +3202,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "0377c5af-3c38-468b-8736-31a6b3ee55d0")
+			(uuid "1b0a0048-6b62-41db-8f93-5b28a30f2368")
 		)
 		(pin "2"
-			(uuid "c44eb887-0c8d-40bb-8ad4-bd022f0bb21e")
+			(uuid "9ea4b55b-b92f-49af-9ee0-bdaa2c090a08")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "R23")
 					(unit 1)
 				)
@@ -3225,7 +3225,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "f36fec60-e614-434c-97b8-743a80ad9c5c")
+		(uuid "6eba706a-dadb-4361-9e68-8d49d4cf53a0")
 		(property "Reference" "R24"
 			(at 116.332 260.35 90)
 			(effects
@@ -3254,14 +3254,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "80545dd8-c6b6-472a-b1e2-f2110261fbdf")
+			(uuid "d00f9804-167d-4be2-8544-3904f9cce4b2")
 		)
 		(pin "2"
-			(uuid "0944ef1b-aff6-4e0c-b703-6a3f9f58c815")
+			(uuid "4979069b-71e2-48a6-8217-ded2f0a9037b")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "R24")
 					(unit 1)
 				)
@@ -3277,7 +3277,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "56f47654-2d2b-429d-97f2-25c8a918c427")
+		(uuid "821e0577-9e03-4974-8807-527c44eb6a1b")
 		(property "Reference" "R25"
 			(at 167.132 260.35 90)
 			(effects
@@ -3306,14 +3306,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "dcf83bf3-b151-4b70-8a89-6b6366310262")
+			(uuid "f27a3395-139f-4f15-87fa-717dc7bfed16")
 		)
 		(pin "2"
-			(uuid "32461e87-ec30-4108-803d-d644d53ef83d")
+			(uuid "e9c9d37f-9329-4d62-bd87-680eec6adba7")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "R25")
 					(unit 1)
 				)
@@ -3329,7 +3329,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "90791d3e-3be7-4332-91f1-f21edfa5535c")
+		(uuid "cb9409b2-4239-4419-98d9-ab7d03a9f858")
 		(property "Reference" "U8"
 			(at 205.74 281.94 0.0000)
 			(effects
@@ -3358,59 +3358,59 @@
 			)
 		)
 		(pin "1"
-			(uuid "d060d3bd-cce1-4a54-b91d-fc9b41468bc2")
+			(uuid "c0a4bb03-cf31-4e74-a84a-04ceef628bb7")
 		)
 		(pin "2"
-			(uuid "1f12d3d7-ad5a-43be-94c8-00b93aade695")
+			(uuid "266b431f-afc6-46b9-a347-7484b6f1d5a7")
 		)
 		(pin "3"
-			(uuid "8b305614-ee9e-4e12-8482-f714c3d1656c")
+			(uuid "51bdd89e-3ab5-47ce-af97-c83c46ec1f26")
 		)
 		(pin "4"
-			(uuid "aaee7ff1-acbf-4b4b-bacb-7c0151ddea59")
+			(uuid "b2e40dac-e986-42a4-9f6c-ea0e94b55401")
 		)
 		(pin "5"
-			(uuid "4ab4af2f-ba1b-46a7-812a-fb4e31ca9c51")
+			(uuid "8b69474f-d644-4cd0-b327-fb7caf56b743")
 		)
 		(pin "6"
-			(uuid "762b41a7-77b2-496c-b13e-bb02a9ec8e05")
+			(uuid "6d4c2061-dcd5-4449-8ac8-f349e21008d8")
 		)
 		(pin "7"
-			(uuid "7119e594-fd6d-45e4-82b5-604badffb022")
+			(uuid "6666d49f-a599-498e-be8f-e08c0ac05dc2")
 		)
 		(pin "8"
-			(uuid "8c5a0598-f884-4512-af4f-4157dd12eaf7")
+			(uuid "fa90cd99-c970-4154-b865-14b208392055")
 		)
 		(pin "9"
-			(uuid "19fafaea-afcb-4024-86b6-1b8e5e1e70a7")
+			(uuid "b90256f7-d05a-48bd-9cdc-d24aeffd6453")
 		)
 		(pin "10"
-			(uuid "e912cbe1-984d-4b39-8333-dc275a4dc50a")
+			(uuid "e8f9dbe1-f375-470f-ab3f-3e153bcc4a13")
 		)
 		(pin "11"
-			(uuid "093f91a1-4c5b-479c-bf54-6be51ad3cfde")
+			(uuid "fea28826-90be-4457-88e7-54fabb96b5c2")
 		)
 		(pin "12"
-			(uuid "73f40d11-7f5a-4e39-8011-6829a9eff7e4")
+			(uuid "1bbe3ea5-b9ef-4819-83ec-1f03a719fb1e")
 		)
 		(pin "13"
-			(uuid "f04470e3-3539-4784-9e0f-4e8276e44473")
+			(uuid "fe03db46-6dd8-4670-aab4-69c8fc06c570")
 		)
 		(pin "14"
-			(uuid "5a958630-6e07-4d3f-b7f1-1a3c1a26f1da")
+			(uuid "60ec9456-bb27-4d93-9c01-6a6ff6d2debc")
 		)
 		(pin "15"
-			(uuid "00a6eaef-d80a-458e-83c4-24eaf9a288c3")
+			(uuid "4455796d-9055-4a64-9c76-2666d3bc8679")
 		)
 		(pin "16"
-			(uuid "36669a98-f3db-4f93-81ca-c81f592f7df3")
+			(uuid "f40b0a7d-ea6b-4be4-8be2-822cc0e6a8e7")
 		)
 		(pin "17"
-			(uuid "37c8e805-a123-4f8a-a05b-a2bbdea1509a")
+			(uuid "230202db-e7db-4be6-ae7c-e434790a9454")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "U8")
 					(unit 1)
 				)
@@ -3426,7 +3426,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "cdb0d22f-8497-4243-af6c-b6b43a284a1d")
+		(uuid "d7d7dd37-9e67-43f1-a3a8-8bf4510bdf81")
 		(property "Reference" "#PWR001"
 			(at 114.3 245.11 0.0000)
 			(effects
@@ -3446,11 +3446,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "1807da70-7165-4e84-8973-043c4dae91cd")
+			(uuid "8941a6d3-79ca-4f52-91ec-eb555a01a8a5")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "#PWR001")
 					(unit 1)
 				)
@@ -3466,7 +3466,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "96e437ab-ad9a-47bb-84cb-cde09db297af")
+		(uuid "61862a14-00bc-4a48-bf50-2912b7f5e3fb")
 		(property "Reference" "#PWR002"
 			(at 165.1 245.11 0.0000)
 			(effects
@@ -3486,11 +3486,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "1a074d0d-f188-452d-8d9b-2d224dd6639a")
+			(uuid "a8312f35-db61-49ac-bdea-24c8c106a143")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "#PWR002")
 					(unit 1)
 				)
@@ -3506,7 +3506,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "80d1107f-8a06-4b8e-a662-5c11ed9b0321")
+		(uuid "846a87f8-3fc9-4da5-b254-681df6cf2ed3")
 		(property "Reference" "#FLG001"
 			(at 223.52 65.405 0.0000)
 			(effects
@@ -3526,11 +3526,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "725e08d1-1b27-41b1-b6ef-ec46eb419374")
+			(uuid "2fdd1287-71db-4654-aef0-316a7d614250")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "#FLG001")
 					(unit 1)
 				)
@@ -3546,7 +3546,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "f54ac24c-b62f-4a56-a119-1f287eec30d3")
+		(uuid "60ecedb6-42c7-4493-aae4-536fa1a4e513")
 		(property "Reference" "#PWR003"
 			(at 63.5 74.93 0.0000)
 			(effects
@@ -3566,11 +3566,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "50c518db-3299-45c5-9b97-4a3fe69206c0")
+			(uuid "6e659f6a-672f-4974-b6f8-a3a62053731f")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "#PWR003")
 					(unit 1)
 				)
@@ -3586,7 +3586,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "c2b84bbc-8c53-402e-b67b-32f3d321d218")
+		(uuid "b9d7bdfc-36bb-4d70-944d-8ade1b76c0d9")
 		(property "Reference" "#PWR004"
 			(at 165.1 74.93 0.0000)
 			(effects
@@ -3606,11 +3606,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "d7c9f50b-72af-49de-b543-f8f73fb0f88c")
+			(uuid "f28fc4d4-f42c-4c8d-8c02-919b85020002")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "#PWR004")
 					(unit 1)
 				)
@@ -3626,7 +3626,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "76e4821f-e523-4c1a-8026-e21ae0eef080")
+		(uuid "b4dc09a6-709b-458a-86ec-1046bf7f7935")
 		(property "Reference" "#PWR005"
 			(at 215.9 74.93 0.0000)
 			(effects
@@ -3646,11 +3646,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "0c2f13b7-a18b-4f1a-a6cb-510a46c1bdf7")
+			(uuid "f9b24116-e6e8-49ed-9507-f491074b62a0")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "#PWR005")
 					(unit 1)
 				)
@@ -3666,7 +3666,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "ff1cbd7d-ebe5-4950-9e6d-3472ddf80c28")
+		(uuid "0b5668a5-19e0-4e49-a1f3-021bc7a2ed73")
 		(property "Reference" "#PWR006"
 			(at 266.7 74.93 0.0000)
 			(effects
@@ -3686,11 +3686,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "a974b7cc-4a1b-4149-a7fa-39d2b128f2d5")
+			(uuid "16df58ac-5527-4e37-8a75-93b4456183e2")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "#PWR006")
 					(unit 1)
 				)
@@ -3706,7 +3706,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "cb15b992-4491-4e88-b8a7-128d17d291bf")
+		(uuid "f42adb34-608d-4958-b021-3e5cf4564a54")
 		(property "Reference" "#PWR007"
 			(at 317.5 74.93 0.0000)
 			(effects
@@ -3726,11 +3726,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "3db7cb02-4456-4bfa-ad74-57d77898c095")
+			(uuid "a520eb0a-bd2d-464b-955f-ba67418a02c7")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "#PWR007")
 					(unit 1)
 				)
@@ -3746,7 +3746,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "7527112b-e44f-472c-b9a8-7460e33512d5")
+		(uuid "e4f91975-e75c-4278-a77a-62355ecd77b6")
 		(property "Reference" "#PWR008"
 			(at 63.5 138.43 0.0000)
 			(effects
@@ -3766,11 +3766,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "44d67d65-557e-43ca-abbd-7f18ca74ac76")
+			(uuid "27b417d5-f28a-4879-b755-890f8366ee7f")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "#PWR008")
 					(unit 1)
 				)
@@ -3786,7 +3786,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "ec7c6e10-da9b-4bba-9cbf-761bbb81d8ef")
+		(uuid "f023792f-5a4d-4655-9b19-ce212e93ce82")
 		(property "Reference" "#PWR009"
 			(at 196.85 135.89 270)
 			(effects
@@ -3806,11 +3806,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "c3043e86-3a50-4dbe-a8f2-392dd2abf4ed")
+			(uuid "23cce184-b2bf-45ff-83de-1f3d1be4d621")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "#PWR009")
 					(unit 1)
 				)
@@ -3826,7 +3826,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "cd85b9b3-0b27-4a99-9183-579a73538ea4")
+		(uuid "5a75c0fd-16f1-423b-86d5-0a86dc631550")
 		(property "Reference" "#PWR010"
 			(at 370.84 139.7 0.0000)
 			(effects
@@ -3846,11 +3846,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "50191419-0ceb-43c9-bd3d-8db616004879")
+			(uuid "90170dbc-a802-423f-b46d-53659196f8f5")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "#PWR010")
 					(unit 1)
 				)
@@ -3866,7 +3866,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "76d54c20-bc07-4d47-971e-5b037d2bcca9")
+		(uuid "be33fea8-3e5f-463a-a6c7-4eea5c72bf8d")
 		(property "Reference" "#PWR011"
 			(at 215.9 201.93 0.0000)
 			(effects
@@ -3886,11 +3886,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "f3d5b487-c40c-4ae3-bb36-cc897835587d")
+			(uuid "aeec2f06-ddd0-4ddc-b8e1-f58871b9c0cc")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "#PWR011")
 					(unit 1)
 				)
@@ -3906,7 +3906,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "8b57299c-215b-4c4d-a0b2-3fa0488e50ba")
+		(uuid "bbea90b4-794c-4ac0-96c8-45077905b19b")
 		(property "Reference" "#PWR012"
 			(at 317.5 201.93 0.0000)
 			(effects
@@ -3926,11 +3926,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "501d96d8-5de6-4fa5-8be2-20020f58eddb")
+			(uuid "6a0fdd4d-174a-4724-96eb-ae17076cba80")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "#PWR012")
 					(unit 1)
 				)
@@ -3946,7 +3946,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "8a477043-8337-43fb-8c22-938eda1abf8a")
+		(uuid "918e3621-2c33-48ef-be7e-f40dd4ec9ce0")
 		(property "Reference" "#PWR013"
 			(at 63.5 265.43 0.0000)
 			(effects
@@ -3966,11 +3966,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "f7ac8a2d-da44-4502-8f30-5a80ae600362")
+			(uuid "2fc015f1-c14b-42e2-a934-77e20dd8a7c4")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "#PWR013")
 					(unit 1)
 				)
@@ -3986,7 +3986,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "96192b1c-e4cd-4a7c-a148-ad4c9cfe4a0e")
+		(uuid "cef491a4-4858-4270-9831-69ff98605cb6")
 		(property "Reference" "#PWR014"
 			(at 215.9 284.48 0.0000)
 			(effects
@@ -4006,11 +4006,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "1024e0b7-7608-456c-8982-03f4193f3eb9")
+			(uuid "9509d049-a9d1-496f-84ac-fbaae394b2b5")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "#PWR014")
 					(unit 1)
 				)
@@ -4026,7 +4026,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "62be2b26-2b95-4b71-b324-72ba384d5a5c")
+		(uuid "08de24f7-bb51-4407-9b1d-a7cc3adec000")
 		(property "Reference" "#PWR015"
 			(at 215.9 284.48 0.0000)
 			(effects
@@ -4046,11 +4046,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "490a29a0-37ae-4f58-ab2b-2f904e0fbfab")
+			(uuid "4c157535-ae1d-413c-8115-aa19002ae499")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "#PWR015")
 					(unit 1)
 				)
@@ -4066,7 +4066,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "dec8a63c-3ba8-47de-ac86-3efec7fc790d")
+		(uuid "8844cec4-8c06-4265-a3ac-bd8e0c3eac95")
 		(property "Reference" "#FLG002"
 			(at 172.72 65.405 0.0000)
 			(effects
@@ -4086,11 +4086,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "02ec0102-4275-4865-9dab-c3b8e8087fa6")
+			(uuid "01197d3d-dc71-42c9-9272-39720081bbed")
 		)
 		(instances
 			(project "SOLAR MPPT CHARGER"
-				(path "/40c61e59-64f7-482c-bac7-2bc5cddc1686"
+				(path "/d9659de3-5829-484a-82b7-53bebe63b378"
 					(reference "#FLG002")
 					(unit 1)
 				)
@@ -4105,7 +4105,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "11d79a12-bbeb-4699-af5d-6455e0e9ad69")
+		(uuid "d73378f4-f697-4219-b4da-335bad27ddd4")
 	)
 	(wire
 		(pts
@@ -4115,7 +4115,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "83d8f85e-31cc-4b09-9344-3c584d32e2d6")
+		(uuid "dbf21581-2545-47a7-b360-4cb17cc3b01d")
 	)
 	(wire
 		(pts
@@ -4125,7 +4125,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "51110c13-2d6e-4569-b5c8-c08c3e32ed66")
+		(uuid "c3f0040a-36af-4b8d-b6d2-b1f05dcb525a")
 	)
 	(wire
 		(pts
@@ -4135,7 +4135,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "d7c6fdbd-8c09-4c71-af78-5866f1ffcfaf")
+		(uuid "ba0878d6-3884-4806-b9eb-0d4499cd786d")
 	)
 	(wire
 		(pts
@@ -4145,7 +4145,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "f82a31fd-7a30-44ea-b611-e6069ac1db5b")
+		(uuid "08f4f466-7c32-4dec-b565-cf59f94ca043")
 	)
 	(wire
 		(pts
@@ -4155,7 +4155,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "8f69db12-b0bd-4181-9140-f2531466d0e5")
+		(uuid "97f82525-2d81-4db3-ad46-b4bc0cfed5f4")
 	)
 	(wire
 		(pts
@@ -4165,7 +4165,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "d011969b-00b1-4e69-8919-f74e7f2e8ffe")
+		(uuid "e126c155-9a2f-4584-8e91-84ae432c8f86")
 	)
 	(wire
 		(pts
@@ -4175,7 +4175,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "5c614c22-2309-46f1-b88e-aaa28cce069d")
+		(uuid "a0403faa-c3e5-4e38-986a-6b748eff28f9")
 	)
 	(wire
 		(pts
@@ -4185,7 +4185,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "ac72c3d4-fbb6-4fb3-8aa3-8b74d3e92266")
+		(uuid "8e4c7ddb-b6ee-4800-b7f8-0149f75fb0ec")
 	)
 	(wire
 		(pts
@@ -4195,7 +4195,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "86d3fe43-a9cd-438c-ad17-6662973b20a3")
+		(uuid "d16f7cff-dff3-4d1d-8688-4a5c6e9b3b5b")
 	)
 	(wire
 		(pts
@@ -4205,7 +4205,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "0a9939bd-5b45-4088-b1e9-bbb110860f30")
+		(uuid "51d5aadf-6ee7-444d-8877-80a26cb89690")
 	)
 	(wire
 		(pts
@@ -4215,7 +4215,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "4c7b0096-f13d-4f50-ab5a-0058fe95c932")
+		(uuid "2c84df36-6e59-4b63-afc9-28fb71401cde")
 	)
 	(wire
 		(pts
@@ -4225,7 +4225,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "98ea13b8-e167-4491-8546-afc9ac8222ab")
+		(uuid "0995284f-21cf-400b-9de4-73e8e4d02a38")
 	)
 	(wire
 		(pts
@@ -4235,7 +4235,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "a8c48ba3-b3af-400f-9fd7-8e7a978eb22c")
+		(uuid "ce51b927-dc89-447b-830b-648e63b6096c")
 	)
 	(wire
 		(pts
@@ -4245,7 +4245,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "96f1a9d1-e9fb-4034-9698-5d4d237820e9")
+		(uuid "618fdf51-4b21-41e8-9b96-8cab195c8500")
 	)
 	(wire
 		(pts
@@ -4255,7 +4255,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "86966bfc-7d4d-457c-afc1-01a6d9555fa2")
+		(uuid "d33faed6-498e-4fbf-b64c-46e972b2f3bf")
 	)
 	(wire
 		(pts
@@ -4265,7 +4265,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "0215dab0-2dc0-4a94-8092-f14e3985c382")
+		(uuid "d935b32a-f195-454a-89ae-bfe999543c61")
 	)
 	(wire
 		(pts
@@ -4275,7 +4275,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "eb23a517-6255-436a-9c1f-f45113f83b86")
+		(uuid "80cb2719-5abb-47af-b4ef-7e26986e8090")
 	)
 	(wire
 		(pts
@@ -4285,7 +4285,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "f6d4f509-24c4-490d-91e2-16023a798727")
+		(uuid "db7b658a-8e5b-4cc8-9b91-773595b64849")
 	)
 	(wire
 		(pts
@@ -4295,7 +4295,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "785741d0-4944-46c7-bba7-148cb517f623")
+		(uuid "5bf14568-1acf-4c6e-babe-8ff7e6e47bb4")
 	)
 	(wire
 		(pts
@@ -4305,7 +4305,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "d2ec5ef6-4a9c-49b8-8126-262a2b1a41ba")
+		(uuid "220ec1ae-1452-4d96-80ea-f2f2765bac32")
 	)
 	(wire
 		(pts
@@ -4315,7 +4315,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "74ab073f-d43f-4ccd-bb90-2bb95cd46a00")
+		(uuid "1c7a20ea-e7fd-4790-832c-96b193fed542")
 	)
 	(wire
 		(pts
@@ -4325,7 +4325,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "9b3af2ad-fc90-4fe8-8236-253dc1a30b67")
+		(uuid "05ad0580-179e-458e-845b-331d9f15be28")
 	)
 	(wire
 		(pts
@@ -4335,7 +4335,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "7df13ae4-ca3e-4a5b-9572-5bc5f3719a39")
+		(uuid "607e77f1-8a11-4aea-80a5-34e923f986bd")
 	)
 	(wire
 		(pts
@@ -4345,7 +4345,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "c300fe28-95b8-469c-8bf1-353f2a60f909")
+		(uuid "20f20840-ed56-42b1-89a7-039eb5d04be1")
 	)
 	(wire
 		(pts
@@ -4355,7 +4355,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "6be1aba3-6dfc-45c3-8999-c7d8d4c17631")
+		(uuid "9a94084b-65a1-45c0-a68a-4b0d011e3aa1")
 	)
 	(wire
 		(pts
@@ -4365,7 +4365,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "d5c65e2e-aaab-4842-ade4-51275531275a")
+		(uuid "140b0e04-c83f-4f1d-aaee-beaad417b6a7")
 	)
 	(wire
 		(pts
@@ -4375,7 +4375,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "55653be6-024b-4972-acd6-4f85f5cb2bb7")
+		(uuid "676bb4d3-e701-44f7-b0fd-fe92b2bd1134")
 	)
 	(wire
 		(pts
@@ -4385,7 +4385,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "be787be3-6bbd-4cf2-bc3d-c5e95e419503")
+		(uuid "5bca3888-a52f-4b58-ae72-32faba154ca1")
 	)
 	(wire
 		(pts
@@ -4395,7 +4395,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "b1621682-414a-4c86-8eae-19c023d763c7")
+		(uuid "fe3e7079-65a3-4fa0-9c08-a3509fce9668")
 	)
 	(wire
 		(pts
@@ -4405,7 +4405,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "3d5e4dea-cd02-495c-912a-e681b0e200ae")
+		(uuid "171bfcc5-815f-419a-a404-982882ceab07")
 	)
 	(wire
 		(pts
@@ -4415,7 +4415,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "aff38d5f-c07a-4061-a8c3-407fa3209ebb")
+		(uuid "ca643e4b-77be-49da-9d0f-eabdd01c7166")
 	)
 	(wire
 		(pts
@@ -4425,7 +4425,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "333ab6de-3d37-43a9-8e34-9ebd9b464af4")
+		(uuid "46e06601-2576-43d5-8ed3-40302cdcd1a9")
 	)
 	(wire
 		(pts
@@ -4435,7 +4435,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "e6f30427-ec93-4299-bfc5-28f751f6d5e8")
+		(uuid "c2ac9a18-ba40-4b3b-a091-345aeee76b17")
 	)
 	(wire
 		(pts
@@ -4445,7 +4445,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "6d6ff519-c674-4b5d-88aa-42755bb7d99b")
+		(uuid "7c2d98b0-677d-40d8-93ec-67a67c705d25")
 	)
 	(wire
 		(pts
@@ -4455,7 +4455,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "861c2bb6-55d0-47c4-8c26-041dbf084c36")
+		(uuid "14389cae-0022-46df-b409-49431123b54e")
 	)
 	(wire
 		(pts
@@ -4465,7 +4465,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "d8ae1a37-2405-481f-9e55-27a74ce895a1")
+		(uuid "38450559-9f3e-4172-bb0e-080dd8765cdf")
 	)
 	(wire
 		(pts
@@ -4475,7 +4475,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "c1b1234b-447a-404c-8657-6c4053c6f8fb")
+		(uuid "d8ed34e3-88b5-4b31-a53f-f3b79a4dcb5a")
 	)
 	(wire
 		(pts
@@ -4485,7 +4485,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "16953d16-ba83-4f4e-b113-03d7fc4f7f65")
+		(uuid "5b74939b-745e-47b7-93eb-acf5ed8714d3")
 	)
 	(wire
 		(pts
@@ -4495,7 +4495,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "0e63d0cc-80c9-461c-889e-9d3092072b6d")
+		(uuid "afdb83e3-f2c3-4aa6-a04c-51bad4f3befb")
 	)
 	(wire
 		(pts
@@ -4505,7 +4505,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "75fc524d-4a77-4e17-8729-2a947987f8e9")
+		(uuid "cafebc13-5d75-4231-8157-90cce101ffdc")
 	)
 	(wire
 		(pts
@@ -4515,7 +4515,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "1b6e0684-f8f5-4c98-ab4d-37fefe2ab7f5")
+		(uuid "8c1353a4-0fd9-43f1-bcca-6335ab8f8cd5")
 	)
 	(wire
 		(pts
@@ -4525,7 +4525,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "37499201-858a-44f7-990b-169441ffda91")
+		(uuid "d5041b41-8d1d-4be8-9ade-458a97d44a9d")
 	)
 	(wire
 		(pts
@@ -4535,7 +4535,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "4cefd71f-6b16-4112-84c0-ecd94e934823")
+		(uuid "562a53c0-bfb8-46ca-9728-4cd19fce9d51")
 	)
 	(wire
 		(pts
@@ -4545,7 +4545,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "ab632b34-4a65-4275-b3f4-525622636432")
+		(uuid "185f02ce-afdb-44a8-aa5b-029af2d87375")
 	)
 	(wire
 		(pts
@@ -4555,7 +4555,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "56c009f7-9156-4c74-868d-8655cce9374a")
+		(uuid "62236aad-bb05-42b6-a9c1-a788dc64de2e")
 	)
 	(wire
 		(pts
@@ -4565,7 +4565,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "071a22a5-1264-4b35-9da1-e0fbd4af2a47")
+		(uuid "9412bb09-4605-4e45-a942-84238e184f64")
 	)
 	(wire
 		(pts
@@ -4575,7 +4575,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "b6d8522d-9551-4faf-a4bb-a517dc45a4b3")
+		(uuid "44dd5804-9434-400e-91f9-dda91c0be2a1")
 	)
 	(wire
 		(pts
@@ -4585,7 +4585,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "b7989e69-5140-4ea5-aaf9-67ee4bcaeef9")
+		(uuid "d667e972-045d-4157-8cb1-0e31e5cf135b")
 	)
 	(wire
 		(pts
@@ -4595,7 +4595,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "388dfdb3-952c-4a12-a769-4a2e02766a2e")
+		(uuid "dc6a6d78-7f08-4ba3-a30a-28483decff29")
 	)
 	(wire
 		(pts
@@ -4605,7 +4605,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "b30c83cb-f71e-4409-afc5-5cc4eedac7f6")
+		(uuid "bab0a5b2-c4de-4549-ae24-28c0c39a0c09")
 	)
 	(wire
 		(pts
@@ -4615,7 +4615,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "fdfb4e1a-2f67-419d-b6a2-5bd719f7ac3d")
+		(uuid "07c105a0-7b87-492a-84d1-dd208d850e85")
 	)
 	(wire
 		(pts
@@ -4625,7 +4625,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "ac1d43e2-c2f5-403b-ac68-f41c55ae6700")
+		(uuid "c853246a-88ce-4706-9d7a-54f0b930ca8d")
 	)
 	(wire
 		(pts
@@ -4635,7 +4635,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "3bf14e49-b451-40fd-bc72-9522876ca71b")
+		(uuid "1e37c06e-0d57-4ff8-b97f-770142f82b3e")
 	)
 	(wire
 		(pts
@@ -4645,7 +4645,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "4f336e43-2565-4cbe-b585-60f06981bebd")
+		(uuid "8ec834a6-2175-4911-8fe3-fad134dc8103")
 	)
 	(wire
 		(pts
@@ -4655,7 +4655,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "a4a99f75-0dd8-42e9-965f-3759b8246c78")
+		(uuid "1fb0c251-150e-4191-b2f2-e248953f3ce9")
 	)
 	(wire
 		(pts
@@ -4665,7 +4665,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "4ba2f89e-bb0b-469c-a1b2-a7bd3663b613")
+		(uuid "29545e86-f865-45b4-ab0a-70022aeabd00")
 	)
 	(wire
 		(pts
@@ -4675,7 +4675,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "ab1e79c1-89ec-4210-abd1-e82fcd382f1d")
+		(uuid "5ab29620-6809-4a04-896d-dce91a43d4bd")
 	)
 	(wire
 		(pts
@@ -4685,7 +4685,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "b9983596-0b34-43d3-b082-13375dd510c0")
+		(uuid "a9937028-eb47-4c1a-989a-14088dbb9f52")
 	)
 	(wire
 		(pts
@@ -4695,7 +4695,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "a531b645-13cd-40ca-9bd2-ea714b5c61a8")
+		(uuid "ecb6d921-4905-4ad6-a93e-1fbd083ba1ce")
 	)
 	(wire
 		(pts
@@ -4705,7 +4705,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "c1c1fc16-a842-4e6b-a10d-5afb34f9edc0")
+		(uuid "70fba748-00aa-4f13-937f-c29c11b18616")
 	)
 	(wire
 		(pts
@@ -4715,7 +4715,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "ed27c72d-7882-4b29-ac85-dacc97ce1377")
+		(uuid "c5d2d3fa-10fb-463c-bf4e-f7cda945b4e4")
 	)
 	(wire
 		(pts
@@ -4725,7 +4725,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "15baed0b-00d0-4567-87e9-36a6acb23c2f")
+		(uuid "846529dc-a45b-4ff1-a47b-5993a45528c1")
 	)
 	(wire
 		(pts
@@ -4735,7 +4735,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "da1193a2-cb68-4809-8855-ba5bca268d5a")
+		(uuid "e764d811-5b4e-4d07-bf84-d11ca2c42a09")
 	)
 	(wire
 		(pts
@@ -4745,7 +4745,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "068ccec8-f207-49a8-a4e0-e0c730d06d42")
+		(uuid "2bde9b60-4e79-4343-a03a-cdc1a0df9ecc")
 	)
 	(wire
 		(pts
@@ -4755,7 +4755,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "6bc56462-146a-467d-a79e-bc02ce575abd")
+		(uuid "f5ce7bc1-aa6a-409b-9429-1361b0c5865c")
 	)
 	(wire
 		(pts
@@ -4765,7 +4765,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "83088687-7ebf-4e6d-ac12-3e0e67408430")
+		(uuid "3bde44a5-7d06-4bd4-bce5-6e9fd9befcb3")
 	)
 	(wire
 		(pts
@@ -4775,7 +4775,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "fb5d8cea-565c-44ad-b937-daa32db98a7f")
+		(uuid "f4bf8b1a-c4e0-467e-ba8e-987d8ce62125")
 	)
 	(wire
 		(pts
@@ -4785,7 +4785,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "84a759ad-6dee-42b8-8f44-b8818589e732")
+		(uuid "ab8f38b9-bfe4-4a69-bf97-986b7f721b5e")
 	)
 	(wire
 		(pts
@@ -4795,7 +4795,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "874c7cda-60e8-407b-a972-4138fc46d95a")
+		(uuid "50a5c949-4aa7-46f5-9553-de7f438adfb4")
 	)
 	(wire
 		(pts
@@ -4805,7 +4805,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "469fe413-58de-4d39-b5a3-8e2e73431173")
+		(uuid "0e3ed57b-9282-4ea4-980a-e0cbc1269a7c")
 	)
 	(label "BAT_SRP"
 		(at 368.3 60.96 90)
@@ -4815,7 +4815,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "0ef48714-7bd7-4b5e-b740-d8f39ddc6aa5")
+		(uuid "f032f8c3-53ef-4bde-9299-0438b5508156")
 	)
 	(label "BAT_SRP"
 		(at 266.7 147.32 270)
@@ -4825,7 +4825,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "427871b8-6768-4541-8aa1-5f2bb95b3276")
+		(uuid "d93c0312-1667-4499-8196-7360532d084e")
 	)
 	(label "BAT_SRP"
 		(at 63.5 187.96 90)
@@ -4835,7 +4835,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "d55e5d91-5617-43e8-a9e2-a2e85b6c7ca8")
+		(uuid "128ac0cd-8fb4-4b8b-a98f-a7640bdca1f5")
 	)
 	(label "BAT_SRP"
 		(at 238.76 257.81 0)
@@ -4845,7 +4845,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "64214115-3a8e-4e57-9e66-c1a042636bb1")
+		(uuid "461c810c-46e5-4a67-91df-5cc67a957e1d")
 	)
 	(label "CHG_BTST"
 		(at 114.3 60.96 90)
@@ -4855,7 +4855,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "31b1d021-a033-4a36-9628-0f0c7352d4f8")
+		(uuid "c88a4153-eab1-4a1b-8661-a4fe0929f0e9")
 	)
 	(label "CHG_BTST"
 		(at 156.21 133.35 180)
@@ -4865,7 +4865,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "60caf829-95b4-405b-ad42-0f0f96e399d0")
+		(uuid "63e59440-808c-4b0a-889d-1630a0b0ad7d")
 	)
 	(label "CHG_BTST"
 		(at 238.76 247.65 0)
@@ -4875,7 +4875,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "ac593ddb-27cf-40b2-b594-207bae3f617e")
+		(uuid "274b5168-9c5d-4975-9270-a3717b662140")
 	)
 	(label "CHG_HIDRV"
 		(at 307.34 133.35 180)
@@ -4885,7 +4885,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "38565741-413d-41f6-bc15-9fd30c349387")
+		(uuid "2dd28068-2b47-4459-96cd-bda6437f7f53")
 	)
 	(label "CHG_HIDRV"
 		(at 238.76 242.57 0)
@@ -4895,7 +4895,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "a6cb17a4-7060-455b-bff3-66846f52959a")
+		(uuid "2469149b-307b-4577-be77-e7b2277335b9")
 	)
 	(label "CHG_LODRV"
 		(at 358.14 133.35 180)
@@ -4905,7 +4905,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "64420599-690c-465d-b500-1c2856ff5563")
+		(uuid "22299745-3413-4467-ab22-b3056ab76adb")
 	)
 	(label "CHG_LODRV"
 		(at 238.76 252.73 0)
@@ -4915,7 +4915,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "29a6854b-2d03-4c33-81f6-ac3c5e12321c")
+		(uuid "b26ce16f-41f3-43f4-84f5-88c15fd8aff6")
 	)
 	(label "CHG_MPPSET"
 		(at 165.1 210.82 270)
@@ -4925,7 +4925,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "6d93ead9-673d-4e34-8617-df4195b22988")
+		(uuid "d4c3c56d-a484-4f72-a41f-d5fee1493c91")
 	)
 	(label "CHG_MPPSET"
 		(at 215.9 187.96 90)
@@ -4935,7 +4935,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "30393eda-8bc4-4c35-8056-3228f68eff54")
+		(uuid "099f64ff-f400-436f-b50d-d5ff50e547e3")
 	)
 	(label "CHG_MPPSET"
 		(at 198.12 257.81 180)
@@ -4945,7 +4945,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "93b64846-f700-4251-b968-bf653be17443")
+		(uuid "7586b6a3-a90c-4de0-9a58-eb88197b2e57")
 	)
 	(label "CHG_REGN"
 		(at 317.5 60.96 90)
@@ -4955,7 +4955,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "a037e9b2-3ea9-47ce-97bf-6a4266059fa8")
+		(uuid "1ef67224-3e1f-47c9-b944-88378bc429ee")
 	)
 	(label "CHG_REGN"
 		(at 179.07 133.35 0)
@@ -4965,7 +4965,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "7960bbfa-7047-4953-acee-41e75ca884d4")
+		(uuid "524acca1-2028-4f8c-a0d0-800b07e1a524")
 	)
 	(label "CHG_REGN"
 		(at 238.76 250.19 0)
@@ -4975,7 +4975,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "2d5aa5ad-2dac-4b8f-a251-822d5d5da06f")
+		(uuid "ddc2cb5c-a305-45cf-90e1-933cc0d33311")
 	)
 	(label "CHG_TS"
 		(at 368.3 210.82 270)
@@ -4985,7 +4985,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "d7102bd9-c381-4aae-b3e2-a4c00d55aa60")
+		(uuid "59b81763-2194-4070-89fa-28f486c091cb")
 	)
 	(label "CHG_TS"
 		(at 63.5 251.46 90)
@@ -4995,7 +4995,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "e526198b-6cfa-41f1-94f7-2a3a199fca6c")
+		(uuid "036dd92f-e790-49f4-9d0d-75c818c46887")
 	)
 	(label "CHG_TS"
 		(at 238.76 270.51 0)
@@ -5005,7 +5005,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "bb59b50e-532e-47e0-8448-378efb8fa9c9")
+		(uuid "5b6e0506-a43c-4532-992b-31cbe097f070")
 	)
 	(label "CHG_VCC"
 		(at 215.9 60.96 90)
@@ -5015,7 +5015,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "37fad5c4-6ba3-4089-916c-7d7705f96b2c")
+		(uuid "39132861-e608-40b0-8243-24f0350de415")
 	)
 	(label "CHG_VCC"
 		(at 114.3 210.82 270)
@@ -5025,7 +5025,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "88cbb69f-d7ab-4f6a-9652-a5b7e96ed4f1")
+		(uuid "ce6a6327-1daa-4c9e-a458-03f140b56b5f")
 	)
 	(label "CHG_VCC"
 		(at 215.9 232.41 90)
@@ -5035,7 +5035,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "5e5e2aed-8740-4620-9645-fe9cfc38a12f")
+		(uuid "6fb81a39-8675-46a4-b12c-054fd97aac66")
 	)
 	(label "CHG_VFB"
 		(at 266.7 210.82 270)
@@ -5045,7 +5045,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "918ca02a-ca97-4970-8e2c-e54579da3b59")
+		(uuid "3d023979-b1b8-4fee-92ed-2b8a301dc518")
 	)
 	(label "CHG_VFB"
 		(at 317.5 187.96 90)
@@ -5055,7 +5055,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "ab0978e2-a76c-411d-8b98-28aef222fcb3")
+		(uuid "afa0a12d-92d1-443f-a739-a13617f7cdf0")
 	)
 	(label "CHG_VFB"
 		(at 238.76 267.97 0)
@@ -5065,7 +5065,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "dea937c1-f6de-437d-a9f9-dee637251cef")
+		(uuid "020f86c4-df82-4245-a5ca-d2fbd51aa6b1")
 	)
 	(label "CHG_VREF"
 		(at 266.7 60.96 90)
@@ -5075,7 +5075,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "6e2b3cbb-3fae-43d2-a454-338144c52591")
+		(uuid "59e8a8ee-0df5-4ab0-a447-fcf43157baca")
 	)
 	(label "CHG_VREF"
 		(at 368.3 187.96 90)
@@ -5085,7 +5085,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "08a6efff-ed29-4314-bdf7-3b01c0abfb35")
+		(uuid "2bb4c796-7e68-4805-9316-df0d78d45973")
 	)
 	(label "CHG_VREF"
 		(at 198.12 250.19 180)
@@ -5095,7 +5095,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "3186c207-760a-4b44-ad84-f0fa9ac6dbd5")
+		(uuid "c8d38147-2bbf-413d-8c46-e3084d907601")
 	)
 	(label "CHG_VREF"
 		(at 198.12 252.73 180)
@@ -5105,7 +5105,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "0ad67a56-aed6-49f9-b905-23461c29f8d4")
+		(uuid "3f081156-7f6e-47f2-ab05-61d953e70960")
 	)
 	(label "MPPT_SW"
 		(at 114.3 83.82 270)
@@ -5115,7 +5115,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "4dadacc2-ad78-4a6d-8924-f2d479f9245b")
+		(uuid "388e1d8e-40f2-4a85-92cf-7926b021b5ed")
 	)
 	(label "MPPT_SW"
 		(at 266.7 124.46 90)
@@ -5125,7 +5125,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "609d7c44-f020-4f25-9a2e-925b1abab389")
+		(uuid "3cf24162-332f-437f-b452-03b37538e46e")
 	)
 	(label "MPPT_SW"
 		(at 320.04 148.59 270)
@@ -5135,7 +5135,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "b0cde5b1-7b6b-497f-b37c-ca7f8fad6b06")
+		(uuid "fa35cc1b-cb64-4c9e-82b1-6b8b2420c8eb")
 	)
 	(label "MPPT_SW"
 		(at 370.84 123.19 90)
@@ -5145,7 +5145,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "dfdd2746-07e8-433d-b1e4-06d7db3261a5")
+		(uuid "378a9c21-f326-498b-812e-c9250e92a80a")
 	)
 	(label "MPPT_SW"
 		(at 238.76 245.11 0)
@@ -5155,7 +5155,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "fb98e225-e44c-4c95-88f3-3f29f53c7c9c")
+		(uuid "7af9825a-fde5-472a-a08b-7a17c74aa2d1")
 	)
 	(label "PV_IN"
 		(at 63.5 60.96 90)
@@ -5165,7 +5165,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "faa5a05b-256d-4253-911f-777fa68624f7")
+		(uuid "a8224d01-3346-43a8-928b-95abc4ca6160")
 	)
 	(label "PV_IN"
 		(at 105.41 133.35 180)
@@ -5175,7 +5175,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "88cb5381-516f-4303-9fde-cdbbe2549531")
+		(uuid "9648ba3e-f9ac-46fd-a375-e0524c8f3f33")
 	)
 	(label "PV_IN"
 		(at 320.04 123.19 90)
@@ -5185,7 +5185,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "bd714b3b-0e7f-4972-a366-7de8ace753dc")
+		(uuid "c4532006-4a9a-4838-bcd4-f1450b972eec")
 	)
 	(label "PV_IN"
 		(at 114.3 187.96 90)
@@ -5195,7 +5195,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "4585ec81-acf5-4fcf-959d-879ede837312")
+		(uuid "ad906e2e-87e1-47cc-9b02-8bc4cc30e3da")
 	)
 	(label "PV_IN"
 		(at 165.1 187.96 90)
@@ -5205,7 +5205,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "7a964913-f725-441b-ad03-b4c637c2f59c")
+		(uuid "bccdb206-1462-4d04-b4f2-57ceab224d2b")
 	)
 	(label "PV_RAW"
 		(at 128.27 133.35 0)
@@ -5215,7 +5215,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "f000bae8-9642-435b-acd5-c81e5dfa6928")
+		(uuid "87c0c1bc-b575-4bfb-8dae-1bcec63ba48b")
 	)
 	(label "PV_RAW"
 		(at 205.74 133.35 180)
@@ -5225,9 +5225,9 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "82c747a7-60ef-4acf-bda1-725bb6d7980d")
+		(uuid "27a112a5-516b-4c23-8237-0dddecb316bf")
 	)
-	(hierarchical_label "CHG_STAT1"
+	(global_label "CHG_STAT1"
 		(shape bidirectional)
 		(at 114.3 274.32 270)
 		(effects
@@ -5236,9 +5236,9 @@
 			)
 			(justify left)
 		)
-		(uuid "3319529c-b708-4f66-8799-cab6812665b8")
+		(uuid "c2292bd7-847d-43a2-86ef-ea911351d10f")
 	)
-	(hierarchical_label "CHG_STAT1"
+	(global_label "CHG_STAT1"
 		(shape bidirectional)
 		(at 238.76 275.59 0)
 		(effects
@@ -5247,9 +5247,9 @@
 			)
 			(justify left)
 		)
-		(uuid "b9d8a481-0008-4f12-8291-731166a130c8")
+		(uuid "00207a52-8bec-468b-940f-7d13674cc576")
 	)
-	(hierarchical_label "CHG_STAT2"
+	(global_label "CHG_STAT2"
 		(shape bidirectional)
 		(at 165.1 274.32 270)
 		(effects
@@ -5258,9 +5258,9 @@
 			)
 			(justify left)
 		)
-		(uuid "8b062100-66b2-48eb-8a2e-494d5cb841cf")
+		(uuid "30ff9b40-31db-4924-bdff-3242340e427c")
 	)
-	(hierarchical_label "CHG_STAT2"
+	(global_label "CHG_STAT2"
 		(shape bidirectional)
 		(at 238.76 278.13 0)
 		(effects
@@ -5269,9 +5269,9 @@
 			)
 			(justify left)
 		)
-		(uuid "332c92dd-0cf5-46fe-9778-5d1a12d86e10")
+		(uuid "5d922cf7-c876-4e9a-bbca-bb623bc170e7")
 	)
-	(hierarchical_label "VBAT"
+	(global_label "VBAT"
 		(shape bidirectional)
 		(at 165.1 60.96 90)
 		(effects
@@ -5280,9 +5280,9 @@
 			)
 			(justify left)
 		)
-		(uuid "92df81bb-67ac-48b7-ba56-7453dabd956e")
+		(uuid "67b6a876-87fa-415e-8ad7-b1cc1819b6c8")
 	)
-	(hierarchical_label "VBAT"
+	(global_label "VBAT"
 		(shape bidirectional)
 		(at 368.3 83.82 270)
 		(effects
@@ -5291,9 +5291,9 @@
 			)
 			(justify left)
 		)
-		(uuid "f1f8b850-5da9-49dd-b5b4-1f5afcedb9ef")
+		(uuid "231389b3-694a-498a-9f1b-05e2fbdb6d77")
 	)
-	(hierarchical_label "VBAT"
+	(global_label "VBAT"
 		(shape bidirectional)
 		(at 63.5 124.46 90)
 		(effects
@@ -5302,9 +5302,9 @@
 			)
 			(justify left)
 		)
-		(uuid "46ceed4d-adf3-4636-99ea-9f194c2941d0")
+		(uuid "245f4fca-9455-43aa-9059-9f2297b28771")
 	)
-	(hierarchical_label "VBAT"
+	(global_label "VBAT"
 		(shape bidirectional)
 		(at 63.5 210.82 270)
 		(effects
@@ -5313,9 +5313,9 @@
 			)
 			(justify left)
 		)
-		(uuid "748d1aa5-186c-4e58-a7c6-b29c37c02354")
+		(uuid "2f652978-ea7e-406f-a143-5f5e7fc2caac")
 	)
-	(hierarchical_label "VBAT"
+	(global_label "VBAT"
 		(shape bidirectional)
 		(at 266.7 187.96 90)
 		(effects
@@ -5324,9 +5324,9 @@
 			)
 			(justify left)
 		)
-		(uuid "aece48f0-e8fc-46b8-ba7c-f09e7029aa80")
+		(uuid "54708538-f1bc-4801-bdc0-94445bdcab65")
 	)
-	(hierarchical_label "VBAT"
+	(global_label "VBAT"
 		(shape bidirectional)
 		(at 238.76 262.89 0)
 		(effects
@@ -5335,14 +5335,14 @@
 			)
 			(justify left)
 		)
-		(uuid "07937a44-8791-4e7c-981f-00d85f3ebc40")
+		(uuid "28bd9b86-89ae-4d37-8c4e-9fc4e72f1832")
 	)
 	(no_connect
 		(at 165.1 133.35)
-		(uuid "572b416c-e391-4d99-9ae8-5d71d65bb3ac")
+		(uuid "07f94dd8-7052-4f15-8702-62b2235a242a")
 	)
 	(sheet_instances
-		(path "/ff7de960-6bdd-4734-b765-9a85f5be0719"
+		(path "/dbb449b7-0608-44b3-8ed5-90e8123dd821"
 			(page "2")
 		)
 	)

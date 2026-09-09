@@ -482,7 +482,7 @@ def build_schematic() -> None:
     local_flags = flag_nets - set(POWER_SYMBOL_BY_NET)
     flagged: set[str] = set()
     root_path = Path(SCHEMATIC_PATH)
-    block_sheets: list[tuple[str, str, set[str]]] = []
+    block_sheets: list[tuple[str, str]] = []
 
     block_order = [
         "charger",
@@ -500,7 +500,7 @@ def build_schematic() -> None:
             continue
         child_filename = f"{root_path.stem}-{block_name}.kicad_sch"
         child_path = str(root_path.parent / child_filename)
-        child_cross = build_child_sheet(
+        build_child_sheet(
             block_name,
             comps,
             nets,
@@ -510,7 +510,7 @@ def build_schematic() -> None:
             | local_flags,
             flagged=flagged,
         )
-        block_sheets.append((block_name, child_filename, child_cross))
+        block_sheets.append((block_name, child_filename))
 
     build_root_sheet(block_sheets, str(root_path), spec["title"])
 

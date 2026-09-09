@@ -280,23 +280,26 @@ def build_child_sheet(
     check_collisions(placed, nets, wires)
 
     sch.save_as(sheet_path)
-    _force_label_shape(sheet_path, SHEET_PIN_TYPE)
+    _promote_to_global_labels(sheet_path)
     return sheet_cross_nets - set(POWER_SYMBOL_BY_NET)
 
 
-def _force_label_shape(sheet_path: str, shape: str) -> None:
-    """Rewrite every hierarchical label's shape in a saved sheet.
+def _promote_to_global_labels(sheet_path: str) -> None:
+    """Rewrite the sheet's hierarchical labels as global labels.
 
-    Reason: kicad-sch-api 0.5.6 accepts a `shape` argument on
-    add_hierarchical_label and then always serializes `(shape input)`. A label whose
-    type disagrees with its sheet pin is a hier_label_mismatch error on KiCad 9,
-    which is every cross-sheet net on this design.
+    Cross-sheet nets connect by name through global labels, so no sheet pins are
+    needed on the root and the hierarchical pin/label pairing disappears entirely.
+    That pairing was worth removing: KiCad 9 reported every one of them as a
+    hier_label_mismatch with the root's pins (and then the root's labels as
+    dangling), while KiCad 10 accepted them — a whole class of version-dependent
+    ERC failure for a design that is flat enough not to need hierarchy.
+
+    Written as a post-save rewrite because kicad-sch-api 0.5.6's add_global_label
+    updates its internal model but never serializes the label.
     """
     path = Path(sheet_path)
-    path.write_text(
-        re.sub(
-            r'(\(hierarchical_label "[^"]+"\s*\n\s*\(shape )\w+(\))',
-            rf"\1{shape}\2",
-            path.read_text(),
-        )
+    text = path.read_text().replace("(hierarchical_label ", "(global_label ")
+    text = re.sub(
+        r'(\(global_label "[^"]+"\s*\n\s*\(shape )\w+(\))', r"\1bidirectional\2", text
     )
+    path.write_text(text)
