@@ -9,6 +9,8 @@ flags sit on the POWER child sheet, anchored to real pins (see multi_sheet).
 from __future__ import annotations
 
 import math
+import re
+from pathlib import Path
 from typing import Final
 
 import kicad_sch_api as ksa
@@ -34,12 +36,44 @@ def _snap(v: float) -> float:
     return round(v / GRID_MM) * GRID_MM
 
 
+def link_hierarchy(root_path: str, pages: dict[str, tuple[str, int]]) -> None:
+    """Repair the hierarchy metadata kicad-sch-api emits.
+
+    Two defects, both invisible to KiCad 10 and fatal to KiCad 9 — which cannot
+    resolve the hierarchy and then reports every sheet pin as having no matching
+    hierarchical label and every root label as dangling:
+
+      * the root's sheet instance block is written as `(project None ...)`, with a
+        literal Python None where the project name belongs
+      * every child declares `(sheet_instances (path "/" (page "1")))`, i.e. each
+        one claims to be the root page, instead of its own instance path and page
+
+    `pages` maps child filename -> (sheet symbol uuid, page number).
+    """
+    root = Path(root_path)
+    project = root.stem
+    text = root.read_text()
+    text = text.replace("(project None", f'(project "{project}"')
+    root.write_text(text)
+
+    for filename, (uuid, page) in pages.items():
+        child = root.parent / filename
+        body = child.read_text()
+        body = re.sub(
+            r'\(sheet_instances\s*\n\s*\(path "[^"]*"\s*\n\s*\(page "[^"]*"\)\s*\n\s*\)\s*\n\s*\)',
+            f'(sheet_instances\n\t\t(path "/{uuid}"\n\t\t\t(page "{page}")\n\t\t)\n\t)',
+            body,
+            count=1,
+        )
+        child.write_text(body)
+
+
 def build_root_sheet(
     block_sheets: list[tuple[str, str, set[str]]],
     sheet_path: str,
     title: str,
     sheet_size: str = ROOT_SHEET_SIZE,
-) -> None:
+) -> dict[str, tuple[str, int]]:
     """Emit the root .kicad_sch.
 
     block_sheets: (block_name, child_filename, cross_net_names) per child. Each
@@ -55,6 +89,7 @@ def build_root_sheet(
     grid_w = COLS * CELL_W + (COLS - 1) * GAP
     margin_x = _snap((TITLE_BLOCK_LEFT_MM - grid_w) / 2)
     margin_y = _snap((SHEET_H_MM - 2 * CELL_H - GAP) / 2)
+    pages: dict[str, tuple[str, int]] = {}
 
     for i, (block_name, child_file, child_cross) in enumerate(block_sheets):
         row, col = divmod(i, COLS)
@@ -67,6 +102,7 @@ def build_root_sheet(
             size=(CELL_W, CELL_H),
             stroke_width=0.2,
         )
+        pages[child_file] = (sheet_uuid, i + 2)  # root is page 1
         nets_sorted = sorted(child_cross)
         if not nets_sorted:
             continue
@@ -96,3 +132,5 @@ def build_root_sheet(
             )
 
     sch.save_as(sheet_path)
+    link_hierarchy(sheet_path, pages)
+    return pages
