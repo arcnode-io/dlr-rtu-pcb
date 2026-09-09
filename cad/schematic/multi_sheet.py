@@ -1,14 +1,16 @@
-"""Multi-sheet hierarchical schematic emission.
+"""Multi-sheet hierarchical schematic emission — child sheets.
 
 Each functional block (power, som, sensors, connectors, cellular, anemometer)
-becomes its own .kicad_sch child sheet. Top-level root sheet contains one
-sheet symbol per block. Cross-block nets use GLOBAL labels (matched by name
-across sheets) and global power symbols (+5V, +3V3, GND). Intra-block nets
-use local labels.
+becomes its own .kicad_sch child sheet; root_sheet.py ties them together.
+Cross-block nets use hierarchical labels (matched by name on the root) and
+global power symbols (+5V, +3V3, GND). Intra-block nets use local labels.
 
-The per-sheet ERC scope bounds KiCad's y-coincidence false-merge bug: with
-~10-30 components per sheet, the cross-net pin-coordinate collision rate
-drops dramatically vs the single-sheet generator.
+Connectivity rules that keep ERC at zero (probed against KiCad 10):
+  * a wire endpoint on a pin end connects; a pin end anywhere along a wire connects
+  * a wire endpoint on another wire's midpoint does NOT connect
+  * a PWR_FLAG wired only to a power symbol reads as "pin not connected" — the
+    flag must share a wire chain with a real pin
+sch_guard.check_collisions enforces the first two across nets.
 """
 
 from __future__ import annotations
@@ -18,6 +20,7 @@ from typing import Final
 
 import kicad_sch_api as ksa
 
+from cad.schematic.sch_guard import Wire, check_collisions
 from cad.schematic.schematic import (
     BLOCK_TITLES,
     POWER_SYMBOL_BY_NET,
@@ -25,18 +28,33 @@ from cad.schematic.schematic import (
     _add_nc_at_pin,
     _outward_direction,
     _place_block,
-    _power_driven_nets,
-    _power_symbol_y,
     _real_pin_position,
 )
 
 CHILD_SHEET_SIZE: Final = "A3"  # roomy per-block sheet; A3 = 420x297 mm
-ROOT_SHEET_SIZE: Final = "A2"  # 594x420 mm; fits 3 rows of sheet symbols
+POWER_STUB: Final = (
+    6  # grid units from pin tip to its power symbol, along the pin direction
+)
+FLAG_BRANCH: Final = (
+    6  # grid units perpendicular from the stub midpoint to the PWR_FLAG
+)
+LABEL_ROTATION: Final = {(1, 0): 0, (-1, 0): 180, (0, 1): 270, (0, -1): 90}
+# Direction a power symbol's graphic points at rotation 0: rails up, GND down
+RAIL_DIRECTION: Final = {"GND": (0, 1)}
+
+
+def _symbol_rotation(net_name: str, d: tuple[int, int]) -> int:
+    """Rotation (deg, CCW) that points the power symbol along stub direction d."""
+    v = RAIL_DIRECTION.get(net_name, (0, -1))
+    for k in range(4):
+        if v == d:
+            return 90 * k
+        v = (v[1], -v[0])
+    raise ValueError(f"bad direction {d}")
 
 
 def cross_block_nets(by_block: dict[str, list[dict]], nets: list[dict]) -> set[str]:
-    """Nets whose nodes span 2+ blocks → must be global labels for cross-sheet
-    connectivity."""
+    """Nets whose nodes span 2+ blocks — must be hierarchical labels."""
     block_of_ref: dict[str, str] = {}
     for block, comps in by_block.items():
         for c in comps:
@@ -51,6 +69,51 @@ def cross_block_nets(by_block: dict[str, list[dict]], nets: list[dict]) -> set[s
     return cross
 
 
+def _route_power_pin(
+    sch,
+    pin_grid: tuple[int, int],
+    d: tuple[int, int],
+    net_name: str,
+    pwr: PwrCounter,
+    wires: list[Wire],
+    flag_nets: frozenset[str],
+    flagged: set[str],
+) -> None:
+    """Straight stub along the pin direction to a power symbol at its tip.
+
+    Reason: stubbing "up for rails, down for GND" regardless of pin direction ran
+    wires through the symbol body and over the part's other pins (L2 pin 2's
+    5V_RAIL stub crossed pin 1 / BUCK_SW). Along-the-pin never crosses a pin.
+    The first pin of each flag net also gets the PWR_FLAG on a perpendicular
+    branch from the stub midpoint, so pin, symbol and flag share one wire chain.
+    """
+    sym = POWER_SYMBOL_BY_NET[net_name]
+    dx, dy = d
+    tip = (pin_grid[0] + dx * POWER_STUB, pin_grid[1] + dy * POWER_STUB)
+    segs = [(pin_grid, tip)]
+    if net_name in flag_nets and net_name not in flagged:
+        mid = (
+            pin_grid[0] + dx * (POWER_STUB // 2),
+            pin_grid[1] + dy * (POWER_STUB // 2),
+        )
+        flag_pos = (mid[0] - dy * FLAG_BRANCH, mid[1] + dx * FLAG_BRANCH)
+        segs = [(pin_grid, mid), (mid, tip), (mid, flag_pos)]
+        sch.components.add(
+            "power:PWR_FLAG", pwr.flg_ref(), "PWR_FLAG", position=flag_pos
+        )
+        flagged.add(net_name)
+    for a, b in segs:
+        sch.add_wire(start=a, end=b)
+        wires.append((a, b, net_name))
+    sch.components.add(
+        sym,
+        pwr.pwr_ref(),
+        sym.split(":")[-1],
+        position=tip,
+        rotation=_symbol_rotation(net_name, d),
+    )
+
+
 def _route_pin_multi(
     sch,
     comp,
@@ -58,64 +121,53 @@ def _route_pin_multi(
     net_name: str,
     cross_nets: set[str],
     pwr: PwrCounter,
+    wires: list[Wire],
+    flag_nets: frozenset[str],
+    flagged: set[str],
 ) -> None:
-    """Stub a pin with power symbol / NC / global label / local label.
-
-    Power nets → power symbol (auto-global). Cross-block nets → global label.
-    Anything else → local label. Internal-only single-endpoint nets → no-connect.
-    """
-    try:
-        pin_pos_mm = _real_pin_position(comp, pin_num)
-    except Exception:
-        return
+    """Stub a pin with power symbol / NC / hierarchical label / local label."""
+    pin_pos_mm = _real_pin_position(comp, pin_num)
     if not pin_pos_mm:
         return
     pin_grid = (round(pin_pos_mm.x / 1.27), round(pin_pos_mm.y / 1.27))
 
     # NC_ / N$ prefix from SKiDL means "auto-named net". A real multi-node net
-    # may get this prefix if SKiDL merges through an unnamed pin (e.g. tying
-    # two pins of the same chip together). Treat such nets as real signals if
-    # the cross-block analysis already decided they need a label.
-    if (
-        net_name.startswith("NC_") or net_name.startswith("N$")
-    ) and net_name not in cross_nets:
+    # may carry it if SKiDL merged through an unnamed pin; cross-block analysis
+    # already decided those need a label.
+    if net_name.startswith(("NC_", "N$")) and net_name not in cross_nets:
         with contextlib.suppress(Exception):
             sch.no_connects.add(position=(pin_grid[0] * 1.27, pin_grid[1] * 1.27))
         return
 
     dx, dy = _outward_direction(comp, pin_num)
-    stub_len = 8 if (dx > 0 or dy > 0) else 4
-
     if net_name in POWER_SYMBOL_BY_NET:
-        rail_offset = {"GND": 0, "5V_RAIL": 0, "3V3": 2}.get(net_name, 0)
-        sym = POWER_SYMBOL_BY_NET[net_name]
-        if net_name == "GND":
-            base_y = pin_grid[1] + stub_len + rail_offset
-        else:
-            base_y = pin_grid[1] - stub_len - rail_offset
-        end = (pin_grid[0], _power_symbol_y(net_name, base_y))
-        with contextlib.suppress(Exception):
-            sch.add_wire(start=pin_grid, end=end)
-            sch.components.add(sym, pwr.pwr_ref(), sym.split(":")[-1], position=end)
+        _route_power_pin(
+            sch, pin_grid, (dx, dy), net_name, pwr, wires, flag_nets, flagged
+        )
         return
-
+    stub_len = 8 if (dx > 0 or dy > 0) else 4
     label_pos = (pin_grid[0] + dx * stub_len, pin_grid[1] + dy * stub_len)
-    if dx > 0:
-        label_rot = 0
-    elif dx < 0:
-        label_rot = 180
-    elif dy > 0:
-        label_rot = 270
+    label_rot = LABEL_ROTATION[(dx, dy)]
+    if net_name in flag_nets and net_name not in flagged:
+        # A local rail with no power-output driver gets its one PWR_FLAG here. The
+        # stub is split at `mid` so pin, label and flag share a single wire chain —
+        # a wire that merely ends on another wire's midpoint does not connect.
+        mid = (pin_grid[0] + dx * (stub_len // 2), pin_grid[1] + dy * (stub_len // 2))
+        flag_pos = (mid[0] - dy * FLAG_BRANCH, mid[1] + dx * FLAG_BRANCH)
+        for a, b in ((pin_grid, mid), (mid, label_pos), (mid, flag_pos)):
+            sch.add_wire(start=a, end=b)
+            wires.append((a, b, net_name))
+        sch.components.add(
+            "power:PWR_FLAG", pwr.flg_ref(), "PWR_FLAG", position=flag_pos
+        )
+        flagged.add(net_name)
     else:
-        label_rot = 90
-
-    sch.add_wire(start=pin_grid, end=label_pos)
+        sch.add_wire(start=pin_grid, end=label_pos)
+        wires.append((pin_grid, label_pos, net_name))
     if net_name in cross_nets:
-        # Hierarchical label persists to file (unlike global_label, which is a
-        # known kicad-sch-api serialization bug as of v0.5.6 — add_global_label
-        # adds to internal data but the serializer doesn't write it).
-        # IMPORTANT: add_hierarchical_label does NOT honor use_grid_units; must
-        # convert grid -> mm here so the label lands on the wire endpoint.
+        # Hierarchical label persists to file (add_global_label is a known
+        # kicad-sch-api v0.5.6 serialization bug). It does NOT honor
+        # use_grid_units — convert grid -> mm here.
         sch.add_hierarchical_label(
             net_name,
             position=(label_pos[0] * 1.27, label_pos[1] * 1.27),
@@ -133,20 +185,17 @@ def _route_sheet_nets(
     nets: list[dict],
     cross_nets: set[str],
     pwr: PwrCounter,
-) -> tuple[set[tuple[str, str]], set[str], set[str]]:
-    """Wire / NC / label every net that touches the current sheet's refs.
-
-    Returns (routed pin set, power nets used here, signal cross-nets used).
-    """
+    wires: list[Wire],
+    flag_nets: frozenset[str],
+    flagged: set[str],
+) -> tuple[set[tuple[str, str]], set[str]]:
+    """Wire / NC / label every net touching this sheet. Returns (routed pins, cross nets used)."""
     routed: set[tuple[str, str]] = set()
-    pwr_nets_used: set[str] = set()
     sheet_cross_nets: set[str] = set()
     for net in nets:
         local_nodes = [n for n in net["nodes"] if n["ref"] in refs]
         if not local_nodes:
             continue
-        if net["name"] in POWER_SYMBOL_BY_NET:
-            pwr_nets_used.add(net["name"])
         if len(net["nodes"]) == 1 and net["name"] not in cross_nets:
             node = local_nodes[0]
             comp = placed.get(node["ref"])
@@ -159,9 +208,19 @@ def _route_sheet_nets(
         for node in local_nodes:
             comp = placed.get(node["ref"])
             if comp:
-                _route_pin_multi(sch, comp, node["pin"], net["name"], cross_nets, pwr)
+                _route_pin_multi(
+                    sch,
+                    comp,
+                    node["pin"],
+                    net["name"],
+                    cross_nets,
+                    pwr,
+                    wires,
+                    flag_nets,
+                    flagged,
+                )
                 routed.add((node["ref"], node["pin"]))
-    return routed, pwr_nets_used, sheet_cross_nets
+    return routed, sheet_cross_nets
 
 
 def build_child_sheet(
@@ -170,214 +229,46 @@ def build_child_sheet(
     nets: list[dict],
     cross_nets: set[str],
     sheet_path: str,
+    flag_nets: frozenset[str] = frozenset(),
+    flagged: set[str] | None = None,
     sheet_size: str = CHILD_SHEET_SIZE,
 ) -> set[str]:
-    """Emit one functional-block sheet. Returns the cross-net names present
-    on this sheet (so the root can add matching sheet pins)."""
+    """Emit one functional-block sheet. Returns the signal cross-net names it exports.
+
+    `flag_nets` are undriven rails that still need a PWR_FLAG; `flagged` carries the
+    ones already placed on earlier sheets, so each net gets exactly one flag in the
+    whole hierarchy.
+    """
     ksa.use_grid_units(True)
     title = BLOCK_TITLES.get(block_name, block_name.upper())
     sch = ksa.create_schematic(title)
     sch.set_paper_size(sheet_size)
     sch.set_title_block(
-        title=f"DLR Carrier — {title}",
-        company="Engineering With AI",
-        rev="1.0",
+        title=f"DLR Carrier — {title}", company="Engineering With AI", rev="1.0"
     )
 
     # Grid sized to A3 minus title block (~330 x 230 grid units)
     region = {"origin": [30, 30], "width": 280, "height": 200}
     placed = _place_block(sch, comps, region)
 
-    # Filter nets to those touching this block's components
     refs = {c["ref"] for c in comps}
     pwr = PwrCounter()
-    routed, _pwr_nets_used, sheet_cross_nets = _route_sheet_nets(
-        sch, placed, refs, nets, cross_nets, pwr
+    wires: list[Wire] = []
+    already_flagged = set() if flagged is None else flagged
+    routed, sheet_cross_nets = _route_sheet_nets(
+        sch, placed, refs, nets, cross_nets, pwr, wires, flag_nets, already_flagged
     )
 
-    # Orphan pins → no-connects
     for ref, comp in placed.items():
         try:
             pins = comp.list_pins()
         except Exception:
             continue
         for pin in pins:
-            num = pin["number"]
-            if (ref, num) not in routed:
-                _add_nc_at_pin(sch, comp, num)
+            if (ref, pin["number"]) not in routed:
+                _add_nc_at_pin(sch, comp, pin["number"])
 
-    # Skip PWR_FLAG on child sheets. Multiple children placing PWR_FLAGs for
-    # the same global net (e.g. GND on every sheet) creates "multiple Power-out
-    # drivers" ERC errors. The root sheet places one PWR_FLAG per undriven
-    # power net globally.
+    check_collisions(placed, nets, wires)
 
     sch.save_as(sheet_path)
-    # Power nets (GND/+5V/+3V3) are KiCad-global via power symbols — no parent
-    # sheet pins needed. Only signal cross-nets get reported back.
-    return sheet_cross_nets - set(POWER_SYMBOL_BY_NET.keys())
-
-
-def _place_pwr_flag_bank(sch, pwr: PwrCounter, nets_used: set[str]) -> None:
-    """Place PWR_FLAG bank in upper-right corner of the child sheet."""
-    for i, net_name in enumerate(sorted(nets_used)):
-        sym = POWER_SYMBOL_BY_NET.get(net_name)
-        if not sym:
-            continue
-        x = 280 + i * 10  # corner of A3 grid
-        y_base = 20 + i * 4
-        y = _power_symbol_y(net_name, y_base)
-        flg_y = _power_symbol_y(net_name, y - 8)
-        with contextlib.suppress(Exception):
-            sch.components.add(sym, pwr.pwr_ref(), sym.split(":")[-1], position=(x, y))
-            sch.components.add(
-                "power:PWR_FLAG",
-                pwr.flg_ref(),
-                "PWR_FLAG",
-                position=(x, flg_y),
-            )
-            sch.add_wire(start=(x, y), end=(x, flg_y))
-
-
-def build_root_sheet(
-    block_sheets: list[tuple[str, str, set[str]]],
-    sheet_path: str,
-    title: str,
-    nets: list[dict],
-    sheet_size: str = ROOT_SHEET_SIZE,
-) -> None:
-    """Root sheet with one sheet symbol per child block.
-
-    block_sheets: list of (block_name, child_filename, cross_net_names) tuples.
-    For each child the cross_net_names declare which nets the child exports.
-    The root adds a matching sheet pin per cross net and a label of the same
-    name next to that pin so KiCad's same-name-on-same-sheet net resolution
-    binds all child sheets' pins for that net into a single parent net.
-    """
-    ksa.use_grid_units(False)  # mm coords for sheet symbols
-    sch = ksa.create_schematic(title)
-    sch.set_paper_size(sheet_size)
-    sch.set_title_block(title=title, company="Engineering With AI", rev="1.0")
-
-    # 3x2 grid on A2 landscape (594x420 mm) with even spacing + symmetric
-    # margins. Cells narrow (just enough for pin labels) — sheet symbols are
-    # placeholders, the interior is intentionally hollow. PWR_FLAG bank sits
-    # centered above the grid; KiCad title block lives at bottom-right.
-    cols = 3
-    cell_w = 70.0
-    cell_h = 130.0
-    col_gap = 30.0
-    row_gap = 30.0
-    # Center the grid horizontally within the area to the LEFT of the title
-    # block (title block occupies bottom-right ~150x60 mm on A2).
-    grid_w = cols * cell_w + (cols - 1) * col_gap
-    margin_x = (445 - grid_w) / 2  # 445 = title-block left edge
-    # Center the grid vertically with even top + bottom margins.
-    margin_y = (420 - 2 * cell_h - row_gap) / 2
-
-    for i, (block_name, child_file, child_cross) in enumerate(block_sheets):
-        row, col = divmod(i, cols)
-        x = margin_x + col * (cell_w + col_gap)
-        y = margin_y + row * (cell_h + row_gap)
-        title_text = BLOCK_TITLES.get(block_name, block_name.upper())
-        try:
-            sheet_uuid = sch.add_sheet(
-                name=title_text,
-                filename=child_file,
-                position=(x, y),
-                size=(cell_w, cell_h),
-                stroke_width=0.2,
-            )
-        except Exception:
-            continue
-        # Add one sheet pin per cross net on the LEFT edge of the symbol,
-        # evenly distributed bottom-to-top (KiCad's convention for "left" edge
-        # is to measure position_along_edge from the bottom).
-        nets_sorted = sorted(child_cross)
-        if not nets_sorted:
-            continue
-        edge_spacing = (cell_h - 10) / max(len(nets_sorted), 1)
-        stub = 5.0  # mm wire stub from sheet pin to label
-        for j, net_name in enumerate(nets_sorted):
-            try:
-                sch.add_sheet_pin(
-                    sheet_uuid=sheet_uuid,
-                    name=net_name,
-                    pin_type="bidirectional",
-                    edge="left",
-                    position_along_edge=5 + j * edge_spacing,
-                )
-            except Exception:
-                continue
-            # Sheet pin actual y on left edge = y + cell_h - position_along_edge.
-            pin_y = (y + cell_h) - (5 + j * edge_spacing)
-            # Short wire stub from the pin outward (leftward) + label on the
-            # wire's outer endpoint, OFFSET 8 mm further out so the label text
-            # doesn't overlap the sheet pin's own internal name rendering.
-            label_offset = 8.0
-            with contextlib.suppress(Exception):
-                sch.add_wire(
-                    start=(x, pin_y),
-                    end=(x - stub - label_offset, pin_y),
-                )
-                sch.add_label(
-                    text=net_name,
-                    position=(x - stub - label_offset, pin_y),
-                    rotation=180,
-                    size=1.0,
-                    grid_units=False,
-                )
-
-    # Globally-undriven power nets need ONE PWR_FLAG on the root so ERC is
-    # satisfied. Power symbols are global → one driver feeds every child.
-    # Place the bank centered above the grid (along grid center x) so the
-    # overall page is left-right symmetric.
-    ksa.use_grid_units(True)
-    driven = _power_driven_nets(nets)
-    flag_nets = set(POWER_SYMBOL_BY_NET.keys()) - driven
-    grid_center_mm = margin_x + grid_w / 2
-    n_flags = len(flag_nets)
-    bank_w_grid = max(1, n_flags - 1) * 6
-    x0_grid = round((grid_center_mm / 1.27) - bank_w_grid / 2)
-    _place_root_pwr_flags(sch, flag_nets, x0_grid=x0_grid, y0_grid=12)
-    ksa.use_grid_units(False)
-
-    sch.save_as(sheet_path)
-
-
-def _place_root_pwr_flags(sch, nets_used: set[str], x0_grid: int, y0_grid: int) -> None:
-    """Place one PWR_FLAG + matching power symbol per undriven power net.
-
-    Grid units = 1.27 mm. Mirrors the schematic.py single-sheet pattern that
-    is known to produce ERC-clean connectivity; only the x-base differs so
-    the bank lands inside the A3 root sheet (420 mm = 331 grid).
-    """
-    pwr = PwrCounter()
-    pwr.n = 100  # avoid clash with child-sheet #PWR refs
-    pwr.flg = 100
-    for i, net_name in enumerate(sorted(nets_used)):
-        sym = POWER_SYMBOL_BY_NET.get(net_name)
-        if not sym:
-            continue
-        x = x0_grid + i * 6
-        # For +5V / +3V3 power symbols, pin points UP — connection expects a
-        # wire coming from above. For GND, pin points DOWN — wire from below.
-        # PWR_FLAG always wants its connection above (pin points up).
-        y_base = y0_grid + i * 4
-        y = _power_symbol_y(net_name, y_base)
-        if net_name == "GND":
-            # GND pin down: place FLG above (smaller y).
-            flg_y = _power_symbol_y(net_name, y - 8)
-        else:
-            # +5V / +3V3 pin up: place FLG above (smaller y). PWR symbol sits
-            # AT THE TOP of a short wire; PWR_FLAG dangles below.
-            flg_y = _power_symbol_y(net_name, y + 8)
-        rail = sym.split(":")[-1]
-        with contextlib.suppress(Exception):
-            sch.components.add(sym, pwr.pwr_ref(), rail, position=(x, y))
-            sch.components.add(
-                "power:PWR_FLAG",
-                pwr.flg_ref(),
-                "PWR_FLAG",
-                position=(x, flg_y),
-            )
-            sch.add_wire(start=(x, y), end=(x, flg_y))
+    return sheet_cross_nets - set(POWER_SYMBOL_BY_NET)

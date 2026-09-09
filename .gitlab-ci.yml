@@ -12,6 +12,8 @@ checks:
     - uv run pytest --junitxml=junit.xml
     - uv run poe cover
     - uv run coverage xml
+    # ERC + DRC are hard gates wherever the runner has KiCad (both tasks exit non-zero on violations)
+    - if command -v kicad-cli >/dev/null; then uv run poe validate-model && uv run poe validate-asm; else echo "kicad-cli not on this runner — ERC/DRC not checked in CI"; fi
   coverage: '/(?i)total.*? (100(?:\.0+)?\%|[1-9]?\d(?:\.\d+)?\%)$/'
   artifacts:
     when: always

@@ -25,8 +25,8 @@ def place_footprints() -> None:
     board = pcbnew.LoadBoard(str(PCB_PATH))
 
     # Reason: stale traces from prior routing corrupt re-routing
-    tracks = list(board.GetTracks())
-    zones = list(board.Zones())
+    tracks = _items(board.Tracks())
+    zones = _items(board.Zones())
     for t in tracks:
         board.Remove(t)
     for z in zones:
@@ -47,13 +47,24 @@ def place_footprints() -> None:
             fp.SetOrientationDegrees(rot)
             placed += 1
 
-    has_outline = any(s.GetLayer() == pcbnew.Edge_Cuts for s in board.GetDrawings())
+    has_outline = any(
+        s.GetLayer() == pcbnew.Edge_Cuts for s in _items(board.Drawings())
+    )
     if not has_outline:
         _draw_outline(board, ox, oy, bw, bh)
         print(f"Drew {bw}x{bh}mm board outline")
 
     board.Save(str(PCB_PATH))
     print(f"Placed {placed} footprints, saved {PCB_PATH}")
+
+
+def _items(container) -> list:
+    """Index-based copy of a SWIG container.
+
+    Reason: KiCad 10's SWIG iterators lack `.next()` on Python 3.14, so
+    `list(board.Tracks())` raises AttributeError.
+    """
+    return [container[i] for i in range(len(container))]
 
 
 def _draw_outline(board, ox: float, oy: float, w: float, h: float) -> None:

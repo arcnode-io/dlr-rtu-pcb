@@ -35,11 +35,39 @@ GROUPS: dict[str, list[str]] = {
         "R10",
         "R11",
     ],
-    "power_harvest": ["J1", "J2", "L1", "R1", "D1", "C1", "C2", "C3"],
-    "power_buck": ["J4", "L2", "C7", "C4", "C5", "C6", "C8", "C9", "R2", "R3", "R4"],
+    "power_harvest": [
+        "J1",
+        "U8",
+        "L1",
+        "R1",
+        "D1",
+        "D4",
+        "Q1",
+        "Q2",
+        "C1",
+        "C2",
+        "C3",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "R17",
+        "R18",
+        "R19",
+        "R20",
+        "R21",
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+    ],
+    "power_buck": ["U9", "L2", "C7", "C4", "C5", "C6", "C8", "C9", "C36", "R2", "R3"],
     "power_ldo": ["U1", "U2", "C10", "C11", "C12", "C13"],
     "bat_terminal": ["J3"],
     "debug_header": ["J11"],
+    "commissioning_usb": ["J12", "R12", "R13"],
+    "anemometer_port": ["U7", "J13", "C30", "R14", "R15", "R16", "D2", "D3", "F1"],
 }
 
 
@@ -71,9 +99,12 @@ def main() -> None:
         "ungrouped": [],
     }
 
-    for fp in board.GetFootprints():
+    footprints = board.Footprints()
+    # Reason: KiCad 10 SWIG iterators lack `.next()` on Python 3.14 — index instead
+    for fp in (footprints[i] for i in range(len(footprints))):
         ref = fp.GetReference()
-        models = list(fp.Models())
+        models = fp.Models()
+        models = [models[i] for i in range(len(models))]
         if not models:
             continue
         path = _resolve_model_path(models[0].m_Filename)

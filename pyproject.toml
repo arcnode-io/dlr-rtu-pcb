@@ -37,9 +37,21 @@ lint = "ruff check"
 checks = ["format", "lint"]
 notebook = "jupyter nbconvert --execute --inplace theory.ipynb"
 build = { cmd = "python cad/netlist/model.py", env = { PYTHONPATH = "." } }
+schematic = { cmd = "python -m cad.schematic.schematic", env = { PYTHONPATH = "." } }
+# pcbnew lives in the system interpreter, not the venv — call it by absolute path
+sync-asm = { cmd = "/usr/bin/python3 -m cad.drawing.sync_pcb", env = { PYTHONPATH = "." } }
+place-asm = { cmd = "/usr/bin/python3 -m cad.drawing.place_pcb", env = { PYTHONPATH = "." } }
+setup-asm = { cmd = "/usr/bin/python3 -m cad.drawing.board_setup", env = { PYTHONPATH = "." } }
+route-asm = { cmd = "/usr/bin/python3 -m cad.drawing.route_pcb", env = { PYTHONPATH = "." } }
+stitch-asm = { cmd = "/usr/bin/python3 -m cad.drawing.stitch_planes", env = { PYTHONPATH = "." } }
+close-gaps = { cmd = "/usr/bin/python3 -m cad.drawing.close_gaps", env = { PYTHONPATH = "." } }
+layout-asm = [
+    "build", "sync-asm", "place-asm", "setup-asm",
+    "route-asm", "stitch-asm", "close-gaps", "validate-asm",
+]
 inspect-model = "bash -c 'nohup eeschema cad/dlr_carrier.kicad_sch &>/dev/null &'"
-validate-model = "kicad-cli sch erc cad/dlr_carrier.kicad_sch"
-validate-asm = "bash -c 'if [ -f cad/dlr_carrier.kicad_pcb ]; then kicad-cli pcb drc cad/dlr_carrier.kicad_pcb; else echo \"No .kicad_pcb yet — route in pcbnew first\"; fi'"
+validate-model = "kicad-cli sch erc cad/dlr_carrier.kicad_sch --exit-code-violations"
+validate-asm = "bash -c 'if [ -f cad/dlr_carrier.kicad_pcb ]; then kicad-cli pcb drc cad/dlr_carrier.kicad_pcb --exit-code-violations; else echo \"No .kicad_pcb yet — route in pcbnew first\"; fi'"
 inspect-asm = "bash -c 'nohup kicad cad/dlr_carrier.kicad_pro &>/dev/null &'"
 generate-model = ["build", { cmd = "bash -c 'mkdir -p output/drawings && kicad-cli sch export svg cad/dlr_carrier.kicad_sch -b -e -n -o output/drawings/ && mv output/drawings/dlr_carrier.svg output/drawings/dlr_carrier_web.svg && python cad/drawing/svg_dark.py output/drawings/dlr_carrier_web.svg output/drawings/dlr_carrier_web_dark.svg && kicad-cli sch export pdf cad/dlr_carrier.kicad_sch -b --drawing-sheet cad/drawing-sheet.kicad_wks -o output/drawings/dlr_carrier_drawing.pdf'" }]
 generate-asm = "bash -c 'if [ -f cad/dlr_carrier.kicad_pcb ]; then mkdir -p output/gerbers output/fab && kicad-cli pcb export gerbers cad/dlr_carrier.kicad_pcb -o output/gerbers/ && kicad-cli pcb export drill cad/dlr_carrier.kicad_pcb -o output/gerbers/ && kicad-cli pcb export step cad/dlr_carrier.kicad_pcb -o output/dlr_carrier_pcb.step && kicad-cli pcb export svg cad/dlr_carrier.kicad_pcb -l F.Cu,B.Cu,Edge.Cuts,F.Silkscreen --black-and-white --exclude-drawing-sheet --page-size-mode 2 --mode-single -o output/drawings/dlr_carrier_pcb.svg && kicad-cli sch export bom cad/dlr_carrier.kicad_sch -o output/fab/bom.csv --fields \"Reference,Value,Footprint,\\${QUANTITY}\" --labels \"Designator,Comment,Footprint,Quantity\" --group-by \"Value,Footprint\" --exclude-dnp && kicad-cli pcb export pos cad/dlr_carrier.kicad_pcb -o output/fab/cpl.csv --format csv --units mm --side both --smd-only --exclude-dnp; else echo \"No .kicad_pcb yet — route in pcbnew first\"; fi'"

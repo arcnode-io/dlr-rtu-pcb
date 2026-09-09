@@ -1,0 +1,5350 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "a14a3ab2-04e6-48d7-930a-861213eab41f")
+	(paper "A3")
+	(title_block
+		(title "DLR Carrier — SOLAR MPPT CHARGER")
+		(rev "1.0")
+		(company "Engineering With AI")
+	)
+	(lib_symbols
+		(symbol "Device:C"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C"
+				(at 0.635 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0.9652 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Unpolarized capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "C_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "C_0_1"
+				(polyline
+					(pts
+						(xy -2.032 0.762) (xy 2.032 0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:D_Schottky"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "D_Schottky"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Schottky diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "diode Schottky"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "D_Schottky_0_1"
+				(polyline
+					(pts
+						(xy -1.905 0.635) (xy -1.905 1.27) (xy -1.27 1.27) (xy -1.27 -1.27) (xy -0.635 -1.27) (xy -0.635 -0.635)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "D_Schottky_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Diode:BAT54W"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "BAT54W"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Package_TO_SOT_SMD:SOT-323_SC-70"
+				(at 0 -4.445 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/BAT54W_SER.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Schottky barrier diode, SOT-323"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "schottky diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "SOT?323*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "BAT54W_0_1"
+				(polyline
+					(pts
+						(xy -1.905 0.635) (xy -1.905 1.27) (xy -1.27 1.27) (xy -1.27 -1.27) (xy -0.635 -1.27) (xy -0.635 -0.635)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "BAT54W_1_1"
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at 0 0 90)
+					(length 2.54)
+					(hide yes)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Connector_Generic:Conn_01x02"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x02"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_01x02_1_1"
+				(rectangle
+					(start -1.27 1.27)
+					(end 1.27 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:L"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "L"
+				(at -1.27 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "L"
+				(at 1.905 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Inductor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "inductor choke coil reactor magnetic"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Choke_* *Coil* Inductor_* L_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "L_0_1"
+				(arc
+					(start 0 2.54)
+					(mid 0.6323 1.905)
+					(end 0 1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 1.27)
+					(mid 0.6323 0.635)
+					(end 0 0)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 0)
+					(mid 0.6323 -0.635)
+					(end 0 -1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 -1.27)
+					(mid 0.6323 -1.905)
+					(end 0 -2.54)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "L_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Transistor_FET:Q_NMOS_GSD"
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "Q"
+				(at 5.08 1.905 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "Q_NMOS_GSD"
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "N-MOSFET transistor, gate/source/drain"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "transistor NMOS N-MOS N-MOSFET"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Q_NMOS_GSD_0_1"
+				(polyline
+					(pts
+						(xy 0.254 1.905) (xy 0.254 -1.905)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.254 0) (xy -2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 2.286) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 0.508) (xy 0.762 -0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.27) (xy 0.762 -2.286)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.778) (xy 3.302 -1.778) (xy 3.302 1.778) (xy 0.762 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 0) (xy 2.032 0.381) (xy 2.032 -0.381) (xy 1.016 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 1.651 0)
+					(radius 2.794)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 2.54) (xy 2.54 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.54 1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 2.54 -1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.921 0.381) (xy 3.683 0.381)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.302 0.381) (xy 2.921 -0.254) (xy 3.683 -0.254) (xy 3.302 0.381)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Q_NMOS_GSD_1_1"
+				(pin input line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "G"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:R"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "R"
+				(at 2.032 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "R"
+				(at 0 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Resistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "R res resistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "R_0_1"
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Battery_Management:BQ24650"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U"
+				(at -10.16 21.59 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "BQ24650"
+				(at 7.62 -21.59 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Package_DFN_QFN:Texas_RVA_VQFN-16-1EP_3.5x3.5mm_P0.5mm_EP2.14x2.14mm_ThermalVias"
+				(at 0 -45.72 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.ti.com/lit/ds/symlink/bq24650.pdf"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "10A, 28V max voltage, Battery Charger w/600kHz NMOS-NMOS Synchronous Buck Converter for Solar, VQFN-16"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "li-ion lion lipo lithium polymer iron phosphate lead acid buck solar power point battery charger"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Texas*RVA*1EP*3.5x3.5mm*P0.5mm*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "BQ24650_1_1"
+				(rectangle
+					(start -10.16 20.32)
+					(end 10.16 -20.32)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin power_in line
+					(at 0 22.86 270)
+					(length 2.54)
+					(name "VCC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -12.7 2.54 0)
+					(length 2.54)
+					(name "MPPSET"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin open_collector line
+					(at 12.7 -15.24 180)
+					(length 2.54)
+					(name "STAT1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 12.7 -10.16 180)
+					(length 2.54)
+					(name "TS"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin open_collector line
+					(at 12.7 -17.78 180)
+					(length 2.54)
+					(name "STAT2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -12.7 10.16 0)
+					(length 2.54)
+					(name "VREF"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -12.7 7.62 0)
+					(length 2.54)
+					(name "TERM_EN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 12.7 -7.62 180)
+					(length 2.54)
+					(name "VFB"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 12.7 -2.54 180)
+					(length 2.54)
+					(name "SRN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 12.7 2.54 180)
+					(length 2.54)
+					(name "SRP"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -22.86 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 12.7 10.16 180)
+					(length 2.54)
+					(name "REGN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 12.7 7.62 180)
+					(length 2.54)
+					(name "LODRV"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 12.7 15.24 180)
+					(length 2.54)
+					(name "PH"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 12.7 17.78 180)
+					(length 2.54)
+					(name "HIDRV"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "15"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 12.7 12.7 180)
+					(length 2.54)
+					(name "BTST"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -22.86 90)
+					(length 2.54)
+					(hide yes)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "17"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "power:+3V3"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "+3V3"
+				(at 0 3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"+3V3\""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "+3V3_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+3V3_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "power:PWR_FLAG"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#FLG"
+				(at 0 1.905 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "PWR_FLAG"
+				(at 0 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Special symbol for telling ERC where power comes from"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "flag power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "PWR_FLAG_0_0"
+				(pin power_out line
+					(at 0 0 90)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "PWR_FLAG_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 1.27) (xy -1.016 1.905) (xy 0 2.54) (xy 1.016 1.905) (xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "power:GND"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "GND"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "GND_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "GND_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 63.5 69.85 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "921afc55-e9fa-413a-b266-1851e88b931a")
+		(property "Reference" "C1"
+			(at 64.135 72.39 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22uF"
+			(at 64.135 67.31 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
+			(at 64.4652 66.04 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1d53e0d9-8ad4-4870-8c52-c099cf1b1bec")
+		)
+		(pin "2"
+			(uuid "17f7372d-fd96-4bb0-81a6-45db33e570c9")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "C1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 114.3 69.85 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "62dffc51-4ccb-4adb-b774-b2f953b4f055")
+		(property "Reference" "C2"
+			(at 114.935 72.39 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 114.935 67.31 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 115.2652 66.04 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "487198d3-c6cc-49ab-8005-498823804112")
+		)
+		(pin "2"
+			(uuid "a9a5872a-f565-4917-805d-f84390a872dc")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "C2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 165.1 69.85 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "2ff03dc7-8202-4c9a-be3e-c67f23ad4d5e")
+		(property "Reference" "C3"
+			(at 165.735 72.39 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22uF"
+			(at 165.735 67.31 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
+			(at 166.0652 66.04 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b4c9fd69-dcdf-4323-bb58-98514e57b190")
+		)
+		(pin "2"
+			(uuid "e012f78d-c446-4069-83ef-db718359d736")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "C3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 215.9 69.85 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "c452581c-84a5-45b8-95c6-eadffa147ecf")
+		(property "Reference" "C31"
+			(at 216.535 72.39 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1uF"
+			(at 216.535 67.31 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 216.8652 66.04 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "55875458-f8f5-4217-936c-7ced48dceadf")
+		)
+		(pin "2"
+			(uuid "4c94d8ac-58bf-4fc3-b889-f32e78d21e80")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "C31")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 266.7 69.85 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "5dd26c32-cbbb-48d5-b5a7-baf671df009f")
+		(property "Reference" "C32"
+			(at 267.335 72.39 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1uF"
+			(at 267.335 67.31 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 267.6652 66.04 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "87a0296d-5659-4ebc-8d8b-17ac34ac7d89")
+		)
+		(pin "2"
+			(uuid "2a8bb7bb-23ec-43cc-a0df-0c7f9419cfd9")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "C32")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 317.5 69.85 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "e98d233f-1d97-45c3-a905-9119e56b0ec0")
+		(property "Reference" "C33"
+			(at 318.135 72.39 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1uF"
+			(at 318.135 67.31 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 318.4652 66.04 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "43af0ce4-868e-4ba9-bb5a-77e7d118581a")
+		)
+		(pin "2"
+			(uuid "17b25607-e546-4b5a-89dd-9d58c525658d")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "C33")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 368.3 69.85 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "5d89e734-5449-4442-9abe-97a1f3289155")
+		(property "Reference" "C34"
+			(at 368.935 72.39 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 368.935 67.31 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 369.2652 66.04 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3aa6b58f-ca7b-4e9a-9ee7-25a51fb06c26")
+		)
+		(pin "2"
+			(uuid "fcf76ba5-fa43-455c-ac8c-c5aa9b0bff87")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "C34")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 63.5 133.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "2230f4d8-35de-4956-9d1b-0ddc49cca197")
+		(property "Reference" "C35"
+			(at 64.135 135.89 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 64.135 130.81 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 64.4652 129.54 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f0db1499-6fe8-4742-aeac-f82de93d944b")
+		)
+		(pin "2"
+			(uuid "a188f112-e115-4f24-b321-9f05e3abf338")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "C35")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D_Schottky")
+		(at 114.3 133.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "018c3877-2ead-473b-a287-5d3578ea9507")
+		(property "Reference" "D1"
+			(at 114.3 135.89 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SS34"
+			(at 114.3 130.81 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SMA"
+			(at 114.3 133.35 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9c4a0481-0f3b-4565-bff2-95b779dfd357")
+		)
+		(pin "2"
+			(uuid "ea4a3e4c-b705-4c07-9c48-7d59aa662dcf")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "D1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:BAT54W")
+		(at 165.1 133.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "69c73792-5844-4274-82ae-9d57da3fe244")
+		(property "Reference" "D4"
+			(at 165.1 135.89 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BAT54W"
+			(at 165.1 130.81 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-323_SC-70"
+			(at 165.1 128.905 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5212ef82-b379-4dc3-8bcc-70c89c902499")
+		)
+		(pin "2"
+			(uuid "4ccfbb6b-1224-4c99-9347-5ed81fd63d67")
+		)
+		(pin "3"
+			(uuid "080456c9-6fa3-4682-8fe9-edfefd1c3d1b")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "D4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 215.9 133.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "f2a1e118-f029-4472-935a-b1c8393787c3")
+		(property "Reference" "J1"
+			(at 215.9 135.89 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "PV_IN"
+			(at 215.9 128.27 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal"
+			(at 215.9 133.35 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c4fce5ca-db44-4615-8ede-8f1677176c4a")
+		)
+		(pin "2"
+			(uuid "c07c2e71-0c81-4850-84e6-81155475fc06")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:L")
+		(at 266.7 133.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "0a81dd70-cf05-4af1-89d1-c9214c775be3")
+		(property "Reference" "L1"
+			(at 265.43 133.35 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "6.8uH"
+			(at 268.605 133.35 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Inductor_SMD:L_Bourns_SRN8040TA"
+			(at 266.7 133.35 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "55650ad4-6cad-49f2-99ec-eea352e4e340")
+		)
+		(pin "2"
+			(uuid "8afc4a37-e529-441f-b7b4-bcf360048248")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "L1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_FET:Q_NMOS_GSD")
+		(at 317.5 133.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "67180bd7-44e1-440c-bde3-ad6ef4633203")
+		(property "Reference" "Q1"
+			(at 322.58 135.255 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DMN4035L-7"
+			(at 322.58 133.35 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 322.58 135.89 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9a05625f-bdea-44b7-961a-f26e4f7f628a")
+		)
+		(pin "2"
+			(uuid "b3be1bb5-97c8-45c9-b3ac-0ff2ff6864b6")
+		)
+		(pin "3"
+			(uuid "4090ccc9-039b-490b-8db5-9b77da2acb12")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "Q1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_FET:Q_NMOS_GSD")
+		(at 368.3 133.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "365d5adf-916b-4868-8085-4d2dbdf69c6f")
+		(property "Reference" "Q2"
+			(at 373.38 135.255 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DMN4035L-7"
+			(at 373.38 133.35 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 373.38 135.89 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5a884b54-e3d4-4117-ae6c-9d2fdf0d2594")
+		)
+		(pin "2"
+			(uuid "77db4ccf-84aa-4930-9559-0a3c607729d8")
+		)
+		(pin "3"
+			(uuid "65b8bb01-c7d6-40d7-8a63-238e92356497")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "Q2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 63.5 196.85 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "03d9fb71-d78d-41a2-98ea-ec0ebdde8462")
+		(property "Reference" "R1"
+			(at 65.532 196.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "20m"
+			(at 63.5 196.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
+			(at 61.722 196.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "36f368e0-9898-43be-bbf5-a76b9ccafe10")
+		)
+		(pin "2"
+			(uuid "906bf4cb-1622-4161-91e7-3b8bc7dc7926")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "R1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 114.3 196.85 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "b310e554-1d4d-4758-9989-d24ec1869d2d")
+		(property "Reference" "R17"
+			(at 116.332 196.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10"
+			(at 114.3 196.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 112.522 196.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f2d458fb-ae9e-4a28-8daa-de87c47cda16")
+		)
+		(pin "2"
+			(uuid "5e3d06e4-22a8-4f4a-8878-2dafb5db0dc0")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "R17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 165.1 196.85 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "d919f6ad-9d7e-489a-9376-55fa10f3e605")
+		(property "Reference" "R18"
+			(at 167.132 196.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "130k"
+			(at 165.1 196.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 163.322 196.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "abb6788e-02bc-4780-8efb-fbf9f5d2fd60")
+		)
+		(pin "2"
+			(uuid "2de47b53-75b5-4c0b-b60f-8b25b8d8006f")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "R18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 215.9 196.85 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "c2a9e9e4-8107-4f47-a48e-0aecf8c896cd")
+		(property "Reference" "R19"
+			(at 217.932 196.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 215.9 196.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 214.122 196.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "83279a1b-0229-4dd1-af34-807a2efc2930")
+		)
+		(pin "2"
+			(uuid "6d355ef7-745a-4f8f-b0ac-1efad7473d7d")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "R19")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 266.7 196.85 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "e318b2d1-4ff2-437f-b217-83d9dad0de41")
+		(property "Reference" "R20"
+			(at 268.732 196.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "297k"
+			(at 266.7 196.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 264.922 196.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "31186973-7116-4e78-a36b-20f1f8a12541")
+		)
+		(pin "2"
+			(uuid "d6ca5cf8-6618-40b8-a0a7-adb1a26fb788")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "R20")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 317.5 196.85 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "9917a828-d3ca-46ec-aa5b-c6fabfbd9839")
+		(property "Reference" "R21"
+			(at 319.532 196.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "49.9k"
+			(at 317.5 196.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 315.722 196.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5baa72eb-f246-4ef4-a624-fbd825202bc8")
+		)
+		(pin "2"
+			(uuid "59cfc00d-a0aa-4831-84fa-e4ea44f8f2d3")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "R21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 368.3 196.85 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "ca92da92-44fa-4a89-a5be-2c1c65805007")
+		(property "Reference" "R22"
+			(at 370.332 196.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 368.3 196.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 366.522 196.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b39e79c9-b3f0-482b-8806-43b78cc3b399")
+		)
+		(pin "2"
+			(uuid "eb790df6-bced-4d26-8d90-0396f3e37838")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "R22")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 63.5 260.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "6d5fd6df-2767-4b62-87b4-3599aeebd9cc")
+		(property "Reference" "R23"
+			(at 65.532 260.35 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "15k"
+			(at 63.5 260.35 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 61.722 260.35 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "16134ea3-e3b4-4886-a69f-90d9a49122c3")
+		)
+		(pin "2"
+			(uuid "3c249746-2db6-4a80-8175-d746c5fd02c6")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "R23")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 114.3 260.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "0363e39f-4f2b-4d66-ba21-a07012bbd3c4")
+		(property "Reference" "R24"
+			(at 116.332 260.35 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 114.3 260.35 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 112.522 260.35 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "bc90e1c9-e1a0-4ea4-837a-453062b8a752")
+		)
+		(pin "2"
+			(uuid "1a73bfe2-f9d8-427f-958d-32b8428357a3")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "R24")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 165.1 260.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "0d5c5f45-3fdd-4cb7-bb88-30072fa8f0a4")
+		(property "Reference" "R25"
+			(at 167.132 260.35 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 165.1 260.35 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 163.322 260.35 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "dc26f0ac-b57d-4813-b88a-3d1ec2cb127d")
+		)
+		(pin "2"
+			(uuid "ce8d47b7-5a7a-42dd-a1aa-cf1c7f6e1b4d")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "R25")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Battery_Management:BQ24650")
+		(at 215.9 260.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "3d0bc7c7-7fce-4097-8eb5-49ae0364cebd")
+		(property "Reference" "U8"
+			(at 205.74 281.94 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BQ24650RVAR"
+			(at 223.52 238.76 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_DFN_QFN:Texas_RVA_VQFN-16-1EP_3.5x3.5mm_P0.5mm_EP2.14x2.14mm_ThermalVias"
+			(at 215.9 214.63 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b853f87d-3897-4b70-b893-efee0a7fa603")
+		)
+		(pin "2"
+			(uuid "7146b027-1f6d-40c4-81f1-a0523f4761b5")
+		)
+		(pin "3"
+			(uuid "ccf81ee8-48c4-4930-a537-9ef14dd6b239")
+		)
+		(pin "4"
+			(uuid "dd5b28c7-2894-4aec-b702-8b7ecaf55073")
+		)
+		(pin "5"
+			(uuid "87075f3d-9a1e-4a92-9232-6a59ab3358b2")
+		)
+		(pin "6"
+			(uuid "418b601f-0645-4349-8b47-679facb234e3")
+		)
+		(pin "7"
+			(uuid "226fe07e-3003-4f3f-898c-a92d7722484e")
+		)
+		(pin "8"
+			(uuid "464e3a11-cab5-4294-ac2d-ae8065fd84aa")
+		)
+		(pin "9"
+			(uuid "3fadd6cb-e351-412a-83da-9557c90b762f")
+		)
+		(pin "10"
+			(uuid "8bb0c065-f3ff-4f64-8f1d-12c56e0b9729")
+		)
+		(pin "11"
+			(uuid "1b373f9f-d79e-430d-86e3-8032672fccb6")
+		)
+		(pin "12"
+			(uuid "755d5c5e-c2b6-42d1-a886-643ee7f5c0dd")
+		)
+		(pin "13"
+			(uuid "019d6e35-2d7d-4a78-a3ea-f9c5d9502df4")
+		)
+		(pin "14"
+			(uuid "bbd02019-7652-4ac8-9b8f-0449f5c245a2")
+		)
+		(pin "15"
+			(uuid "b06a174f-0398-4db2-910d-8c18bacd607b")
+		)
+		(pin "16"
+			(uuid "48135270-5d4c-48d2-901f-761e8e8f6b3e")
+		)
+		(pin "17"
+			(uuid "68837f29-0758-49e2-8510-e1184e24a63b")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "U8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 114.3 248.92 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "8e068898-c75b-4cba-99dd-32feb7875472")
+		(property "Reference" "#PWR001"
+			(at 114.3 245.11 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 114.3 243.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b54486b3-dfa8-40de-aff4-2b8abd80ffe4")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "#PWR001")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 165.1 248.92 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "77314f2b-1345-41dd-8aaa-c0ada2f7c2db")
+		(property "Reference" "#PWR002"
+			(at 165.1 245.11 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 165.1 243.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b61c3503-b57b-4e44-a29d-c1020f14df3c")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "#PWR002")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 223.52 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "20a9ffc7-571e-4d0f-a648-e79a67071443")
+		(property "Reference" "#FLG001"
+			(at 223.52 65.405 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 223.52 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f956548d-10e6-4641-b076-186c34dd2397")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "#FLG001")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 63.5 81.28 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "8e6b7a66-07b5-4d7b-aed6-388c5772341d")
+		(property "Reference" "#PWR003"
+			(at 63.5 74.93 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 63.5 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f6d39f6b-5d55-42c5-a922-399cb7909b2e")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "#PWR003")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 165.1 81.28 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "acce3bf6-26fa-4b95-93ec-6814360f435d")
+		(property "Reference" "#PWR004"
+			(at 165.1 74.93 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 165.1 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "bdfb603a-d38a-4219-b441-c8a7eacae5cc")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "#PWR004")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 215.9 81.28 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "10bdab23-44d0-48ae-8b0a-e27fef52546d")
+		(property "Reference" "#PWR005"
+			(at 215.9 74.93 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 215.9 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2981785d-8258-45a4-a590-d39617c281af")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "#PWR005")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 266.7 81.28 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "0a88864f-22cb-41a4-b948-d58517c55d0d")
+		(property "Reference" "#PWR006"
+			(at 266.7 74.93 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 266.7 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f81cf64b-22ab-4992-b14a-67fe743f98b7")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "#PWR006")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 317.5 81.28 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "b7f78531-5bff-4d41-90c1-e92ef7f8ccd1")
+		(property "Reference" "#PWR007"
+			(at 317.5 74.93 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 317.5 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a8a57e07-b725-426f-af8d-ada523ad6f70")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "#PWR007")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 63.5 144.78 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "34c53118-c3c1-4815-9fd6-c9b902b5ae1e")
+		(property "Reference" "#PWR008"
+			(at 63.5 138.43 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 63.5 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2f3d0ecd-b2fd-4df1-846d-8db1309d525f")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "#PWR008")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 203.2 135.89 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "bc1e494d-e015-4750-b557-a5e5c02b3a06")
+		(property "Reference" "#PWR009"
+			(at 196.85 135.89 270)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 208.28 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3e73546b-0681-4ce6-9958-761dc153475b")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "#PWR009")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 370.84 146.05 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "ac16f907-5fc5-4a6d-b4f9-64dc5c5b0be7")
+		(property "Reference" "#PWR010"
+			(at 370.84 139.7 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 370.84 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "fdb80c81-4703-44c7-a218-7e9ec4f25b1f")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "#PWR010")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 215.9 208.28 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "f211b66f-22bb-4f9a-ba6d-49f89082b6e4")
+		(property "Reference" "#PWR011"
+			(at 215.9 201.93 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 215.9 213.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2de37dca-652f-4b0e-a846-e1fec23db21c")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "#PWR011")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 317.5 208.28 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "2407397a-83f9-4cd2-9a14-f09ac6193430")
+		(property "Reference" "#PWR012"
+			(at 317.5 201.93 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 317.5 213.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0846f760-d9e2-40a8-b3e5-37f179f8bfc8")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "#PWR012")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 63.5 271.78 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "f118a609-5621-4e4a-8560-8f4dfb721b36")
+		(property "Reference" "#PWR013"
+			(at 63.5 265.43 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 63.5 276.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3025668b-e865-4d0c-811d-ab0b971a7935")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "#PWR013")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 215.9 290.83 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "72ee8bdc-fe38-4425-8737-4cfe3263cfdc")
+		(property "Reference" "#PWR014"
+			(at 215.9 284.48 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 215.9 295.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "06593e30-c177-4a7a-a725-44eb7987e692")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "#PWR014")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 215.9 290.83 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "00537aad-7ee2-44cd-b078-b5b0aa5aa9ab")
+		(property "Reference" "#PWR015"
+			(at 215.9 284.48 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 215.9 295.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d21d25fa-a231-4a06-a8dd-cb83b7c98ec6")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "#PWR015")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 172.72 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced no)
+		(uuid "83b57d3e-b872-4172-9cfe-31f15787e5cb")
+		(property "Reference" "#FLG002"
+			(at 172.72 65.405 0.0000)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 172.72 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8e7814a8-23e1-4d5e-afd1-4fc1f302d321")
+		)
+		(instances
+			(project "SOLAR MPPT CHARGER"
+				(path "/a14a3ab2-04e6-48d7-930a-861213eab41f"
+					(reference "#FLG002")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 114.3 256.54) (xy 114.3 248.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d8a75347-d9ce-4991-8e71-f5f070547fb8")
+	)
+	(wire
+		(pts
+			(xy 165.1 256.54) (xy 165.1 248.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4b159f6d-cf49-4835-96f8-3e5a5114d67c")
+	)
+	(wire
+		(pts
+			(xy 368.3 66.04) (xy 368.3 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3090b936-7426-4dd7-8656-108e69876d13")
+	)
+	(wire
+		(pts
+			(xy 266.7 137.16) (xy 266.7 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1bb29813-93ff-4e4f-b98e-8e70a3aa20e9")
+	)
+	(wire
+		(pts
+			(xy 63.5 193.04) (xy 63.5 187.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "78a63848-661d-4983-bab7-d9380f41e56b")
+	)
+	(wire
+		(pts
+			(xy 228.6 257.81) (xy 238.76 257.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "34825937-4553-40eb-89ae-2be91e0274bf")
+	)
+	(wire
+		(pts
+			(xy 114.3 66.04) (xy 114.3 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7977a4e1-047c-4798-b19d-966430488ae0")
+	)
+	(wire
+		(pts
+			(xy 161.29 133.35) (xy 156.21 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5d5bbe2e-2078-4721-bfa3-bceddbb51111")
+	)
+	(wire
+		(pts
+			(xy 228.6 247.65) (xy 238.76 247.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1fdf647e-f2ae-4d85-9ce5-86a10e831894")
+	)
+	(wire
+		(pts
+			(xy 312.42 133.35) (xy 307.34 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "05eef2b5-669b-4cc8-b8a1-bfdca3df4cb3")
+	)
+	(wire
+		(pts
+			(xy 228.6 242.57) (xy 238.76 242.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "adb5737d-faa4-4c0b-b2bb-5f4fb0299017")
+	)
+	(wire
+		(pts
+			(xy 363.22 133.35) (xy 358.14 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9f04a472-90b6-4cb0-a1d0-9c526241d6dd")
+	)
+	(wire
+		(pts
+			(xy 228.6 252.73) (xy 238.76 252.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0b16f614-4dec-47e1-bb2c-3385bb14a1c3")
+	)
+	(wire
+		(pts
+			(xy 165.1 200.66) (xy 165.1 210.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f8899a26-2e8b-46c9-b66e-e873142d9f46")
+	)
+	(wire
+		(pts
+			(xy 215.9 193.04) (xy 215.9 187.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fdc1217e-59cc-4e5e-a032-794d36190bcc")
+	)
+	(wire
+		(pts
+			(xy 203.2 257.81) (xy 198.12 257.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "372b3efb-4c2f-474e-af8a-055743acdd96")
+	)
+	(wire
+		(pts
+			(xy 317.5 66.04) (xy 317.5 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "41f2511f-057f-436a-a05c-2a113378fbbb")
+	)
+	(wire
+		(pts
+			(xy 168.91 133.35) (xy 179.07 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ec782c93-0837-468f-86a2-bc01de578fec")
+	)
+	(wire
+		(pts
+			(xy 228.6 250.19) (xy 238.76 250.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bfe0b63d-a7a5-437a-926d-319ade89ef02")
+	)
+	(wire
+		(pts
+			(xy 114.3 264.16) (xy 114.3 274.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "27d69a37-75aa-44b0-a791-1d00106988d7")
+	)
+	(wire
+		(pts
+			(xy 228.6 275.59) (xy 238.76 275.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "83638634-3fe2-4beb-841d-818382e80645")
+	)
+	(wire
+		(pts
+			(xy 165.1 264.16) (xy 165.1 274.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "85481972-c9a2-4967-ad55-077d3ca5b10f")
+	)
+	(wire
+		(pts
+			(xy 228.6 278.13) (xy 238.76 278.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b665208e-e1bd-4dfd-8cdf-1ee4d2281867")
+	)
+	(wire
+		(pts
+			(xy 368.3 200.66) (xy 368.3 210.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8648fe3b-88c6-4eb1-9fe1-428f20e1c0c4")
+	)
+	(wire
+		(pts
+			(xy 63.5 256.54) (xy 63.5 251.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6d37b4bb-afc1-4bb1-82a3-3f6065c42b8f")
+	)
+	(wire
+		(pts
+			(xy 228.6 270.51) (xy 238.76 270.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "618110b0-dfb0-4295-934d-5157e0f17e54")
+	)
+	(wire
+		(pts
+			(xy 215.9 66.04) (xy 215.9 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "05732a2b-53b2-4301-a816-85a1773318b3")
+	)
+	(wire
+		(pts
+			(xy 215.9 63.5) (xy 215.9 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9728f417-fec8-459d-b6a6-8678bae48080")
+	)
+	(wire
+		(pts
+			(xy 215.9 63.5) (xy 223.52 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3a24dfb4-4233-4b96-8454-688deed6bd51")
+	)
+	(wire
+		(pts
+			(xy 114.3 200.66) (xy 114.3 210.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0e045d5f-ab5b-4f18-8fb0-5747ec96dd25")
+	)
+	(wire
+		(pts
+			(xy 215.9 237.49) (xy 215.9 232.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7ff4d238-a14c-4391-a86c-63b7e7b30b1b")
+	)
+	(wire
+		(pts
+			(xy 266.7 200.66) (xy 266.7 210.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "57e4aab4-59eb-48d0-a871-fa2bb9c93c94")
+	)
+	(wire
+		(pts
+			(xy 317.5 193.04) (xy 317.5 187.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b8c42875-4556-47e1-9ffe-17fadc76d8d0")
+	)
+	(wire
+		(pts
+			(xy 228.6 267.97) (xy 238.76 267.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f2b7f5a1-f444-4c04-b639-2f1746e70346")
+	)
+	(wire
+		(pts
+			(xy 266.7 66.04) (xy 266.7 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f707a17e-7d1a-4c92-91d1-504aff7569cf")
+	)
+	(wire
+		(pts
+			(xy 368.3 193.04) (xy 368.3 187.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "66576070-1349-496a-b2b0-17887c43c6fe")
+	)
+	(wire
+		(pts
+			(xy 203.2 250.19) (xy 198.12 250.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c8ce9173-f163-45ef-8ca3-8d929b4424ce")
+	)
+	(wire
+		(pts
+			(xy 203.2 252.73) (xy 198.12 252.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f9069ce6-2d57-4cd5-8ebc-bc3a0883684b")
+	)
+	(wire
+		(pts
+			(xy 63.5 73.66) (xy 63.5 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4984dc2f-dc41-43b6-903e-cc16402f8343")
+	)
+	(wire
+		(pts
+			(xy 165.1 73.66) (xy 165.1 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4df37bb9-0238-447c-8327-44e1edc91652")
+	)
+	(wire
+		(pts
+			(xy 215.9 73.66) (xy 215.9 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6cb03f07-9aab-4fce-904d-ed51dd762ca3")
+	)
+	(wire
+		(pts
+			(xy 266.7 73.66) (xy 266.7 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a16e9291-1a9d-493c-8702-787160156f0d")
+	)
+	(wire
+		(pts
+			(xy 317.5 73.66) (xy 317.5 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "713bcf3a-c187-4571-9636-2d3cc67cca65")
+	)
+	(wire
+		(pts
+			(xy 63.5 137.16) (xy 63.5 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "89e9b77e-cebe-49fd-8782-f1f4a84c0aab")
+	)
+	(wire
+		(pts
+			(xy 210.82 135.89) (xy 203.2 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2bf606fc-670f-4c2a-867c-3ca8fd7163f4")
+	)
+	(wire
+		(pts
+			(xy 370.84 138.43) (xy 370.84 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5285358c-5efb-44f0-8a65-e60afc80c875")
+	)
+	(wire
+		(pts
+			(xy 215.9 200.66) (xy 215.9 208.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4da51c96-f10b-48f0-a503-8ad4513ab88b")
+	)
+	(wire
+		(pts
+			(xy 317.5 200.66) (xy 317.5 208.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3410cd56-af96-4fc8-881a-ec35fb9c9215")
+	)
+	(wire
+		(pts
+			(xy 63.5 264.16) (xy 63.5 271.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dc6a1511-1fed-4690-8bb1-6ca826c2c604")
+	)
+	(wire
+		(pts
+			(xy 215.9 283.21) (xy 215.9 290.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "93cc813b-e73b-460d-a474-a35d671892fb")
+	)
+	(wire
+		(pts
+			(xy 215.9 283.21) (xy 215.9 290.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0b999a8f-053c-4ab8-957b-f9787012d3a6")
+	)
+	(wire
+		(pts
+			(xy 114.3 73.66) (xy 114.3 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "095b51e2-6743-4428-a1a3-748d53375c65")
+	)
+	(wire
+		(pts
+			(xy 266.7 129.54) (xy 266.7 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "04c5f127-046c-4a5c-a03b-068996312e76")
+	)
+	(wire
+		(pts
+			(xy 320.04 138.43) (xy 320.04 148.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bac1775e-eab8-491f-bcb6-3dd70b2771e2")
+	)
+	(wire
+		(pts
+			(xy 370.84 128.27) (xy 370.84 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b7422fe0-5e52-460f-911c-49061ae038be")
+	)
+	(wire
+		(pts
+			(xy 228.6 245.11) (xy 238.76 245.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "79580c99-6f01-4cbf-b221-8985c88d2b0f")
+	)
+	(wire
+		(pts
+			(xy 63.5 66.04) (xy 63.5 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "71612a6a-862a-4b3b-be27-53a98c58d88d")
+	)
+	(wire
+		(pts
+			(xy 110.49 133.35) (xy 105.41 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "040fbb25-af3c-4fa4-a277-87cb03777f16")
+	)
+	(wire
+		(pts
+			(xy 320.04 128.27) (xy 320.04 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cc2571e0-a96f-4ed1-b8df-313e0e1a11c5")
+	)
+	(wire
+		(pts
+			(xy 114.3 193.04) (xy 114.3 187.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "75c833c4-63ee-421d-9b1d-63a4c85d8bbc")
+	)
+	(wire
+		(pts
+			(xy 165.1 193.04) (xy 165.1 187.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5692fd08-4c5d-498d-b281-2dddf7b1af1a")
+	)
+	(wire
+		(pts
+			(xy 118.11 133.35) (xy 128.27 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e1b67f16-5d5e-48c2-82bc-298777946c2a")
+	)
+	(wire
+		(pts
+			(xy 210.82 133.35) (xy 205.74 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3813c9a9-e4a6-4dec-b882-beb4cf8c468f")
+	)
+	(wire
+		(pts
+			(xy 165.1 66.04) (xy 165.1 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2b035f07-9d9d-46bf-9e38-e9d9cc4db41e")
+	)
+	(wire
+		(pts
+			(xy 165.1 63.5) (xy 165.1 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "68ce308d-40aa-4d36-a4ca-e3838608b100")
+	)
+	(wire
+		(pts
+			(xy 165.1 63.5) (xy 172.72 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "70da1553-30e4-47ae-81d9-792bae8c1e04")
+	)
+	(wire
+		(pts
+			(xy 368.3 73.66) (xy 368.3 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0db626dc-595e-47a0-b2ef-a58f0e1696bc")
+	)
+	(wire
+		(pts
+			(xy 63.5 129.54) (xy 63.5 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "77647a3f-562a-46a7-9d07-e47a6e518abc")
+	)
+	(wire
+		(pts
+			(xy 63.5 200.66) (xy 63.5 210.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "775d9404-eec9-4b5e-a117-cc6f732b8c25")
+	)
+	(wire
+		(pts
+			(xy 266.7 193.04) (xy 266.7 187.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b10e9c72-e378-4064-b442-fb16853c0cd6")
+	)
+	(wire
+		(pts
+			(xy 228.6 262.89) (xy 238.76 262.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3ad522fe-bd7c-476a-9c15-2b154792bfdd")
+	)
+	(label "BAT_SRP"
+		(at 368.3 60.96 90)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "21b8efef-79d4-426b-94e2-ed4c10cc2090")
+	)
+	(label "BAT_SRP"
+		(at 266.7 147.32 270)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "cabf7a9c-8e8c-4dc7-bc66-4c3673eeb4f3")
+	)
+	(label "BAT_SRP"
+		(at 63.5 187.96 90)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "fa2e4cb1-794f-4dec-82d1-281b5175a75c")
+	)
+	(label "BAT_SRP"
+		(at 238.76 257.81 0)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "d910786b-ab52-4842-b90f-ee8f7059ccb6")
+	)
+	(label "CHG_BTST"
+		(at 114.3 60.96 90)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "65efc699-67c7-4680-b48a-3b9eaa5d70b0")
+	)
+	(label "CHG_BTST"
+		(at 156.21 133.35 180)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "6cf1fc1f-baa8-4a3d-a049-899b1f6c8963")
+	)
+	(label "CHG_BTST"
+		(at 238.76 247.65 0)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "edf0ec69-fcad-4dfd-8066-7681bacfe8e6")
+	)
+	(label "CHG_HIDRV"
+		(at 307.34 133.35 180)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "29b3d5a4-fa96-41ac-828a-68ca0efddbbf")
+	)
+	(label "CHG_HIDRV"
+		(at 238.76 242.57 0)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "43c0d1a5-1bcd-48d8-b23e-1155853bf05e")
+	)
+	(label "CHG_LODRV"
+		(at 358.14 133.35 180)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "f9fbf85e-0bb6-472d-9e98-af4d96ff3025")
+	)
+	(label "CHG_LODRV"
+		(at 238.76 252.73 0)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "562e6d2f-d725-490e-9579-50ca5eec97a3")
+	)
+	(label "CHG_MPPSET"
+		(at 165.1 210.82 270)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "f41ac64a-e081-44d2-b4d2-76ad082c4545")
+	)
+	(label "CHG_MPPSET"
+		(at 215.9 187.96 90)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "00af93bf-e031-491a-a1ab-e03520dae65a")
+	)
+	(label "CHG_MPPSET"
+		(at 198.12 257.81 180)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "44d133f1-8943-414d-b097-561ae9793890")
+	)
+	(label "CHG_REGN"
+		(at 317.5 60.96 90)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "26ccebb7-2352-4efe-a7da-ed587facdc62")
+	)
+	(label "CHG_REGN"
+		(at 179.07 133.35 0)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "74dc94d7-abd8-4126-a2da-2979eedcf5f2")
+	)
+	(label "CHG_REGN"
+		(at 238.76 250.19 0)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "dd5a12d4-d805-4450-a2bc-f77acb3a778c")
+	)
+	(label "CHG_TS"
+		(at 368.3 210.82 270)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "5e0a9188-a6ff-4a51-b5be-b72e7ef99eb8")
+	)
+	(label "CHG_TS"
+		(at 63.5 251.46 90)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "73262bda-5826-442e-96e6-b5d14da190b4")
+	)
+	(label "CHG_TS"
+		(at 238.76 270.51 0)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "7c585b09-0b12-4279-8f2a-104af777c566")
+	)
+	(label "CHG_VCC"
+		(at 215.9 60.96 90)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "a795df2c-c9cb-4053-840a-0bbc659a50e7")
+	)
+	(label "CHG_VCC"
+		(at 114.3 210.82 270)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "23fef7af-660c-434d-8c15-4f0afb511427")
+	)
+	(label "CHG_VCC"
+		(at 215.9 232.41 90)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "d83560ed-44f0-4726-baef-63f9160e91d0")
+	)
+	(label "CHG_VFB"
+		(at 266.7 210.82 270)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "c07983c9-5327-4750-bc3e-3a89cd8be77c")
+	)
+	(label "CHG_VFB"
+		(at 317.5 187.96 90)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "5a51c64e-096c-4aeb-b72e-2e0e594dcc47")
+	)
+	(label "CHG_VFB"
+		(at 238.76 267.97 0)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "bec021f2-0c56-4d6d-8f23-c43b025baadb")
+	)
+	(label "CHG_VREF"
+		(at 266.7 60.96 90)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "f4fa38ec-d98a-4c02-a410-bf238a9d5e41")
+	)
+	(label "CHG_VREF"
+		(at 368.3 187.96 90)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "3d657616-4713-43c9-8ef3-31a056bd82fb")
+	)
+	(label "CHG_VREF"
+		(at 198.12 250.19 180)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "5a695eb1-595f-4bbf-a184-ec5b5deb80fb")
+	)
+	(label "CHG_VREF"
+		(at 198.12 252.73 180)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "85644535-a3b2-4829-adf6-05008a78010a")
+	)
+	(label "MPPT_SW"
+		(at 114.3 83.82 270)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "0304bda9-f468-44da-93aa-883830586fd8")
+	)
+	(label "MPPT_SW"
+		(at 266.7 124.46 90)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "5ba34ddd-0267-4588-8cd4-3889814c6e80")
+	)
+	(label "MPPT_SW"
+		(at 320.04 148.59 270)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "18ed6f17-2ae9-4bf7-a33f-00e8ea9df0e1")
+	)
+	(label "MPPT_SW"
+		(at 370.84 123.19 90)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "c4be1ca5-b4e4-4e01-95b5-9b80a8e26a47")
+	)
+	(label "MPPT_SW"
+		(at 238.76 245.11 0)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "fe530429-75a3-456d-bd16-4ea52cd6b658")
+	)
+	(label "PV_IN"
+		(at 63.5 60.96 90)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "c55a5292-4a67-4d37-b888-b1f4853aa3fb")
+	)
+	(label "PV_IN"
+		(at 105.41 133.35 180)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "2cf23822-5999-4d0d-8e3d-ffe136a9ebe5")
+	)
+	(label "PV_IN"
+		(at 320.04 123.19 90)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "bf6da15d-f3c8-41ed-88fb-6f3fd24ca13e")
+	)
+	(label "PV_IN"
+		(at 114.3 187.96 90)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "4ae9ebc0-c55b-4e21-b0a1-057357811e5e")
+	)
+	(label "PV_IN"
+		(at 165.1 187.96 90)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "8d5d4b2c-aaa9-4ed7-b3d0-e270e7f2f5b2")
+	)
+	(label "PV_RAW"
+		(at 128.27 133.35 0)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "f7d0df7f-d797-4264-8886-c3a76ba83a1b")
+	)
+	(label "PV_RAW"
+		(at 205.74 133.35 180)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "b90d0db4-81e8-4a3d-967b-f5a7e1e1f355")
+	)
+	(hierarchical_label "CHG_STAT1"
+		(shape input)
+		(at 114.3 274.32 270)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "955d8408-5b48-4973-993a-d94bf54ae15d")
+	)
+	(hierarchical_label "CHG_STAT1"
+		(shape input)
+		(at 238.76 275.59 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "7850708b-df82-4e2e-91e9-8f99b895c537")
+	)
+	(hierarchical_label "CHG_STAT2"
+		(shape input)
+		(at 165.1 274.32 270)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "3cd2eca0-b456-4997-b9e7-08e55bece251")
+	)
+	(hierarchical_label "CHG_STAT2"
+		(shape input)
+		(at 238.76 278.13 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "ac0aab0d-fcfb-4869-b668-473a0b8f568c")
+	)
+	(hierarchical_label "VBAT"
+		(shape input)
+		(at 165.1 60.96 90)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "c1462cf5-0f73-4e25-858a-ef064509b807")
+	)
+	(hierarchical_label "VBAT"
+		(shape input)
+		(at 368.3 83.82 270)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "9d67e3d9-1bdf-446b-90bd-d06634548112")
+	)
+	(hierarchical_label "VBAT"
+		(shape input)
+		(at 63.5 124.46 90)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "1bb99e09-0ae6-4a3b-bab3-139e08013911")
+	)
+	(hierarchical_label "VBAT"
+		(shape input)
+		(at 63.5 210.82 270)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "e30e7261-2e82-49fb-ac68-8cc8b7f87a83")
+	)
+	(hierarchical_label "VBAT"
+		(shape input)
+		(at 266.7 187.96 90)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "570057b0-c562-4a9e-9765-10703ff63046")
+	)
+	(hierarchical_label "VBAT"
+		(shape input)
+		(at 238.76 262.89 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "6b8119ec-e44f-4e47-9062-d62dfd91368e")
+	)
+	(no_connect
+		(at 165.1 133.35)
+		(uuid "30939ec9-2f8c-4a1d-80e8-22c495625ac2")
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

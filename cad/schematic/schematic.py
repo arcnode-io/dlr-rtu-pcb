@@ -11,7 +11,6 @@ import math
 from pathlib import Path
 from typing import Final
 
-import kicad_sch_api as ksa
 import sexpdata
 import yaml
 
@@ -38,6 +37,10 @@ LIB_BY_PART: Final = {
     "DHT11": "Sensor",
     "SP3485EN": "Interface_UART",
     "USB_C_Receptacle_USB2.0_14P": "Connector",
+    "BQ24650": "Battery_Management",
+    "LMR33630ADDA": "Regulator_Switching",
+    "Q_NMOS_GSD": "Transistor_FET",
+    "BAT54W": "Diode",
 }
 
 # Component value -> block (catches all uniquely-named ICs and connectors)
@@ -237,6 +240,7 @@ def _comp_nets_index(nets: list[dict]) -> dict[str, set[str]]:
 
 
 SOURCE_FILE_TO_BLOCK: Final = {
+    "charger.py": "charger",
     "power.py": "power",
     "som.py": "som",
     "cellular.py": "cellular",
@@ -268,19 +272,30 @@ def _classify(comp: dict, comp_nets: set[str]) -> str:
     return "misc"
 
 
+# Reason: a cell must hold the symbol (half-extent ≤ 10 wide / ≤ 14 tall for a
+# 1x14 header) plus its 8-grid stubs on both sides, so no stub can reach a
+# neighbour's pin end — that is the only way two nets ever merge on a sheet.
+MIN_CELL_W: Final = 40
+MIN_CELL_H: Final = 50
+
+
 def _grid_for_block(n: int, w: int, h: int) -> tuple[int, int, int]:
-    """Choose (cols, cell_w, cell_h) so n components fit in w x h with even spacing."""
+    """Choose (cols, cell_w, cell_h) so n components fit in w x h with cells ≥ MIN_CELL."""
     if n == 0:
         return 1, w, h
-    cols = max(1, min(n, math.ceil(math.sqrt(n * w / max(h, 1)))))
+    cols = max(1, min(n, w // MIN_CELL_W))
     rows = math.ceil(n / cols)
-    cell_w = max(20, w // cols)
-    cell_h = max(20, h // rows)
-    return cols, cell_w, cell_h
+    if rows * MIN_CELL_H > h:
+        raise ValueError(
+            f"{n} components need {rows} rows of {MIN_CELL_H}; block is {h} tall"
+        )
+    return cols, w // cols, h // rows
 
 
 BLOCK_TITLES: Final = {
-    "power": "POWER",
+    "charger": "SOLAR MPPT CHARGER",
+    # Reason: no "/" in a sheet name — kicad-cli builds the export filename from it
+    "power": "POWER RAILS",
     "som": "CM4 SoM",
     "cellular": "CELLULAR",
     "sensors": "IEEE 738 SENSORS",
@@ -290,35 +305,11 @@ BLOCK_TITLES: Final = {
 }
 
 
-def _draw_block_frame(sch, block_name: str, region: dict) -> None:
-    """Thin gray dashed border + title text for a functional block."""
-    ox, oy = region["origin"]
-    w, h = region["width"], region["height"]
-    pad = 4  # frame padding so it doesn't crowd components
-    gray = (128, 128, 128, 1.0)
-    with contextlib.suppress(Exception):
-        sch.add_rectangle(
-            start=(ox - pad, oy - pad),
-            end=(ox + w + pad, oy + h + pad),
-            stroke_width=0.05,
-            stroke_type="dash",
-            stroke_color=gray,
-        )
-        title = BLOCK_TITLES.get(block_name, block_name.upper())
-        sch.add_text(
-            title,
-            position=(ox, oy - pad - 3),
-            size=2.0,
-            bold=True,
-            color=gray,
-        )
-
-
 # Components whose symbol body is much taller than typical (multi-unit / many-pin).
-# Reserve a dedicated full-width row at the top of their block so their pin
-# labels and body don't overflow into adjacent components.
+# They get a dedicated column on the left of their block so their pin labels
+# and body don't overflow into the grid of ordinary parts.
 TALL_COMPONENT_VALUES: Final = {"BG770A-NA", "CM4_J2"}
-TALL_ROW_HEIGHT: Final = 110  # grid units — covers BG770A body (~80) + label margin
+TALL_COL_WIDTH: Final = 110  # grid units — BG770A body + stubs + label text
 
 
 def _place_one(sch, comp: dict, gx: int, gy: int):
@@ -333,7 +324,12 @@ def _place_one(sch, comp: dict, gx: int, gy: int):
 
 
 def _place_block(sch, block_components: list[dict], region: dict) -> dict:
-    """Place tall ICs in a dedicated top row, rest in a sub-grid below."""
+    """Place tall ICs in a left column, the rest in a deterministic sub-grid.
+
+    No jitter: placement is a pure function of the netlist, so two runs give the
+    same schematic and ERC result. Cross-net safety comes from MIN_CELL_* plus
+    sch_guard.check_collisions, not from randomness.
+    """
     placed: dict = {}
     ox, oy = region["origin"]
     w, h = region["width"], region["height"]
@@ -341,31 +337,23 @@ def _place_block(sch, block_components: list[dict], region: dict) -> dict:
     tall = [c for c in block_components if c.get("value") in TALL_COMPONENT_VALUES]
     rest = [c for c in block_components if c.get("value") not in TALL_COMPONENT_VALUES]
 
-    rest_oy, rest_h = oy, h
+    rest_ox, rest_w = ox, w
     if tall:
-        cell_w_t = w // len(tall)
-        gy_t = oy + TALL_ROW_HEIGHT // 2
+        row_h = h // len(tall)
         for i, comp in enumerate(tall):
-            gx = ox + i * cell_w_t + cell_w_t // 2
-            placed[comp["ref"]] = _place_one(sch, comp, gx, gy_t)
-        rest_oy = oy + TALL_ROW_HEIGHT
-        rest_h = max(20, h - TALL_ROW_HEIGHT)
+            gx = ox + TALL_COL_WIDTH // 2
+            gy = oy + i * row_h + row_h // 2
+            placed[comp["ref"]] = _place_one(sch, comp, gx, gy)
+        rest_ox = ox + TALL_COL_WIDTH
+        rest_w = max(MIN_CELL_W, w - TALL_COL_WIDTH)
 
     n = len(rest)
     if n:
-        cols, cw, ch = _grid_for_block(n, w, rest_h)
+        cols, cw, ch = _grid_for_block(n, rest_w, h)
         for i, comp in enumerate(rest):
             row, col = divmod(i, cols)
-            # Per-component (dx, dy) hash jitter breaks x- and y-coincidence
-            # across the whole schematic. KiCad ERC falsely merges nets when
-            # any two wires share an x or y, so wide entropy is needed to avoid
-            # cascade merges. Prime moduli (17, 23) reduce structured collisions
-            # vs round moduli that align with pin offsets like 2.54/3.81/5.08.
-            h = abs(hash(comp["ref"]))
-            dx = h % 17
-            dy = (h // 17) % 23
-            gx = ox + col * cw + cw // 2 + dx
-            gy = rest_oy + row * ch + ch // 2 + dy
+            gx = rest_ox + col * cw + cw // 2
+            gy = oy + row * ch + ch // 2
             placed[comp["ref"]] = _place_one(sch, comp, gx, gy)
     return placed
 
@@ -417,82 +405,6 @@ def _outward_direction(comp, pin_num: str) -> tuple[int, int]:
     return (-1, 0)
 
 
-def _net_jitter(net_name: str) -> tuple[int, int]:
-    """Per-net x/y offset (0-2 grid) to break kicad's false-merge y/x coincidence bug."""
-    h = abs(hash(net_name))
-    return (h % 3, (h // 3) % 3)
-
-
-NET_Y_MOD: Final = {"GND": 0, "5V_RAIL": 1, "3V3": 2}
-
-
-def _power_symbol_y(net_name: str, base_y: int) -> int:
-    """Snap a power symbol's y to a unique-per-net residue mod 4.
-
-    KiCad ERC falsely merges nets when any two of their pins/symbols share
-    a y-coordinate (anywhere on the sheet — not just adjacent). Forcing each
-    net's symbols to land on a distinct y-mod-4 residue guarantees that two
-    *different* power nets can never produce a pin at the same y, so the
-    cross-net cascade can't trigger. Same-net symbols may share y, which is
-    fine because they're supposed to be on the same net anyway.
-    """
-    target = NET_Y_MOD.get(net_name, 3)
-    return base_y - (base_y % 4) + target
-
-
-def _route_pin(sch, comp, pin_num: str, net_name: str, pwr: PwrCounter) -> None:
-    """Stub a single pin — power symbol for power nets, NC marker for NC_*, label otherwise."""
-    try:
-        pin_pos_mm = _real_pin_position(comp, pin_num)
-    except Exception:
-        return
-    if not pin_pos_mm:
-        return
-    pin_grid = (round(pin_pos_mm.x / 1.27), round(pin_pos_mm.y / 1.27))
-
-    if net_name.startswith("NC_") or net_name.startswith("N$"):
-        with contextlib.suppress(Exception):
-            sch.no_connects.add(position=(pin_grid[0] * 1.27, pin_grid[1] * 1.27))
-        return
-
-    dx, dy = _outward_direction(comp, pin_num)
-    # Asymmetric stubs: right/down labels start text AT anchor (extends outward),
-    # left/up labels END text at anchor (text extends back toward symbol). Right-side
-    # needs a longer stub so visible text isn't crammed against the symbol body.
-    stub_len = 8 if (dx > 0 or dy > 0) else 4
-
-    if net_name in POWER_SYMBOL_BY_NET:
-        # Snap the power-symbol y to a per-net mod-4 residue so distinct power
-        # nets never share a y-coordinate anywhere on the sheet (KiCad ERC's
-        # y-coincidence bug uses that to false-merge nets).
-        rail_offset = {"GND": 0, "5V_RAIL": 0, "3V3": 2}.get(net_name, 0)
-        sym = POWER_SYMBOL_BY_NET[net_name]
-        if net_name == "GND":
-            base_y = pin_grid[1] + stub_len + rail_offset
-        else:
-            base_y = pin_grid[1] - stub_len - rail_offset
-        end = (pin_grid[0], _power_symbol_y(net_name, base_y))
-        with contextlib.suppress(Exception):
-            sch.add_wire(start=pin_grid, end=end)
-            sch.components.add(sym, pwr.pwr_ref(), sym.split(":")[-1], position=end)
-        return
-
-    # Outward-direction stub + label, with rotation matching pin direction.
-    # Smaller font (0.8mm) so labels fit within tight pin spacing on big connectors.
-    label_pos = (pin_grid[0] + dx * stub_len, pin_grid[1] + dy * stub_len)
-    if dx > 0:
-        label_rot = 0
-    elif dx < 0:
-        label_rot = 180
-    elif dy > 0:
-        label_rot = 270
-    else:
-        label_rot = 90
-    with contextlib.suppress(Exception):
-        sch.add_wire(start=pin_grid, end=label_pos)
-        sch.add_label(net_name, position=label_pos, rotation=label_rot, size=0.8)
-
-
 def _add_nc_at_pin(sch, comp, pin_num: str) -> None:
     """Place a no-connect marker at a component pin (mm coords)."""
     try:
@@ -503,79 +415,6 @@ def _add_nc_at_pin(sch, comp, pin_num: str) -> None:
         return
     with contextlib.suppress(Exception):
         sch.no_connects.add(position=(pos_mm.x, pos_mm.y))
-
-
-def _place_pwr_flags(sch, pwr: PwrCounter, nets_used: set[str]) -> None:
-    """Place ONE PWR_FLAG per used power net with unique x AND y per flag.
-
-    Per kicad's y/x coincidence ERC false-merge bug, every PWR_FLAG must have
-    a unique x AND a unique y from every other PWR_FLAG. Use index-based
-    diagonal staggering to guarantee both.
-    """
-    for i, net_name in enumerate(sorted(nets_used)):
-        sym = POWER_SYMBOL_BY_NET.get(net_name)
-        if not sym:
-            continue
-        # Each PWR + FLG pair lands on the per-net mod-4 residue (same as inline
-        # power-symbol routing) so the FLAG bank can't y-coincide with any other
-        # power symbol on the sheet. Wire must be axis-aligned (KiCad treats
-        # diagonals as graphics, not connections).
-        # x-base 850 puts the bank in the empty right-of-SoM strip on A0
-        # (936 grid wide); was 40 on A1 — that crammed the bank against the
-        # power block and triggered false-merges.
-        x = 850 + i * 30
-        y_base = 28 + i * 4
-        y = _power_symbol_y(net_name, y_base)
-        flg_y = _power_symbol_y(net_name, y - 8)  # FLG below PWR, same residue
-        with contextlib.suppress(Exception):
-            sch.components.add(sym, pwr.pwr_ref(), sym.split(":")[-1], position=(x, y))
-            sch.components.add(
-                "power:PWR_FLAG", pwr.flg_ref(), "PWR_FLAG", position=(x, flg_y)
-            )
-            sch.add_wire(start=(x, y), end=(x, flg_y))
-
-
-def _route_explicit_nets(
-    sch, placed: dict, nets: list[dict], pwr: PwrCounter
-) -> tuple[set[tuple[str, str]], set[str]]:
-    """Stub each pin per its net (power symbol / NC marker / label). Returns (routed, pwr_nets_used)."""
-    routed: set[tuple[str, str]] = set()
-    pwr_nets_used: set[str] = set()
-    for net in nets:
-        if net["name"] in POWER_SYMBOL_BY_NET:
-            pwr_nets_used.add(net["name"])
-        if len(net["nodes"]) == 1:
-            node = net["nodes"][0]
-            comp = placed.get(node["ref"])
-            if comp:
-                _add_nc_at_pin(sch, comp, node["pin"])
-                routed.add((node["ref"], node["pin"]))
-            continue
-        for node in net["nodes"]:
-            comp = placed.get(node["ref"])
-            if comp:
-                _route_pin(sch, comp, node["pin"], net["name"], pwr)
-                routed.add((node["ref"], node["pin"]))
-    return routed, pwr_nets_used
-
-
-def _add_orphan_no_connects(sch, placed: dict, routed: set[tuple[str, str]]) -> None:
-    """Mark every un-routed pin as no-connect.
-
-    Now that pin positions are computed correctly (via _real_pin_position with
-    the y-inversion fix), large parts like BG95-M1 (102 pins, single-unit) work
-    fine here too. The earlier >30 pin skip was a workaround for the y-inversion
-    bug that's now fixed.
-    """
-    for ref, comp in placed.items():
-        try:
-            pins = comp.list_pins()
-        except Exception:
-            continue
-        for pin in pins:
-            num = pin["number"]
-            if (ref, num) not in routed:
-                _add_nc_at_pin(sch, comp, num)
 
 
 def _power_driven_nets(nets: list[dict]) -> set[str]:
@@ -594,26 +433,36 @@ def _power_driven_nets(nets: list[dict]) -> set[str]:
     return driven
 
 
-def _label_pins(sch, placed: dict, nets: list[dict]) -> None:
-    pwr = PwrCounter()
-    routed, pwr_nets_used = _route_explicit_nets(sch, placed, nets, pwr)
-    _add_orphan_no_connects(sch, placed, routed)
-    flag_nets = pwr_nets_used - _power_driven_nets(nets)
-    _place_pwr_flags(sch, pwr, flag_nets)
+def _power_input_nets(nets: list[dict]) -> set[str]:
+    """Nets that feed at least one power-input pin."""
+    inputs: set[str] = set()
+    for net in nets:
+        for node in net["nodes"]:
+            ptype = node.get("pintype", "").upper().replace("_", "-")
+            if ptype.startswith("POWER-IN"):
+                inputs.add(net["name"])
+                break
+    return inputs
+
+
+def flag_required_nets(nets: list[dict]) -> frozenset[str]:
+    """Nets ERC will call undriven: they reach a power-input pin with no power-output pin.
+
+    Reason: a rail fed through a passive — VBAT out of the battery connector, the
+    charger's VCC through its 10 ohm filter — has no Power-output pin anywhere, so
+    KiCad reports power_pin_not_driven until a PWR_FLAG declares it a source.
+    """
+    return frozenset(_power_input_nets(nets) - _power_driven_nets(nets))
 
 
 def build_schematic() -> None:
     """Top-level — emit hierarchical multi-sheet schematic.
 
     Root .kicad_sch holds one sheet symbol per functional block; each block
-    becomes its own dlr_carrier-<block>.kicad_sch child file. Per-sheet ERC
-    scope bounds KiCad's y-coincidence false-merge bug.
+    becomes its own dlr_carrier-<block>.kicad_sch child file.
     """
-    from cad.schematic.multi_sheet import (
-        build_child_sheet,
-        build_root_sheet,
-        cross_block_nets,
-    )
+    from cad.schematic.multi_sheet import build_child_sheet, cross_block_nets
+    from cad.schematic.root_sheet import build_root_sheet
 
     spec = yaml.safe_load(LAYOUT_SPEC_PATH.read_text())
     components, nets = _parse_netlist(NETLIST_PATH)
@@ -625,10 +474,18 @@ def build_schematic() -> None:
         by_block.setdefault(block, []).append(comp)
 
     cross_nets = cross_block_nets(by_block, nets)
+    # Every undriven rail needs exactly one PWR_FLAG in the hierarchy. The three
+    # global power nets are flagged on the POWER sheet; a local rail (VBAT, CHG_VCC)
+    # is flagged on whichever sheet owns it — first sheet to route it wins.
+    flag_nets = flag_required_nets(nets)
+    global_flags = frozenset(set(POWER_SYMBOL_BY_NET) & flag_nets)
+    local_flags = flag_nets - set(POWER_SYMBOL_BY_NET)
+    flagged: set[str] = set()
     root_path = Path(SCHEMATIC_PATH)
     block_sheets: list[tuple[str, str, set[str]]] = []
 
     block_order = [
+        "charger",
         "power",
         "som",
         "sensors",
@@ -643,26 +500,19 @@ def build_schematic() -> None:
             continue
         child_filename = f"{root_path.stem}-{block_name}.kicad_sch"
         child_path = str(root_path.parent / child_filename)
-        child_cross = build_child_sheet(block_name, comps, nets, cross_nets, child_path)
+        child_cross = build_child_sheet(
+            block_name,
+            comps,
+            nets,
+            cross_nets,
+            child_path,
+            flag_nets=(global_flags if block_name == "power" else frozenset())
+            | local_flags,
+            flagged=flagged,
+        )
         block_sheets.append((block_name, child_filename, child_cross))
 
-    build_root_sheet(block_sheets, str(root_path), spec["title"], nets=nets)
-    return  # below logic is single-sheet legacy, unreachable
-
-    # === Legacy single-sheet path (kept for reference; unreachable above) ===
-    ksa.use_grid_units(True)
-    sch = ksa.create_schematic(spec["title"])
-    sch.set_paper_size(spec.get("sheet_size", "A1"))
-    sch.set_title_block(title=spec["title"], company="Engineering With AI", rev="1.0")
-
-    placed: dict = {}
-    for block_name, comps in by_block.items():
-        region = spec["blocks"].get(block_name, spec["blocks"]["misc"])
-        _draw_block_frame(sch, block_name, region)
-        placed.update(_place_block(sch, comps, region))
-
-    _label_pins(sch, placed, nets)
-    sch.save_as(SCHEMATIC_PATH)
+    build_root_sheet(block_sheets, str(root_path), spec["title"])
 
 
 if __name__ == "__main__":

@@ -9,43 +9,10 @@
   "groups": {
     "cm4_socket": [
       {
-        "ref": "C15",
-        "value": "100nF",
-        "x_mm": 198.0,
-        "y_mm": 104.0,
-        "rotation_deg": 0.0,
-        "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
-        "bbox_w_mm": 1.87,
-        "bbox_h_mm": 0.97
-      },
-      {
-        "ref": "C14",
-        "value": "100nF",
-        "x_mm": 188.0,
-        "y_mm": 104.0,
-        "rotation_deg": 0.0,
-        "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
-        "bbox_w_mm": 1.87,
-        "bbox_h_mm": 0.97
-      },
-      {
-        "ref": "C16",
-        "value": "100nF",
-        "x_mm": 208.0,
-        "y_mm": 104.0,
-        "rotation_deg": 0.0,
-        "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
-        "bbox_w_mm": 1.87,
-        "bbox_h_mm": 0.97
-      },
-      {
         "ref": "J5",
         "value": "CM4_J2",
         "x_mm": 198.0,
-        "y_mm": 94.0,
+        "y_mm": 96.0,
         "rotation_deg": 0.0,
         "flipped": false,
         "model_path": null,
@@ -53,15 +20,48 @@
         "bbox_h_mm": 5.14
       },
       {
+        "ref": "C14",
+        "value": "100nF",
+        "x_mm": 186.0,
+        "y_mm": 108.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 1.87,
+        "bbox_h_mm": 0.97
+      },
+      {
         "ref": "C17",
         "value": "100nF",
         "x_mm": 214.0,
-        "y_mm": 94.0,
+        "y_mm": 96.0,
         "rotation_deg": 90.0,
         "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+        "model_path": null,
         "bbox_w_mm": 0.97,
         "bbox_h_mm": 1.87
+      },
+      {
+        "ref": "C15",
+        "value": "100nF",
+        "x_mm": 198.0,
+        "y_mm": 108.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 1.87,
+        "bbox_h_mm": 0.97
+      },
+      {
+        "ref": "C16",
+        "value": "100nF",
+        "x_mm": 210.0,
+        "y_mm": 108.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 1.87,
+        "bbox_h_mm": 0.97
       }
     ],
     "cellular_modem": [
@@ -72,42 +72,9 @@
         "y_mm": 130.0,
         "rotation_deg": 0.0,
         "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+        "model_path": null,
         "bbox_w_mm": 1.91,
         "bbox_h_mm": 0.99
-      },
-      {
-        "ref": "C18",
-        "value": "4.7uF",
-        "x_mm": 178.0,
-        "y_mm": 118.0,
-        "rotation_deg": 0.0,
-        "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
-        "bbox_w_mm": 1.87,
-        "bbox_h_mm": 0.97
-      },
-      {
-        "ref": "C20",
-        "value": "100nF",
-        "x_mm": 186.0,
-        "y_mm": 118.0,
-        "rotation_deg": 0.0,
-        "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
-        "bbox_w_mm": 1.87,
-        "bbox_h_mm": 0.97
-      },
-      {
-        "ref": "C19",
-        "value": "100nF",
-        "x_mm": 182.0,
-        "y_mm": 118.0,
-        "rotation_deg": 0.0,
-        "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
-        "bbox_w_mm": 1.87,
-        "bbox_h_mm": 0.97
       },
       {
         "ref": "C22",
@@ -116,7 +83,7 @@
         "y_mm": 112.0,
         "rotation_deg": 0.0,
         "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+        "model_path": null,
         "bbox_w_mm": 1.87,
         "bbox_h_mm": 0.97
       },
@@ -127,7 +94,40 @@
         "y_mm": 120.0,
         "rotation_deg": 0.0,
         "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+        "model_path": null,
+        "bbox_w_mm": 1.87,
+        "bbox_h_mm": 0.97
+      },
+      {
+        "ref": "C19",
+        "value": "100nF",
+        "x_mm": 182.0,
+        "y_mm": 118.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 1.87,
+        "bbox_h_mm": 0.97
+      },
+      {
+        "ref": "C20",
+        "value": "100nF",
+        "x_mm": 186.0,
+        "y_mm": 118.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 1.87,
+        "bbox_h_mm": 0.97
+      },
+      {
+        "ref": "C18",
+        "value": "4.7uF",
+        "x_mm": 178.0,
+        "y_mm": 118.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
         "bbox_w_mm": 1.87,
         "bbox_h_mm": 0.97
       },
@@ -138,66 +138,22 @@
         "y_mm": 138.0,
         "rotation_deg": 0.0,
         "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/RF_GSM.3dshapes/Quectel_BG95.step",
+        "model_path": null,
         "bbox_w_mm": 21.95,
         "bbox_h_mm": 25.65
       }
     ],
     "cellular_io": [
       {
-        "ref": "R7",
-        "value": "10k",
-        "x_mm": 186.0,
-        "y_mm": 155.0,
-        "rotation_deg": 90.0,
-        "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
-        "bbox_w_mm": 0.99,
-        "bbox_h_mm": 1.91
-      },
-      {
-        "ref": "U4",
-        "value": "TXS0108E",
+        "ref": "J7",
+        "value": "SIM",
         "x_mm": 210.0,
-        "y_mm": 130.0,
-        "rotation_deg": 90.0,
-        "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Package_SO.3dshapes/TSSOP-20_4.4x6.5mm_P0.65mm.step",
-        "bbox_w_mm": 7.05,
-        "bbox_h_mm": 8.125
-      },
-      {
-        "ref": "C23",
-        "value": "100nF",
-        "x_mm": 204.0,
-        "y_mm": 118.0,
+        "y_mm": 162.0,
         "rotation_deg": 0.0,
         "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
-        "bbox_w_mm": 1.87,
-        "bbox_h_mm": 0.97
-      },
-      {
-        "ref": "C24",
-        "value": "100nF",
-        "x_mm": 214.0,
-        "y_mm": 120.0,
-        "rotation_deg": 0.0,
-        "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
-        "bbox_w_mm": 1.87,
-        "bbox_h_mm": 0.97
-      },
-      {
-        "ref": "R6",
-        "value": "100k",
-        "x_mm": 182.0,
-        "y_mm": 155.0,
-        "rotation_deg": 90.0,
-        "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
-        "bbox_w_mm": 0.99,
-        "bbox_h_mm": 1.91
+        "model_path": null,
+        "bbox_w_mm": 14.67,
+        "bbox_h_mm": 32.125
       },
       {
         "ref": "J6",
@@ -206,90 +162,90 @@
         "y_mm": 125.0,
         "rotation_deg": 0.0,
         "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Connector_Coaxial.3dshapes/U.FL_Hirose_U.FL-R-SMT-1_Vertical.step",
-        "bbox_w_mm": 4.35,
+        "model_path": null,
+        "bbox_w_mm": 4.4,
         "bbox_h_mm": 5.05
       },
       {
-        "ref": "J7",
-        "value": "SIM",
-        "x_mm": 208.0,
-        "y_mm": 158.0,
+        "ref": "U4",
+        "value": "TXS0108E",
+        "x_mm": 210.0,
+        "y_mm": 130.0,
+        "rotation_deg": 90.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 7.05,
+        "bbox_h_mm": 8.125
+      },
+      {
+        "ref": "R6",
+        "value": "100k",
+        "x_mm": 182.0,
+        "y_mm": 155.0,
+        "rotation_deg": 90.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 0.99,
+        "bbox_h_mm": 1.91
+      },
+      {
+        "ref": "R7",
+        "value": "10k",
+        "x_mm": 186.0,
+        "y_mm": 155.0,
+        "rotation_deg": 90.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 0.99,
+        "bbox_h_mm": 1.91
+      },
+      {
+        "ref": "C24",
+        "value": "100nF",
+        "x_mm": 214.0,
+        "y_mm": 120.0,
         "rotation_deg": 0.0,
         "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Connector_JAE.3dshapes/JAE_SIM_Card_SF72S006.step",
-        "bbox_w_mm": 12.05,
-        "bbox_h_mm": 15.2
+        "model_path": null,
+        "bbox_w_mm": 1.87,
+        "bbox_h_mm": 0.97
+      },
+      {
+        "ref": "C23",
+        "value": "100nF",
+        "x_mm": 204.0,
+        "y_mm": 118.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 1.87,
+        "bbox_h_mm": 0.97
       }
     ],
     "vision_thermal": [
       {
         "ref": "J8",
-        "value": "FLIR_LEPTON",
-        "x_mm": 110.0,
-        "y_mm": 145.0,
-        "rotation_deg": 0.0,
+        "value": "FLIR_LEPTON_FFC",
+        "x_mm": 107.0,
+        "y_mm": 146.0,
+        "rotation_deg": -90.0,
         "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x14_P2.54mm_Vertical.step",
-        "bbox_w_mm": 3.59,
-        "bbox_h_mm": 36.63
+        "model_path": null,
+        "bbox_w_mm": 7.95,
+        "bbox_h_mm": 13.17
       }
     ],
     "atmospherics": [
       {
-        "ref": "U6",
-        "value": "ADS1115",
-        "x_mm": 140.0,
-        "y_mm": 155.0,
-        "rotation_deg": 0.0,
+        "ref": "R11",
+        "value": "2.2k",
+        "x_mm": 155.0,
+        "y_mm": 152.0,
+        "rotation_deg": 90.0,
         "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Package_SO.3dshapes/MSOP-10_3x3mm_P0.5mm.step",
-        "bbox_w_mm": 6.41,
-        "bbox_h_mm": 3.605
-      },
-      {
-        "ref": "C28",
-        "value": "100nF",
-        "x_mm": 150.0,
-        "y_mm": 148.0,
-        "rotation_deg": 0.0,
-        "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
-        "bbox_w_mm": 1.87,
-        "bbox_h_mm": 0.97
-      },
-      {
-        "ref": "C27",
-        "value": "100nF",
-        "x_mm": 145.0,
-        "y_mm": 148.0,
-        "rotation_deg": 0.0,
-        "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
-        "bbox_w_mm": 1.87,
-        "bbox_h_mm": 0.97
-      },
-      {
-        "ref": "C25",
-        "value": "100nF",
-        "x_mm": 130.0,
-        "y_mm": 148.0,
-        "rotation_deg": 0.0,
-        "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
-        "bbox_w_mm": 1.87,
-        "bbox_h_mm": 0.97
-      },
-      {
-        "ref": "C26",
-        "value": "100nF",
-        "x_mm": 135.0,
-        "y_mm": 148.0,
-        "rotation_deg": 0.0,
-        "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
-        "bbox_w_mm": 1.87,
-        "bbox_h_mm": 0.97
+        "model_path": null,
+        "bbox_w_mm": 0.99,
+        "bbox_h_mm": 1.91
       },
       {
         "ref": "R8",
@@ -298,29 +254,7 @@
         "y_mm": 140.0,
         "rotation_deg": 90.0,
         "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
-        "bbox_w_mm": 0.99,
-        "bbox_h_mm": 1.91
-      },
-      {
-        "ref": "J9",
-        "value": "SI1145",
-        "x_mm": 125.0,
-        "y_mm": 140.0,
-        "rotation_deg": 0.0,
-        "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x05_P2.54mm_Vertical.step",
-        "bbox_w_mm": 3.59,
-        "bbox_h_mm": 13.75
-      },
-      {
-        "ref": "R9",
-        "value": "10k",
-        "x_mm": 155.0,
-        "y_mm": 144.0,
-        "rotation_deg": 90.0,
-        "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+        "model_path": null,
         "bbox_w_mm": 0.99,
         "bbox_h_mm": 1.91
       },
@@ -331,9 +265,86 @@
         "y_mm": 148.0,
         "rotation_deg": 90.0,
         "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+        "model_path": null,
         "bbox_w_mm": 0.99,
         "bbox_h_mm": 1.91
+      },
+      {
+        "ref": "R9",
+        "value": "10k",
+        "x_mm": 155.0,
+        "y_mm": 144.0,
+        "rotation_deg": 90.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 0.99,
+        "bbox_h_mm": 1.91
+      },
+      {
+        "ref": "C25",
+        "value": "100nF",
+        "x_mm": 130.0,
+        "y_mm": 148.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 1.87,
+        "bbox_h_mm": 0.97
+      },
+      {
+        "ref": "C29",
+        "value": "10nF",
+        "x_mm": 150.0,
+        "y_mm": 158.0,
+        "rotation_deg": 90.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 0.97,
+        "bbox_h_mm": 1.87
+      },
+      {
+        "ref": "C27",
+        "value": "100nF",
+        "x_mm": 145.0,
+        "y_mm": 148.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 1.87,
+        "bbox_h_mm": 0.97
+      },
+      {
+        "ref": "C26",
+        "value": "100nF",
+        "x_mm": 135.0,
+        "y_mm": 148.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 1.87,
+        "bbox_h_mm": 0.97
+      },
+      {
+        "ref": "C28",
+        "value": "100nF",
+        "x_mm": 150.0,
+        "y_mm": 148.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 1.87,
+        "bbox_h_mm": 0.97
+      },
+      {
+        "ref": "J9",
+        "value": "SI1145",
+        "x_mm": 125.0,
+        "y_mm": 140.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 3.59,
+        "bbox_h_mm": 13.75
       },
       {
         "ref": "J10",
@@ -342,7 +353,7 @@
         "y_mm": 140.0,
         "rotation_deg": 0.0,
         "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x04_P2.54mm_Vertical.step",
+        "model_path": null,
         "bbox_w_mm": 3.59,
         "bbox_h_mm": 11.21
       },
@@ -353,77 +364,176 @@
         "y_mm": 155.0,
         "rotation_deg": 0.0,
         "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Sensor.3dshapes/Aosong_DHT11_5.5x12.0_P2.54mm.step",
+        "model_path": null,
         "bbox_w_mm": 6.245,
         "bbox_h_mm": 12.745
       },
       {
-        "ref": "C29",
-        "value": "10nF",
-        "x_mm": 150.0,
-        "y_mm": 158.0,
-        "rotation_deg": 90.0,
+        "ref": "U6",
+        "value": "ADS1115",
+        "x_mm": 140.0,
+        "y_mm": 155.0,
+        "rotation_deg": 0.0,
         "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
-        "bbox_w_mm": 0.97,
-        "bbox_h_mm": 1.87
-      },
-      {
-        "ref": "R11",
-        "value": "2.2k",
-        "x_mm": 155.0,
-        "y_mm": 152.0,
-        "rotation_deg": 90.0,
-        "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
-        "bbox_w_mm": 0.99,
-        "bbox_h_mm": 1.91
+        "model_path": null,
+        "bbox_w_mm": 6.25,
+        "bbox_h_mm": 3.605
       }
     ],
     "power_harvest": [
       {
-        "ref": "C2",
-        "value": "100nF",
-        "x_mm": 144.0,
-        "y_mm": 98.0,
-        "rotation_deg": 0.0,
-        "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
-        "bbox_w_mm": 1.87,
-        "bbox_h_mm": 0.97
-      },
-      {
-        "ref": "C1",
+        "ref": "C3",
         "value": "22uF",
-        "x_mm": 125.0,
-        "y_mm": 96.0,
+        "x_mm": 156.0,
+        "y_mm": 102.0,
         "rotation_deg": 0.0,
         "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Capacitor_SMD.3dshapes/C_1206_3216Metric.step",
+        "model_path": null,
         "bbox_w_mm": 4.65,
         "bbox_h_mm": 2.35
       },
       {
-        "ref": "C3",
+        "ref": "C1",
         "value": "22uF",
-        "x_mm": 155.0,
-        "y_mm": 98.0,
+        "x_mm": 122.0,
+        "y_mm": 92.0,
         "rotation_deg": 0.0,
         "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Capacitor_SMD.3dshapes/C_1206_3216Metric.step",
+        "model_path": null,
         "bbox_w_mm": 4.65,
         "bbox_h_mm": 2.35
       },
       {
         "ref": "L1",
         "value": "6.8uH",
-        "x_mm": 150.0,
+        "x_mm": 156.0,
         "y_mm": 92.0,
         "rotation_deg": 0.0,
         "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Inductor_SMD.3dshapes/L_Bourns-SRN6028.step",
-        "bbox_w_mm": 6.92,
-        "bbox_h_mm": 6.52
+        "model_path": null,
+        "bbox_w_mm": 9.05,
+        "bbox_h_mm": 8.55
+      },
+      {
+        "ref": "Q2",
+        "value": "DMN4035L-7",
+        "x_mm": 144.0,
+        "y_mm": 95.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 3.91,
+        "bbox_h_mm": 3.45
+      },
+      {
+        "ref": "Q1",
+        "value": "DMN4035L-7",
+        "x_mm": 144.0,
+        "y_mm": 90.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 3.91,
+        "bbox_h_mm": 3.45
+      },
+      {
+        "ref": "R22",
+        "value": "10k",
+        "x_mm": 124.0,
+        "y_mm": 100.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 1.91,
+        "bbox_h_mm": 0.99
+      },
+      {
+        "ref": "R19",
+        "value": "10k",
+        "x_mm": 133.0,
+        "y_mm": 87.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 1.91,
+        "bbox_h_mm": 0.99
+      },
+      {
+        "ref": "R23",
+        "value": "15k",
+        "x_mm": 127.0,
+        "y_mm": 100.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 1.91,
+        "bbox_h_mm": 0.99
+      },
+      {
+        "ref": "R21",
+        "value": "49.9k",
+        "x_mm": 139.0,
+        "y_mm": 87.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 1.91,
+        "bbox_h_mm": 0.99
+      },
+      {
+        "ref": "R18",
+        "value": "130k",
+        "x_mm": 130.0,
+        "y_mm": 87.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 1.91,
+        "bbox_h_mm": 0.99
+      },
+      {
+        "ref": "R20",
+        "value": "297k",
+        "x_mm": 136.0,
+        "y_mm": 87.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 1.91,
+        "bbox_h_mm": 0.99
+      },
+      {
+        "ref": "R25",
+        "value": "10k",
+        "x_mm": 127.0,
+        "y_mm": 103.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 1.91,
+        "bbox_h_mm": 0.99
+      },
+      {
+        "ref": "R17",
+        "value": "10",
+        "x_mm": 122.0,
+        "y_mm": 96.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 1.91,
+        "bbox_h_mm": 0.99
+      },
+      {
+        "ref": "R24",
+        "value": "10k",
+        "x_mm": 124.0,
+        "y_mm": 103.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 1.91,
+        "bbox_h_mm": 0.99
       },
       {
         "ref": "J1",
@@ -432,88 +542,132 @@
         "y_mm": 92.0,
         "rotation_deg": 0.0,
         "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/TerminalBlock_Phoenix.3dshapes/TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal.step",
+        "model_path": null,
         "bbox_w_mm": 11.22,
         "bbox_h_mm": 11.125
       },
       {
-        "ref": "J2",
-        "value": "BQ24650",
-        "x_mm": 138.0,
-        "y_mm": 92.0,
+        "ref": "R1",
+        "value": "20m",
+        "x_mm": 146.0,
+        "y_mm": 102.0,
         "rotation_deg": 0.0,
         "flipped": false,
         "model_path": null,
-        "bbox_w_mm": 4.685,
-        "bbox_h_mm": 4.31
+        "bbox_w_mm": 4.61,
+        "bbox_h_mm": 2.31
+      },
+      {
+        "ref": "C32",
+        "value": "1uF",
+        "x_mm": 129.0,
+        "y_mm": 101.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 1.87,
+        "bbox_h_mm": 0.97
+      },
+      {
+        "ref": "C34",
+        "value": "100nF",
+        "x_mm": 140.0,
+        "y_mm": 102.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 1.87,
+        "bbox_h_mm": 0.97
+      },
+      {
+        "ref": "C33",
+        "value": "1uF",
+        "x_mm": 132.0,
+        "y_mm": 101.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 1.87,
+        "bbox_h_mm": 0.97
+      },
+      {
+        "ref": "C2",
+        "value": "100nF",
+        "x_mm": 148.0,
+        "y_mm": 87.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 1.87,
+        "bbox_h_mm": 0.97
+      },
+      {
+        "ref": "C35",
+        "value": "100nF",
+        "x_mm": 136.0,
+        "y_mm": 105.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 1.87,
+        "bbox_h_mm": 0.97
+      },
+      {
+        "ref": "C31",
+        "value": "1uF",
+        "x_mm": 122.0,
+        "y_mm": 99.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 1.87,
+        "bbox_h_mm": 0.97
       },
       {
         "ref": "D1",
         "value": "SS34",
-        "x_mm": 125.0,
-        "y_mm": 88.0,
+        "x_mm": 122.0,
+        "y_mm": 87.0,
         "rotation_deg": 0.0,
         "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Diode_SMD.3dshapes/D_SMA.step",
+        "model_path": null,
         "bbox_w_mm": 7.095,
         "bbox_h_mm": 3.55
       },
       {
-        "ref": "R1",
-        "value": "20m",
-        "x_mm": 160.0,
+        "ref": "D4",
+        "value": "BAT54W",
+        "x_mm": 148.0,
         "y_mm": 92.0,
         "rotation_deg": 0.0,
         "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Resistor_SMD.3dshapes/R_1206_3216Metric.step",
-        "bbox_w_mm": 4.61,
-        "bbox_h_mm": 2.31
+        "model_path": null,
+        "bbox_w_mm": 2.95,
+        "bbox_h_mm": 2.39
+      },
+      {
+        "ref": "U8",
+        "value": "BQ24650RVAR",
+        "x_mm": 134.0,
+        "y_mm": 94.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 5.185,
+        "bbox_h_mm": 4.81
       }
     ],
     "power_buck": [
       {
-        "ref": "C9",
-        "value": "100nF",
-        "x_mm": 150.0,
-        "y_mm": 118.0,
-        "rotation_deg": 0.0,
-        "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
-        "bbox_w_mm": 1.87,
-        "bbox_h_mm": 0.97
-      },
-      {
-        "ref": "R2",
-        "value": "39.2k",
-        "x_mm": 170.0,
-        "y_mm": 108.0,
-        "rotation_deg": 90.0,
-        "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
-        "bbox_w_mm": 0.99,
-        "bbox_h_mm": 1.91
-      },
-      {
-        "ref": "C7",
-        "value": "470uF",
-        "x_mm": 162.0,
-        "y_mm": 112.0,
-        "rotation_deg": 0.0,
-        "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Capacitor_SMD.3dshapes/CP_Elec_8x10.step",
-        "bbox_w_mm": 10.835,
-        "bbox_h_mm": 8.85
-      },
-      {
-        "ref": "C5",
-        "value": "100nF",
+        "ref": "C4",
+        "value": "10uF",
         "x_mm": 125.0,
-        "y_mm": 114.0,
+        "y_mm": 108.0,
         "rotation_deg": 0.0,
         "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
-        "bbox_w_mm": 1.87,
-        "bbox_h_mm": 0.97
+        "model_path": null,
+        "bbox_w_mm": 4.65,
+        "bbox_h_mm": 2.35
       },
       {
         "ref": "L2",
@@ -522,9 +676,53 @@
         "y_mm": 110.0,
         "rotation_deg": 0.0,
         "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Inductor_SMD.3dshapes/L_Bourns-SRN8040_8x8.15mm.step",
-        "bbox_w_mm": 8.75,
-        "bbox_h_mm": 8.75
+        "model_path": null,
+        "bbox_w_mm": 9.05,
+        "bbox_h_mm": 8.55
+      },
+      {
+        "ref": "C8",
+        "value": "22uF",
+        "x_mm": 163.0,
+        "y_mm": 119.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 3.45,
+        "bbox_h_mm": 2.01
+      },
+      {
+        "ref": "C7",
+        "value": "470uF",
+        "x_mm": 163.0,
+        "y_mm": 112.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 10.835,
+        "bbox_h_mm": 8.85
+      },
+      {
+        "ref": "R2",
+        "value": "100k",
+        "x_mm": 170.0,
+        "y_mm": 108.0,
+        "rotation_deg": 90.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 0.99,
+        "bbox_h_mm": 1.91
+      },
+      {
+        "ref": "R3",
+        "value": "24.9k",
+        "x_mm": 170.0,
+        "y_mm": 112.0,
+        "rotation_deg": 90.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 0.99,
+        "bbox_h_mm": 1.91
       },
       {
         "ref": "C6",
@@ -533,89 +731,56 @@
         "y_mm": 116.0,
         "rotation_deg": 0.0,
         "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+        "model_path": null,
         "bbox_w_mm": 1.87,
         "bbox_h_mm": 0.97
       },
       {
-        "ref": "R3",
-        "value": "10k",
-        "x_mm": 170.0,
-        "y_mm": 112.0,
-        "rotation_deg": 90.0,
-        "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
-        "bbox_w_mm": 0.99,
-        "bbox_h_mm": 1.91
-      },
-      {
-        "ref": "C4",
-        "value": "4.7uF",
+        "ref": "C5",
+        "value": "220nF",
         "x_mm": 125.0,
-        "y_mm": 108.0,
+        "y_mm": 113.0,
         "rotation_deg": 0.0,
         "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
-        "bbox_w_mm": 3.45,
-        "bbox_h_mm": 2.01
+        "model_path": null,
+        "bbox_w_mm": 1.87,
+        "bbox_h_mm": 0.97
       },
       {
-        "ref": "J4",
+        "ref": "C36",
+        "value": "1uF",
+        "x_mm": 132.0,
+        "y_mm": 117.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 1.87,
+        "bbox_h_mm": 0.97
+      },
+      {
+        "ref": "C9",
+        "value": "100nF",
+        "x_mm": 150.0,
+        "y_mm": 118.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 1.87,
+        "bbox_h_mm": 0.97
+      },
+      {
+        "ref": "U9",
         "value": "LMR33630ADDA",
         "x_mm": 138.0,
         "y_mm": 110.0,
         "rotation_deg": 0.0,
         "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Package_SO.3dshapes/HSOP-8-1EP_3.9x4.9mm_P1.27mm_EP2.41x3.1mm.step",
-        "bbox_w_mm": 7.45,
-        "bbox_h_mm": 5.585
-      },
-      {
-        "ref": "C8",
-        "value": "22uF",
-        "x_mm": 162.0,
-        "y_mm": 118.0,
-        "rotation_deg": 0.0,
-        "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
-        "bbox_w_mm": 3.45,
-        "bbox_h_mm": 2.01
-      },
-      {
-        "ref": "R4",
-        "value": "47k",
-        "x_mm": 170.0,
-        "y_mm": 116.0,
-        "rotation_deg": 90.0,
-        "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
-        "bbox_w_mm": 0.99,
-        "bbox_h_mm": 1.91
+        "model_path": null,
+        "bbox_w_mm": 7.55,
+        "bbox_h_mm": 5.64
       }
     ],
     "power_ldo": [
-      {
-        "ref": "C11",
-        "value": "1uF",
-        "x_mm": 131.0,
-        "y_mm": 132.0,
-        "rotation_deg": 0.0,
-        "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
-        "bbox_w_mm": 1.87,
-        "bbox_h_mm": 0.97
-      },
-      {
-        "ref": "C12",
-        "value": "1uF",
-        "x_mm": 142.0,
-        "y_mm": 132.0,
-        "rotation_deg": 0.0,
-        "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
-        "bbox_w_mm": 1.87,
-        "bbox_h_mm": 0.97
-      },
       {
         "ref": "U2",
         "value": "LP5907MFX-3.8",
@@ -623,20 +788,9 @@
         "y_mm": 126.0,
         "rotation_deg": 0.0,
         "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Package_TO_SOT_SMD.3dshapes/SOT-23-5.step",
+        "model_path": null,
         "bbox_w_mm": 4.15,
         "bbox_h_mm": 3.625
-      },
-      {
-        "ref": "C13",
-        "value": "1uF",
-        "x_mm": 148.0,
-        "y_mm": 132.0,
-        "rotation_deg": 0.0,
-        "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
-        "bbox_w_mm": 1.87,
-        "bbox_h_mm": 0.97
       },
       {
         "ref": "U1",
@@ -645,9 +799,42 @@
         "y_mm": 126.0,
         "rotation_deg": 0.0,
         "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Package_TO_SOT_SMD.3dshapes/SOT-23-5.step",
+        "model_path": null,
         "bbox_w_mm": 4.15,
         "bbox_h_mm": 3.625
+      },
+      {
+        "ref": "C12",
+        "value": "1uF",
+        "x_mm": 142.0,
+        "y_mm": 132.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 1.87,
+        "bbox_h_mm": 0.97
+      },
+      {
+        "ref": "C13",
+        "value": "1uF",
+        "x_mm": 148.0,
+        "y_mm": 132.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 1.87,
+        "bbox_h_mm": 0.97
+      },
+      {
+        "ref": "C11",
+        "value": "1uF",
+        "x_mm": 131.0,
+        "y_mm": 132.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 1.87,
+        "bbox_h_mm": 0.97
       },
       {
         "ref": "C10",
@@ -656,7 +843,7 @@
         "y_mm": 132.0,
         "rotation_deg": 0.0,
         "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+        "model_path": null,
         "bbox_w_mm": 1.87,
         "bbox_h_mm": 0.97
       }
@@ -665,11 +852,11 @@
       {
         "ref": "J3",
         "value": "BAT",
-        "x_mm": 125.0,
-        "y_mm": 160.0,
+        "x_mm": 112.0,
+        "y_mm": 176.0,
         "rotation_deg": 0.0,
         "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/TerminalBlock_Phoenix.3dshapes/TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal.step",
+        "model_path": null,
         "bbox_w_mm": 11.22,
         "bbox_h_mm": 11.125
       }
@@ -682,9 +869,145 @@
         "y_mm": 164.0,
         "rotation_deg": 0.0,
         "flipped": false,
-        "model_path": "/usr/share/kicad/3dmodels/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x04_P2.54mm_Vertical.step",
+        "model_path": null,
         "bbox_w_mm": 3.59,
         "bbox_h_mm": 11.21
+      }
+    ],
+    "commissioning_usb": [
+      {
+        "ref": "R12",
+        "value": "5.1k",
+        "x_mm": 172.0,
+        "y_mm": 96.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 1.91,
+        "bbox_h_mm": 0.99
+      },
+      {
+        "ref": "R13",
+        "value": "5.1k",
+        "x_mm": 188.0,
+        "y_mm": 96.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 1.91,
+        "bbox_h_mm": 0.99
+      },
+      {
+        "ref": "J12",
+        "value": "USBC_COMMISSIONING",
+        "x_mm": 177.0,
+        "y_mm": 84.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 10.6,
+        "bbox_h_mm": 10.22
+      }
+    ],
+    "anemometer_port": [
+      {
+        "ref": "U7",
+        "value": "SP3485EN",
+        "x_mm": 152.0,
+        "y_mm": 168.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 7.45,
+        "bbox_h_mm": 5.585
+      },
+      {
+        "ref": "D2",
+        "value": "SM712-like",
+        "x_mm": 140.0,
+        "y_mm": 168.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 3.91,
+        "bbox_h_mm": 3.45
+      },
+      {
+        "ref": "R14",
+        "value": "120",
+        "x_mm": 160.0,
+        "y_mm": 166.0,
+        "rotation_deg": 90.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 0.99,
+        "bbox_h_mm": 1.91
+      },
+      {
+        "ref": "R15",
+        "value": "680",
+        "x_mm": 160.0,
+        "y_mm": 170.0,
+        "rotation_deg": 90.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 0.99,
+        "bbox_h_mm": 1.91
+      },
+      {
+        "ref": "R16",
+        "value": "680",
+        "x_mm": 160.0,
+        "y_mm": 174.0,
+        "rotation_deg": 90.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 0.99,
+        "bbox_h_mm": 1.91
+      },
+      {
+        "ref": "D3",
+        "value": "SMBJ24CA",
+        "x_mm": 128.0,
+        "y_mm": 174.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 7.395,
+        "bbox_h_mm": 4.55
+      },
+      {
+        "ref": "F1",
+        "value": "250mA",
+        "x_mm": 133.0,
+        "y_mm": 168.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 4.61,
+        "bbox_h_mm": 2.31
+      },
+      {
+        "ref": "C30",
+        "value": "100nF",
+        "x_mm": 152.0,
+        "y_mm": 173.0,
+        "rotation_deg": 0.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 1.87,
+        "bbox_h_mm": 0.97
+      },
+      {
+        "ref": "J13",
+        "value": "ANEMO_M12_5P",
+        "x_mm": 140.0,
+        "y_mm": 176.0,
+        "rotation_deg": 90.0,
+        "flipped": false,
+        "model_path": null,
+        "bbox_w_mm": 13.75,
+        "bbox_h_mm": 3.59
       }
     ]
   },

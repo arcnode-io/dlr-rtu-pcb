@@ -48,7 +48,7 @@ The carrier is the physical sensing + edge-compute layer of the DLR feedback loo
 
 ```mermaid
 graph LR
-    SOLAR["Solar Panel<br/>~20W 12V"] --> MPPT["MPPT Charger"]
+    SOLAR["Solar Panel<br/>~20W 12V"] --> MPPT["BQ24650 MPPT<br/>+ 2x DMN4035L"]
     MPPT --> BAT["LiFePO4 4S<br/>~50Wh + BMS"]
     BAT --> BUCK["Buck<br/>5V 3A"]
     BUCK --> CM4["CM4 SoM<br/>DF40 x2"]
@@ -212,7 +212,11 @@ restores both winter margin and 2-day autonomy.
 | 3.3V | AP2112K LDO | ADS1115 + SI1145 + YL-83 | 9 mA | 9 mA | 14 mA |
 | | | **Total @ 5V equiv** | **240 mA** | **1660 mA** | **3920 mA** |
 
-Daily energy with realistic CM4-always-on idle + 1/min sensor wake + 1/15 min cellular TX: **~29 Wh/day** (derived in `theory.ipynb`). A 50 Wh battery (90% DoD) gives ~1.6 days autonomy with no PV. A 20W panel at 2.5 sun-hours/day (winter Northeast US worst case) delivers ~45 Wh/day after MPPT η — **1.55x winter margin**, 2.5x annual avg.
+The 3920 mA peak is a worst-case *sum*, not a supported operating point. The LMR33630 delivers 3.375 A with worst-case silicon, so a coincident CM4-boot + Lepton-shutter + modem-TX peak browns the rail out below the CM4's 4.75 V floor — firmware sequences those loads apart (**ADR-017**, derived in `theory.ipynb` §7 and asserted in `sim/test_spice.py`). The CM4 boot peak on its own holds the rail at ~4.95 V.
+
+Daily energy with CM4-always-on idle + 1/min sensor wake + 1/15 min cellular TX: **~29 Wh/day** (derived in `theory.ipynb`). A 50 Wh battery (90% DoD) gives ~1.6 days autonomy with no PV. A 20W panel at 2.5 sun-hours/day (winter Northeast US worst case) delivers ~45 Wh/day after MPPT η — **1.55x winter margin**, 2.5x annual avg.
+
+That margin assumes a 120 mA CM4 idle (tuned Pi OS Lite, headless). The CM4 datasheet §5.3 quotes ~400 mA typical idle; at that figure the budget is 62.6 Wh/day and the 20 W panel does **not** carry winter (0.72x). Idle current is the single measurement that most needs a bench check before committing to the panel size.
 
 ## Environmental
 
@@ -228,36 +232,61 @@ Daily energy with realistic CM4-always-on idle + 1/min sensor wake + 1/15 min ce
 
 ## Fabrication Pipeline
 
-The project fabricates **two PCBs** (per ADR-013): the main carrier and the Lepton daughterboard. Both go through the same flow.
+Fully scripted — no GUI step. KiCad's "Update PCB from Schematic" is GUI-only, so `cad/drawing/sync_pcb.py` does the same job from the SKiDL netlist: it rebuilds every footprint from the library and reassigns every pad net, which is what keeps the board honest about what the schematic says.
 
 ```
- 1. uv run poe notebook         → theory.ipynb: power budget + signal integrity
- 2. uv run poe build            → SKiDL netlist (main carrier + daughterboard)
- 3. uv run poe sim              → validate buck regulation, MPPT, I2C/SPI timing
- 4. /generate-schematic         → professional .kicad_sch (each PCB)
+ 1. uv run poe notebook         → theory.ipynb: power, signal integrity, 5V transients
+ 2. uv run poe build            → SKiDL netlist
+ 3. uv run poe schematic        → hierarchical .kicad_sch (one sheet per block)
+ 4. uv run poe validate-model   → ERC, 0 violations (exits non-zero otherwise)
+ 5. uv run poe sim / cover      → pytest: hand calcs + ngspice transients
+
+ 6. uv run poe layout-asm       → the whole board flow, in order:
+      build       netlist from SKiDL
+      sync-asm    footprints + pad nets  <- replaces the GUI "Update PCB from Schematic"
+      place-asm   positions from cad/pcb_placement.yaml
+      setup-asm   4-layer stack, design rules, net classes, GND + 5V planes
+      route-asm   Specctra DSN -> Freerouting -> SES import -> zone fill
+      stitch-asm  vias from surface pads to their plane
+      validate-asm DRC, 0 violations
 
     ┌──────────────────────────────────────────────────────┐
-    │  HUMAN: open pcbnew, import netlist, save, close     │
+    │  HUMAN: review the render, adjust pcb_placement.yaml │
     └──────────────────────────────────────────────────────┘
 
- 5. /layout-pcb                 → place + autoroute + ground pour + DRC
-
-    ┌──────────────────────────────────────────────────────┐
-    │  HUMAN: review SVG, adjust pcb_placement.yaml        │
-    └──────────────────────────────────────────────────────┘
-
- 6. uv run poe validate-asm     → DRC 0 errors
- 7. uv run poe generate-asm     → gerbers + BOM + CPL (per board)
+ 7. uv run poe generate-asm     → gerbers + drill + STEP + BOM + CPL
 ```
+
+### Board status
+
+ERC is 0. DRC is clean of clearance, short, annular-ring and courtyard errors, with
+**5 connections still open** out of 457 pads — all of them escapes on the three
+finest-pitch parts, where Freerouting and `close_gaps` both run out of room:
+
+| Net | At (mm) | Part |
+|---|---|---|
+| 3V3 | 154.09, 140.00 | trace island to the sensor-block 3V3 run |
+| 3V3 | 144.52, 148.00 | U6 (ADS1115, MSOP-10) pin 8 |
+| 3V3 | 197.40, 97.54 | J5 (DF40, 0.4 mm) pin 17 |
+| GND | 197.80, 94.46 | J5 pin 20 |
+| BAT_SRP | 140.06, 101.20 | U8 (BQ24650, VQFN) pin 10 |
+
+`close_gaps` refuses to force copper through another net, so these are left for a
+human pass in pcbnew (`uv run poe inspect-asm`) rather than closed unsafely. Until
+they are routed the gerbers in `output/` are a preview, not a fab release.
 
 ## Layer Stack
+
+4-layer, 1.6 mm FR4, controlled impedance (ADR-016). Applied by `cad/drawing/board_setup.py`, so a regenerated board always has the same stack.
 
 | Layer | Use |
 |-------|-----|
 | F.Cu | Signal — high-speed (SPI 20MHz, USB2.0 to BG770A) |
-| In1.Cu | GND pour (unbroken under FLIR + cellular module) |
-| In2.Cu | Power planes — 5V, 3V3, BAT |
+| In1.Cu | GND plane, unbroken (reference for the USB pair and the Lepton SPI) |
+| In2.Cu | 5V_RAIL plane — CM4, both LDOs and the Lepton feed off it via drops |
 | B.Cu | Signal — low-speed (I2C, GPIO, UART) |
+
+Signals are confined to F.Cu / B.Cu: the router is told the inner layers are `power` type, so nothing slices a plane. VBAT, 3V3 and 3V8 run as 0.6 mm traces (`power` net class); signal vias are 0.5/0.25 mm so they fan out between the DF40's 0.4 mm pads, power vias 0.6/0.3 mm.
 
 Unbroken ground plane under the Lepton is critical — SPI runs at 20 MHz and the thermal imager is noise-sensitive. USB2.0 to the BG770A is differential-routed at 90Ω matched impedance with GND directly below. Analog traces from YL-83 to ADS1115 are guard-ringed on F.Cu. Cellular antenna is 50Ω microstrip to a u.FL connector.
 
@@ -265,21 +294,38 @@ Unbroken ground plane under the Lepton is critical — SPI runs at 20 MHz and th
 
 ```
 ├── pyproject.toml              # Dependencies and build config
-├── theory.ipynb                # Power budget + signal integrity derivation
+├── theory.ipynb                # Power, signal integrity, 5V transient derivations
 ├── sim/
-│   ├── model.py                # Buck regulation, LDO dropout, I2C/SPI timing
-│   └── test_run.py             # Assert simulation matches theory
+│   ├── constants.py            # Sourced part parameters (datasheet + edition cited)
+│   ├── model.py                # Closed-form: buck current, energy, I2C/SPI/USB
+│   ├── spice_bank.py           # Shared 5V output capacitor bank
+│   ├── spice_ripple.py         # ngspice: open-loop switching ripple (Eq 7)
+│   ├── spice_load_step.py      # ngspice: averaged current-mode boot-peak droop
+│   ├── test_run.py             # Assert closed-form results match theory.ipynb
+│   └── test_spice.py           # Assert ngspice results match theory.ipynb §7
 ├── cad/
 │   ├── netlist/
 │   │   ├── model.py            # Top-level SKiDL circuit (main carrier)
-│   │   ├── power.py            # MPPT + BMS + buck + LDO
+│   │   ├── charger.py          # Solar input + BQ24650 MPPT charger (ADR-015)
+│   │   ├── power.py            # LMR33630 5V buck + AP2112K / LP5907 LDOs
 │   │   ├── som.py              # CM4 DF40 connector + decoupling
 │   │   ├── cellular.py         # BG770A + SIM holder + u.FL
 │   │   ├── sensors.py          # FLIR (FFC), DHT22, SI1145, ADS1115, YL-83
+│   │   ├── anemometer.py       # RS-485 wind sensor port (SKU-agnostic)
 │   │   ├── connectors.py       # Battery + debug + USB-C commissioning
 │   │   └── lepton_daughter.py  # Daughterboard SKiDL (Molex socket + FFC)
+│   ├── schematic/              # Hierarchical .kicad_sch generator
+│   │   ├── schematic.py        # Netlist parse, block classification, placement
+│   │   ├── multi_sheet.py      # Per-block child sheets, power symbols, PWR_FLAG
+│   │   ├── root_sheet.py       # Root sheet + cross-net sheet pins
+│   │   └── sch_guard.py        # Fails the build on cross-net wire/pin collisions
+│   ├── drawing/                # Board pipeline (system python3 — pcbnew)
+│   │   ├── sync_pcb.py         # Footprints + pad nets from the netlist
+│   │   ├── place_pcb.py        # Positions from pcb_placement.yaml
+│   │   ├── board_setup.py      # 4-layer stack, rules, net classes, planes
+│   │   ├── route_pcb.py        # DSN -> Freerouting -> SES -> fill
+│   │   └── stitch_planes.py    # Surface-pad vias into the planes
 │   ├── lepton_daughter/        # Second PCB (per ADR-013) — Lepton + bracket
-│   ├── schematic/              # /generate-schematic output
 │   ├── assembly/               # CadQuery → GLB pipeline (build_assembly.py)
 │   ├── layout_spec.yaml        # Schematic block layout
 │   ├── pcb_placement.yaml      # Main-PCB component positions
