@@ -16,6 +16,8 @@ sch_guard.check_collisions enforces the first two across nets.
 from __future__ import annotations
 
 import contextlib
+import re
+from pathlib import Path
 from typing import Final
 
 import kicad_sch_api as ksa
@@ -39,6 +41,8 @@ FLAG_BRANCH: Final = (
     6  # grid units perpendicular from the stub midpoint to the PWR_FLAG
 )
 LABEL_ROTATION: Final = {(1, 0): 0, (-1, 0): 180, (0, 1): 270, (0, -1): 90}
+# Hierarchical labels and the root's sheet pins must agree on electrical type
+SHEET_PIN_TYPE: Final = "bidirectional"
 # Direction a power symbol's graphic points at rotation 0: rails up, GND down
 RAIL_DIRECTION: Final = {"GND": (0, 1)}
 
@@ -171,6 +175,11 @@ def _route_pin_multi(
         sch.add_hierarchical_label(
             net_name,
             position=(label_pos[0] * 1.27, label_pos[1] * 1.27),
+            # Reason: must match the sheet pin's type on the root, which is
+            # bidirectional. KiCad's hier_label_mismatch check compares electrical
+            # type as well as name; the library default of "input" makes every
+            # cross-sheet net an error on KiCad 9 (KiCad 10 tolerates it).
+            shape=SHEET_PIN_TYPE,
             rotation=label_rot,
             size=1.0,
         )
@@ -271,4 +280,23 @@ def build_child_sheet(
     check_collisions(placed, nets, wires)
 
     sch.save_as(sheet_path)
+    _force_label_shape(sheet_path, SHEET_PIN_TYPE)
     return sheet_cross_nets - set(POWER_SYMBOL_BY_NET)
+
+
+def _force_label_shape(sheet_path: str, shape: str) -> None:
+    """Rewrite every hierarchical label's shape in a saved sheet.
+
+    Reason: kicad-sch-api 0.5.6 accepts a `shape` argument on
+    add_hierarchical_label and then always serializes `(shape input)`. A label whose
+    type disagrees with its sheet pin is a hier_label_mismatch error on KiCad 9,
+    which is every cross-sheet net on this design.
+    """
+    path = Path(sheet_path)
+    path.write_text(
+        re.sub(
+            r'(\(hierarchical_label "[^"]+"\s*\n\s*\(shape )\w+(\))',
+            rf"\1{shape}\2",
+            path.read_text(),
+        )
+    )

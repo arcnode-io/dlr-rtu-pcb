@@ -2,7 +2,7 @@
 	(version 20250114)
 	(generator "eeschema")
 	(generator_version "9.0")
-	(uuid "ad58629c-2314-4e8d-95b2-00f0562e8317")
+	(uuid "60ce49b7-5723-40b3-8af3-b298ee684017")
 	(paper "A3")
 	(title_block
 		(title "DLR Carrier — IEEE 738 SENSORS")
@@ -1986,7 +1986,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "6151fe97-f374-4a5d-8950-e3e6cd5139e4")
+		(uuid "c247fea8-6bf5-4694-bd9b-86e5171f4d38")
 		(property "Reference" "C25"
 			(at 64.135 82.55 0.0000)
 			(effects
@@ -2015,14 +2015,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "99d54a2e-e675-42e8-acef-a066a8fa3ca0")
+			(uuid "cf7f5afd-9a39-4879-81b2-e307bcc3219d")
 		)
 		(pin "2"
-			(uuid "836973c3-c7d8-4e29-908e-2711beb15087")
+			(uuid "57077107-3406-4226-8a04-4a3a584ba488")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "C25")
 					(unit 1)
 				)
@@ -2038,7 +2038,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "948e5e07-c071-49bb-9674-dedb45f2ad2f")
+		(uuid "470bacfd-e942-4217-a91c-b490f8526290")
 		(property "Reference" "C26"
 			(at 114.935 82.55 0.0000)
 			(effects
@@ -2067,14 +2067,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "cce4d967-0d75-4653-a636-72903330e808")
+			(uuid "fb3cf5a1-e241-4605-bd81-f54fba7f165f")
 		)
 		(pin "2"
-			(uuid "b4dae6df-dd66-4b4a-b96f-5f79d6a77db6")
+			(uuid "1791b8a5-12be-44d5-9795-a127818724ec")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "C26")
 					(unit 1)
 				)
@@ -2090,7 +2090,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "eb783740-b516-42f1-9011-bd52920933ee")
+		(uuid "f606d9ea-4157-4796-bab3-7c31722b2687")
 		(property "Reference" "C27"
 			(at 165.735 82.55 0.0000)
 			(effects
@@ -2119,14 +2119,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "89582fe6-3f42-4288-b546-4c9f6155de5a")
+			(uuid "6369f006-d8e4-4b54-8d05-704c51e71348")
 		)
 		(pin "2"
-			(uuid "1a86cecc-b58b-4567-8873-c226ed0f44e8")
+			(uuid "5c02e040-e38d-497f-a337-9a9b1d07899e")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "C27")
 					(unit 1)
 				)
@@ -2142,7 +2142,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "d1cc81d6-a9c9-401e-b84c-e843deaefc3b")
+		(uuid "b56bb898-4de6-4610-8e87-b57df3185196")
 		(property "Reference" "C28"
 			(at 216.535 82.55 0.0000)
 			(effects
@@ -2171,14 +2171,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "dd02d864-a967-4321-8c8c-44d8af705c96")
+			(uuid "34fab348-a0b5-4fe2-b885-ed858b4bec41")
 		)
 		(pin "2"
-			(uuid "8ba804af-8809-47f4-817f-6a189fddf58b")
+			(uuid "f364e304-9902-4c54-adf3-df6cc7b33199")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "C28")
 					(unit 1)
 				)
@@ -2194,7 +2194,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "c34d6e14-2bc2-4cdd-841c-ff5ebae06c1c")
+		(uuid "d4ed25c7-48bc-4ec5-8900-349a72e191bd")
 		(property "Reference" "C29"
 			(at 267.335 82.55 0.0000)
 			(effects
@@ -2223,14 +2223,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "65ee522a-aad4-4698-b962-862d9e3583fd")
+			(uuid "b8fac33e-cd3e-4de4-bff4-f2afa436227b")
 		)
 		(pin "2"
-			(uuid "e3474b37-e82c-408a-8076-733d729826fa")
+			(uuid "2ac6476c-e969-4c8d-a74c-60bea869516a")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "C29")
 					(unit 1)
 				)
@@ -2246,7 +2246,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "1591eda0-b055-4866-9238-aba9c9659475")
+		(uuid "169e71ee-729c-4ecd-b90c-3875f1816cff")
 		(property "Reference" "J10"
 			(at 317.5 85.09 0.0000)
 			(effects
@@ -2275,20 +2275,20 @@
 			)
 		)
 		(pin "1"
-			(uuid "3e4b0f7e-2610-4586-9ece-ea730e9be479")
+			(uuid "96f469be-15ea-4f18-8a6e-cd4a60f41a7f")
 		)
 		(pin "2"
-			(uuid "3f2ce539-6264-4caf-a254-518d0c51d4d4")
+			(uuid "4eac5925-d3c6-4be2-be8b-8d9687aa9148")
 		)
 		(pin "3"
-			(uuid "cad4644b-4555-430a-b5a3-9437ac358198")
+			(uuid "89d90f33-ba71-4733-859b-3cd21cbc0c88")
 		)
 		(pin "4"
-			(uuid "0d5c46e3-db96-4357-9e41-a8f4fafc10b1")
+			(uuid "2a88a90d-b445-4063-863a-12eaf0753242")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "J10")
 					(unit 1)
 				)
@@ -2304,7 +2304,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "6349af8f-9f56-4eb5-b936-380a22abf98a")
+		(uuid "6e5c69b6-2d8c-4802-94c4-64beec3495d5")
 		(property "Reference" "J8"
 			(at 368.3 97.79 0.0000)
 			(effects
@@ -2333,50 +2333,50 @@
 			)
 		)
 		(pin "1"
-			(uuid "4375c0c5-c991-40d2-8a60-c02ceb811577")
+			(uuid "ee33fdfc-9ec8-49a5-8f0b-b8ed183a3822")
 		)
 		(pin "2"
-			(uuid "6e756be6-31a7-4063-8cf4-7d4010e06b7d")
+			(uuid "352ed916-6ffe-44b0-a9e5-bcf2225815dd")
 		)
 		(pin "3"
-			(uuid "e981f4a4-3846-4be9-a124-fce986893fdb")
+			(uuid "272d39bf-a91a-4ed4-bbe6-f2dbb4c59040")
 		)
 		(pin "4"
-			(uuid "44a5d8c0-8d21-49a1-af3c-18a37ebf0892")
+			(uuid "e8c3af5d-89d6-49ad-b766-ebfae9fe8e9b")
 		)
 		(pin "5"
-			(uuid "9fed0e53-6c74-4bdf-aa1b-e5f3f3993ac8")
+			(uuid "3d0a1175-55d8-40ff-a4cc-afdcc7e7ce42")
 		)
 		(pin "6"
-			(uuid "6c7627af-d4c5-4463-a631-5601b69c024b")
+			(uuid "80ad7544-de17-44d8-8c19-9e297724573e")
 		)
 		(pin "7"
-			(uuid "6b618ae1-9e7d-424e-b24d-7a214d3b143f")
+			(uuid "37b85356-ea2e-4705-aac1-818d7fd7a953")
 		)
 		(pin "8"
-			(uuid "c269a130-8c77-44d5-ba1b-587d26ea84a7")
+			(uuid "e94f811a-9215-441b-b9a8-4af91a9d9e0a")
 		)
 		(pin "9"
-			(uuid "2fa534fa-a613-4e73-b102-270488cb50f2")
+			(uuid "51b82a41-54f7-4bb1-b16a-5b8e0a9c4112")
 		)
 		(pin "10"
-			(uuid "f846e134-6c65-4c9f-a962-efa73e6f12ed")
+			(uuid "ecd1eab8-141b-4675-9f3c-54502084f0d9")
 		)
 		(pin "11"
-			(uuid "00edc41a-c16a-49ee-b035-0d502cacf53a")
+			(uuid "b0a2af9c-361f-4823-9ce5-9d6252e9d64c")
 		)
 		(pin "12"
-			(uuid "469fdfcd-b2a1-4d55-8bdb-3f3fc895ad66")
+			(uuid "d5020e88-83d2-4d1c-b2a4-0327e2a6b6ed")
 		)
 		(pin "13"
-			(uuid "db0513ba-5cac-44ab-9dbc-98ca82b08163")
+			(uuid "bd09d665-2957-4493-a7d0-6e85222d5cec")
 		)
 		(pin "14"
-			(uuid "3d915fdf-7fdb-45a1-bb35-73a4a57e76be")
+			(uuid "f7bccd0c-a813-4f07-bb38-714597873bf9")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "J8")
 					(unit 1)
 				)
@@ -2392,7 +2392,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "067b6499-13f1-4b99-b86b-cfcefc5c600f")
+		(uuid "b80fb8a4-093d-4e44-aa0d-84db15a30842")
 		(property "Reference" "J9"
 			(at 63.5 171.45 0.0000)
 			(effects
@@ -2421,23 +2421,23 @@
 			)
 		)
 		(pin "1"
-			(uuid "fa025765-ec36-43b0-bf29-316a86db661f")
+			(uuid "54dbb81d-f66f-427b-934c-03025e006f76")
 		)
 		(pin "2"
-			(uuid "74fade86-78a0-49de-8a42-043ca37491dd")
+			(uuid "6144472c-2b67-400f-9556-73086cb3d5cc")
 		)
 		(pin "3"
-			(uuid "9ba6a035-0be0-4528-ba18-84f4d4782bd7")
+			(uuid "70e7018c-b997-45b5-859e-0e81203b4a0d")
 		)
 		(pin "4"
-			(uuid "6be9180b-eea1-49fe-bced-ede89e65177c")
+			(uuid "c7c3bc2d-8448-49cf-b3c2-898d2212ced6")
 		)
 		(pin "5"
-			(uuid "f5d556a4-a2b1-4673-a3f8-266fda60eddb")
+			(uuid "2cf69cb7-acf5-4dfb-87d9-f51bd36a0754")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "J9")
 					(unit 1)
 				)
@@ -2453,7 +2453,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "4715319a-4c99-4c5d-af37-bb12bda6d459")
+		(uuid "2bf135b2-e329-4523-a629-c2039632dfe8")
 		(property "Reference" "R10"
 			(at 116.332 163.83 90)
 			(effects
@@ -2482,14 +2482,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "283cea8a-aae9-4010-8cd1-45e94ee8d650")
+			(uuid "0c35e6fa-699e-4030-ad29-fedb198ff18e")
 		)
 		(pin "2"
-			(uuid "35faec8b-063d-4aff-8c5a-9faf040f5cd7")
+			(uuid "a2d31e22-7a91-4fd3-b4c4-320967cbd8cd")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "R10")
 					(unit 1)
 				)
@@ -2505,7 +2505,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "d68993c8-22a0-4886-bc30-ae5c38e6e85b")
+		(uuid "3dab42cf-6a6b-49bc-bfb3-89f959c0cac2")
 		(property "Reference" "R11"
 			(at 167.132 163.83 90)
 			(effects
@@ -2534,14 +2534,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "58e5e663-8bb3-4d1d-a904-6be417ab227b")
+			(uuid "79dd6d4f-c7fb-471e-80a8-0cd6f537b9fc")
 		)
 		(pin "2"
-			(uuid "f9dc3af6-8bd5-4447-b0d5-a727cb9f4a22")
+			(uuid "16324ffc-549f-4af0-99b9-d9aa35e88e6c")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "R11")
 					(unit 1)
 				)
@@ -2557,7 +2557,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "16511414-75ae-42e1-a930-4dee4797367a")
+		(uuid "be3e6701-33ce-4abd-9024-8b2de0ffdeec")
 		(property "Reference" "R7"
 			(at 217.932 163.83 90)
 			(effects
@@ -2586,14 +2586,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "c224deb8-5372-4f77-823b-ff937ee711cd")
+			(uuid "495a08d2-a7ff-41f6-a3b0-2c7f872fd74a")
 		)
 		(pin "2"
-			(uuid "20c5b185-a45c-4c46-8a9c-c53ff23e6a02")
+			(uuid "fabb5433-7435-4ad1-8b26-c77f7c59b885")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "R7")
 					(unit 1)
 				)
@@ -2609,7 +2609,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "fe00708d-9772-4cb8-b6fa-20efd830f765")
+		(uuid "3fb511ae-f2b5-47bc-81bc-9b2aaad8bc32")
 		(property "Reference" "R8"
 			(at 268.732 163.83 90)
 			(effects
@@ -2638,14 +2638,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "5322cec8-c7cf-40de-b9f9-8ba9431ef021")
+			(uuid "270fdbec-b678-4150-84e0-7ac485413687")
 		)
 		(pin "2"
-			(uuid "fbdd5e6c-cf29-4c6d-926d-460c65f60828")
+			(uuid "f5fbe914-d4fd-40ec-890f-8b43c558cf5f")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "R8")
 					(unit 1)
 				)
@@ -2661,7 +2661,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "fa815dd1-9727-47c3-b0a3-2e2d481e604a")
+		(uuid "60f6b6f2-bd66-4bf2-81d2-863bbf73aba3")
 		(property "Reference" "R9"
 			(at 319.532 163.83 90)
 			(effects
@@ -2690,14 +2690,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "b1cb8a17-4653-4cca-8281-ef3e7334632e")
+			(uuid "e0564671-cb7d-4003-8a88-a229f4641d3f")
 		)
 		(pin "2"
-			(uuid "4d842476-26e9-4db1-a21c-d9ce63c38da9")
+			(uuid "8a6b10ef-d783-4684-a918-27fb67c34ecb")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "R9")
 					(unit 1)
 				)
@@ -2713,7 +2713,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "3b01094f-1c89-4d69-b6eb-1ae341dc43c1")
+		(uuid "9a21ca06-461a-4e15-916e-19875aedeacb")
 		(property "Reference" "U5"
 			(at 364.49 170.18 0.0000)
 			(effects
@@ -2742,20 +2742,20 @@
 			)
 		)
 		(pin "1"
-			(uuid "83febb61-a9f4-4c57-ad7a-fe41db484041")
+			(uuid "e08ecda9-f26f-4a40-ae7a-16bda73b0f25")
 		)
 		(pin "2"
-			(uuid "3cdd4e88-bb50-4a4b-9c3d-6c6d502e0bc6")
+			(uuid "b35a88f3-1414-44fd-bd7c-40249668abf7")
 		)
 		(pin "3"
-			(uuid "775208fc-912f-4eaf-9718-851aa38a9547")
+			(uuid "312eb80a-3457-4dfe-915c-3af7520fc083")
 		)
 		(pin "4"
-			(uuid "d86968c1-9f31-4443-b923-98756b2ed41f")
+			(uuid "8b1c2eb8-c600-4555-a914-a124b69b3932")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "U5")
 					(unit 1)
 				)
@@ -2771,7 +2771,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "fc8c6e97-8cc6-4924-97d5-3b70055686e8")
+		(uuid "f8f203a6-d853-4b14-92fd-5bd5f469cd2d")
 		(property "Reference" "U6"
 			(at 66.04 261.62 0.0000)
 			(effects
@@ -2800,38 +2800,38 @@
 			)
 		)
 		(pin "1"
-			(uuid "de49cce7-1360-496b-98aa-96ec7f87c410")
+			(uuid "45ebe8fa-9d12-48dd-995e-a6b7e8025547")
 		)
 		(pin "2"
-			(uuid "d328adc6-474d-4da4-a408-8f033701b4f9")
+			(uuid "1fd94499-5ab5-4902-8f35-175b7840dc6e")
 		)
 		(pin "3"
-			(uuid "5922b991-0479-47ac-af0f-1f1f6cd7ba3d")
+			(uuid "97ea75ba-7f08-4093-8df6-8dfc97126c41")
 		)
 		(pin "4"
-			(uuid "cd4d0ba8-ccf3-42c2-aeb3-98ffdc668607")
+			(uuid "fcdac3f4-5839-4ab3-a707-2f7999a676dd")
 		)
 		(pin "5"
-			(uuid "d588e038-cd0b-4153-9b10-e9f90c4de606")
+			(uuid "a18aad09-a517-434d-a3d6-6d095bd91bef")
 		)
 		(pin "6"
-			(uuid "de3e56cb-678b-4cfb-865c-96aa28797561")
+			(uuid "de0a4e58-2da8-460f-8432-8adddc74c2d0")
 		)
 		(pin "7"
-			(uuid "6cbfee08-d99a-4465-b5a5-bb284398647c")
+			(uuid "6ba829b6-9113-4315-9399-7839d1208ec0")
 		)
 		(pin "8"
-			(uuid "64ece96c-692b-433d-9140-e0d44d5a6417")
+			(uuid "5537bc9e-1382-4309-8802-4e6ec601d331")
 		)
 		(pin "9"
-			(uuid "37666883-e16e-4559-a5b2-97f338c804a6")
+			(uuid "3ff5f45a-70a6-4ae2-8836-e90617b1e8f0")
 		)
 		(pin "10"
-			(uuid "664345f2-fd52-4486-8660-e69101a0844c")
+			(uuid "250b9e64-c1a6-4386-969c-6f28eae9d51f")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "U6")
 					(unit 1)
 				)
@@ -2847,7 +2847,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "908d0bd7-2c2b-4e49-9500-507021014285")
+		(uuid "472a1e3e-1bf1-4238-b16f-5c80c551eb7c")
 		(property "Reference" "#PWR001"
 			(at 63.5 64.77 0.0000)
 			(effects
@@ -2867,11 +2867,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "aea4f0eb-97f7-4f7e-b13b-38948ff49d0a")
+			(uuid "64fbbfb3-91b0-40f2-bdc8-0fbe42cee3c0")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "#PWR001")
 					(unit 1)
 				)
@@ -2887,7 +2887,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "e4a863e9-38b4-4abe-95c4-21a08098d520")
+		(uuid "e3d37e62-ac11-4187-aa92-68e07d63d62a")
 		(property "Reference" "#PWR002"
 			(at 114.3 64.77 0.0000)
 			(effects
@@ -2907,11 +2907,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "8e1a2b18-4298-4095-81ac-c1bc8eb4051a")
+			(uuid "bd3ed463-eb67-4dca-9c84-006d19d1d8d8")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "#PWR002")
 					(unit 1)
 				)
@@ -2927,7 +2927,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "21b1c867-15e5-45d4-b549-921cea796bd0")
+		(uuid "28fbdd1f-511b-4dc8-99be-dc1c4fce50f7")
 		(property "Reference" "#PWR003"
 			(at 165.1 64.77 0.0000)
 			(effects
@@ -2947,11 +2947,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "c48d63fa-490b-45fc-82f4-b7b6e39cd374")
+			(uuid "f3bd01f5-5d45-487a-887a-ea02880fa431")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "#PWR003")
 					(unit 1)
 				)
@@ -2967,7 +2967,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "abf9eecc-bed8-4558-96ca-813239568ab9")
+		(uuid "bc84c9ca-86e4-436e-b837-3fbd9d5341c1")
 		(property "Reference" "#PWR004"
 			(at 215.9 64.77 0.0000)
 			(effects
@@ -2987,11 +2987,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "cf402d61-2455-4fda-875d-b09325d82bf2")
+			(uuid "ef785e42-5464-421b-878a-2290d018f619")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "#PWR004")
 					(unit 1)
 				)
@@ -3007,7 +3007,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "0a973f25-3987-4a81-860b-336a17f3fe6f")
+		(uuid "81d2306e-3806-48e0-ae8c-85cb4b755ebe")
 		(property "Reference" "#PWR005"
 			(at 308.61 77.47 90)
 			(effects
@@ -3027,11 +3027,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "3ed39854-3c96-475c-abba-4e6258097b59")
+			(uuid "c4994a50-0e74-42dd-915e-26f5fc485b1d")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "#PWR005")
 					(unit 1)
 				)
@@ -3047,7 +3047,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "d400edb7-0abd-4878-8c7a-706f70389fd5")
+		(uuid "c3e79a79-86ae-4a79-b286-7596436e19b2")
 		(property "Reference" "#PWR006"
 			(at 359.41 95.25 90)
 			(effects
@@ -3067,11 +3067,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "1f9f60dc-ca85-4e72-82ba-25842be3cff4")
+			(uuid "6652bc08-a4e0-42e9-9b6e-af5f48f5048e")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "#PWR006")
 					(unit 1)
 				)
@@ -3087,7 +3087,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "3ad33d1a-eb5b-4c23-9f44-b17d79af3575")
+		(uuid "17c71f49-61a1-4df4-a8c5-dca69ba84246")
 		(property "Reference" "#PWR007"
 			(at 359.41 97.79 90)
 			(effects
@@ -3107,11 +3107,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "f7489091-9651-495b-bbd0-3de0e071eb4b")
+			(uuid "e63a3214-7c7d-42e3-b033-ad07a1c1f850")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "#PWR007")
 					(unit 1)
 				)
@@ -3127,7 +3127,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "76e37116-899f-46ce-b018-46e1a22a3e76")
+		(uuid "9c848fa6-28f3-43d9-aad5-9bd8c3561487")
 		(property "Reference" "#PWR008"
 			(at 54.61 158.75 90)
 			(effects
@@ -3147,11 +3147,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "ace9e31c-1a21-4f7d-8e30-5949d22c5548")
+			(uuid "5117731f-bf84-47ce-9838-a0406911b576")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "#PWR008")
 					(unit 1)
 				)
@@ -3167,7 +3167,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "2001d3a7-d169-47f3-933c-4fbe40f811b5")
+		(uuid "134b3adf-a77e-43c3-961e-6435ddef8a34")
 		(property "Reference" "#PWR009"
 			(at 114.3 179.07 180)
 			(effects
@@ -3187,11 +3187,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "14ceaa9f-ee85-45f9-b885-0bcfe77cb0bd")
+			(uuid "b317b32b-8b6e-424e-af05-03c2ba86bfff")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "#PWR009")
 					(unit 1)
 				)
@@ -3207,7 +3207,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "38601ded-82fc-416f-b03d-9ab1a432116c")
+		(uuid "8a8bc9eb-8be9-4ae3-8493-d6d290fd3897")
 		(property "Reference" "#PWR010"
 			(at 165.1 179.07 180)
 			(effects
@@ -3227,11 +3227,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "f0ab77f5-36ed-4152-a749-7a12424526cf")
+			(uuid "91a1792b-33d2-4374-a059-36ec86bc85b8")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "#PWR010")
 					(unit 1)
 				)
@@ -3247,7 +3247,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "b8b2a006-9c9d-42f4-8cdd-a08055ca1e03")
+		(uuid "ac8cf00e-1117-4366-9835-3d5754f9080e")
 		(property "Reference" "#PWR011"
 			(at 215.9 179.07 180)
 			(effects
@@ -3267,11 +3267,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "d7bde28e-3903-4f36-bfac-fb768162e179")
+			(uuid "5d8af843-0d3e-4ebd-bacf-79257133c87d")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "#PWR011")
 					(unit 1)
 				)
@@ -3287,7 +3287,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "bcf29fca-dc2a-403e-a407-e1daf5e28d43")
+		(uuid "9824c3b9-fcd0-4d2e-acb2-4d71134ed661")
 		(property "Reference" "#PWR012"
 			(at 266.7 179.07 180)
 			(effects
@@ -3307,11 +3307,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "5767b769-3dcd-4626-9e47-8c17a972d776")
+			(uuid "2d652557-b36c-474d-8b03-28f17e1a57f5")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "#PWR012")
 					(unit 1)
 				)
@@ -3327,7 +3327,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "9594f4ec-4f18-4925-b0e1-5d195a9cd57b")
+		(uuid "9765cfc8-68f7-4c1c-9f00-165622384c8b")
 		(property "Reference" "#PWR013"
 			(at 317.5 179.07 180)
 			(effects
@@ -3347,11 +3347,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "0edbb9a8-6449-49b6-9c4b-afb60ee1473e")
+			(uuid "e614f4d2-50ab-4740-89fd-0a9d42b7c831")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "#PWR013")
 					(unit 1)
 				)
@@ -3367,7 +3367,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "dca6ec36-15b6-41dd-8398-c5fd7072f47c")
+		(uuid "f71b7dc1-8217-4b3b-8b95-20982a18cbb6")
 		(property "Reference" "#PWR014"
 			(at 368.3 144.78 0.0000)
 			(effects
@@ -3387,11 +3387,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "c206d363-ff9a-4802-a717-957f76f9aa85")
+			(uuid "ca9f132d-cfdc-40e6-8edb-17013693aeb1")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "#PWR014")
 					(unit 1)
 				)
@@ -3407,7 +3407,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "36b36b11-79bc-40d4-860f-12a7566c1125")
+		(uuid "b08633bd-6654-4682-a76a-9323d9ac1df9")
 		(property "Reference" "#PWR015"
 			(at 63.5 223.52 0.0000)
 			(effects
@@ -3427,11 +3427,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "cd1cc34d-baf3-4509-a50e-29eb25b61447")
+			(uuid "878c75ec-90b9-4ea2-8165-d2e9d243f477")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "#PWR015")
 					(unit 1)
 				)
@@ -3447,7 +3447,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "ed3c7b3f-f6bd-4bd5-a372-c5464b929075")
+		(uuid "8d2be681-95fc-4e44-9307-2a45fd1eb794")
 		(property "Reference" "#PWR016"
 			(at 63.5 85.09 0.0000)
 			(effects
@@ -3467,11 +3467,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "b4032392-1efb-4a3f-b60a-76fe655c47eb")
+			(uuid "71333806-4747-4d7f-82b3-bb73963c662e")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "#PWR016")
 					(unit 1)
 				)
@@ -3487,7 +3487,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "53d60158-e2e9-4afe-802c-1aabfbe3cf6a")
+		(uuid "9d895a60-f5eb-44ff-96c5-8f98c625bf3d")
 		(property "Reference" "#PWR017"
 			(at 114.3 85.09 0.0000)
 			(effects
@@ -3507,11 +3507,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "7c98d36f-6e38-41f6-91e7-eed78b57bd66")
+			(uuid "7d613dfb-3fd1-4c5d-bcf6-573139842e11")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "#PWR017")
 					(unit 1)
 				)
@@ -3527,7 +3527,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "9f8a121b-7cd0-41ec-8e70-925dc5b6c499")
+		(uuid "5d9dc2c9-ccf3-4d78-afb6-b1812f1ce58c")
 		(property "Reference" "#PWR018"
 			(at 165.1 85.09 0.0000)
 			(effects
@@ -3547,11 +3547,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "1eabbc9b-3c89-45fd-9fcd-56328c7a0380")
+			(uuid "dc85cdaf-1d46-40fc-a3e1-849e506005c9")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "#PWR018")
 					(unit 1)
 				)
@@ -3567,7 +3567,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "fe46dd61-ac99-4a35-9563-981a4d0183fd")
+		(uuid "d5f50b51-bdba-4bda-add6-af06a75f0597")
 		(property "Reference" "#PWR019"
 			(at 215.9 85.09 0.0000)
 			(effects
@@ -3587,11 +3587,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "07408a83-9ae0-4ef9-94f2-67d4c9dbade8")
+			(uuid "28650255-1b3f-4de5-b472-fdec214c1069")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "#PWR019")
 					(unit 1)
 				)
@@ -3607,7 +3607,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "3475b4ff-359a-455c-9ea1-04248f550ec1")
+		(uuid "19939c1c-3931-4384-8a7c-e620f11119c0")
 		(property "Reference" "#PWR020"
 			(at 266.7 85.09 0.0000)
 			(effects
@@ -3627,11 +3627,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "9bdc52d8-37c9-4baf-81cd-aab78d273bfc")
+			(uuid "27c81445-8418-49b6-b6fc-6f4926bc8e07")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "#PWR020")
 					(unit 1)
 				)
@@ -3647,7 +3647,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "598dd998-ad2b-4c86-93f6-473026b49a6c")
+		(uuid "57ceeb37-8e4e-46cb-b57a-a517029026c3")
 		(property "Reference" "#PWR021"
 			(at 298.45 80.01 270)
 			(effects
@@ -3667,11 +3667,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "f5a99b8a-846d-491e-b2d2-7e9c90ea93a4")
+			(uuid "5dc27885-3a02-43cd-bd7e-61516723abff")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "#PWR021")
 					(unit 1)
 				)
@@ -3687,7 +3687,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "c1b36042-4ed4-4479-a0a0-fd94ae8a6ea5")
+		(uuid "aa8ab73b-ad1d-4ed9-84b7-83d45f6a7936")
 		(property "Reference" "#PWR022"
 			(at 349.25 64.77 270)
 			(effects
@@ -3707,11 +3707,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "8467cbcb-ab89-4da2-afed-3eae47c99ef7")
+			(uuid "bce6dbaf-4c7d-4dbb-b686-82604c782502")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "#PWR022")
 					(unit 1)
 				)
@@ -3727,7 +3727,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "2556d4eb-cd88-412a-b75d-395fed8ad5ab")
+		(uuid "dace5a42-388f-4ec1-930f-28479998b50d")
 		(property "Reference" "#PWR023"
 			(at 349.25 92.71 270)
 			(effects
@@ -3747,11 +3747,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "484e5039-c8e6-4311-9e83-e76a472186d1")
+			(uuid "68b35e8a-c49e-4530-8900-e6f69a99b098")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "#PWR023")
 					(unit 1)
 				)
@@ -3767,7 +3767,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "c7ab855b-abb5-49cb-b321-cdb0ca2bf389")
+		(uuid "520696d6-abff-4780-945f-9f8a82285ad1")
 		(property "Reference" "#PWR024"
 			(at 44.45 161.29 270)
 			(effects
@@ -3787,11 +3787,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "cc977fe9-78e9-4158-a623-c3c90d475021")
+			(uuid "a0eafeba-ff28-44b8-9a4e-cfd7caa6b6c6")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "#PWR024")
 					(unit 1)
 				)
@@ -3807,7 +3807,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "b75ec66d-6d9c-4c50-8244-96b9dd32e1b4")
+		(uuid "9e7009ca-c9d0-4615-9ee1-8425c9b45d59")
 		(property "Reference" "#PWR025"
 			(at 368.3 172.72 0.0000)
 			(effects
@@ -3827,11 +3827,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "a98ed1aa-5039-4abf-8ef3-f522eeada2b5")
+			(uuid "03eb4f53-80be-4f99-ad88-d61c0a89905c")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "#PWR025")
 					(unit 1)
 				)
@@ -3847,7 +3847,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "1e03a372-be75-4182-99a6-09a47ddf8d3c")
+		(uuid "ede4b732-3429-4a3e-9c7b-795cfd7819df")
 		(property "Reference" "#PWR026"
 			(at 87.63 252.73 90)
 			(effects
@@ -3867,11 +3867,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "5fc25c21-8609-4f54-81e7-d058a83dc8a2")
+			(uuid "eb55e11b-5d1a-4b62-84c4-89cd93a9544c")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "#PWR026")
 					(unit 1)
 				)
@@ -3887,7 +3887,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "0b8518f7-faed-487c-b08c-bc06fd56d766")
+		(uuid "fc5ca729-dcdf-4a00-83f1-1f8a563fc1b0")
 		(property "Reference" "#PWR027"
 			(at 63.5 259.08 0.0000)
 			(effects
@@ -3907,11 +3907,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "e5a2ff32-46e6-4aea-b392-52b178583af1")
+			(uuid "78fd9113-f5e3-4dd4-b94a-183b686b92dc")
 		)
 		(instances
 			(project "IEEE 738 SENSORS"
-				(path "/ad58629c-2314-4e8d-95b2-00f0562e8317"
+				(path "/60ce49b7-5723-40b3-8af3-b298ee684017"
 					(reference "#PWR027")
 					(unit 1)
 				)
@@ -3926,7 +3926,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "731c520f-b920-424d-b01c-98dc07272a8a")
+		(uuid "e4fc492b-a7c3-4e21-a8a4-9171eaf8a733")
 	)
 	(wire
 		(pts
@@ -3936,7 +3936,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "daef932d-877d-4a38-bb59-e0c191611372")
+		(uuid "1487ccf2-3be6-46dc-8fea-735942ad4142")
 	)
 	(wire
 		(pts
@@ -3946,7 +3946,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "7832d9db-f04b-4ba7-9566-7202353a9a3b")
+		(uuid "4d419f5e-0b8b-49e2-a26e-a14453910bff")
 	)
 	(wire
 		(pts
@@ -3956,7 +3956,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "d10f9441-01ae-442a-a25c-fabfc540efdf")
+		(uuid "0f504e3b-c95b-4d75-a001-3ba1a41ff375")
 	)
 	(wire
 		(pts
@@ -3966,7 +3966,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "8e3d415b-4106-49b8-bb22-ef5aef66804a")
+		(uuid "bef60490-a808-44a0-a0f5-f8063c14b7bf")
 	)
 	(wire
 		(pts
@@ -3976,7 +3976,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "d0f42377-ea9e-480a-a365-97b92facbc2f")
+		(uuid "4021a976-9391-4251-b52c-21a5bf1a96ac")
 	)
 	(wire
 		(pts
@@ -3986,7 +3986,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "ea90f2b5-d008-4e78-b82c-b1fb21455c22")
+		(uuid "79790137-6411-411b-a24d-1b6c6828eb41")
 	)
 	(wire
 		(pts
@@ -3996,7 +3996,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "c88f6966-e91d-4ecc-9dd0-0e0728d4446e")
+		(uuid "49d0ba83-fa2e-4c5c-b300-b48794850d4e")
 	)
 	(wire
 		(pts
@@ -4006,7 +4006,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "d09f39d7-a5e3-488b-8f40-c53df8fc9425")
+		(uuid "3b25a884-7248-49b6-90bf-28dc8add8d2c")
 	)
 	(wire
 		(pts
@@ -4016,7 +4016,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "65a7b26f-e7c1-49a8-aafb-6ec768863b92")
+		(uuid "6a7c336e-1526-4510-a281-6c393eed5d98")
 	)
 	(wire
 		(pts
@@ -4026,7 +4026,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "4607c4af-1aa6-4fe2-bd76-7f4171c00316")
+		(uuid "7ef57107-d315-4085-b607-760ee8f0864a")
 	)
 	(wire
 		(pts
@@ -4036,7 +4036,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "09e3655f-8fcb-478b-879d-0324cb7a26a7")
+		(uuid "2b3051a4-ce07-4a44-b161-58191f81aa92")
 	)
 	(wire
 		(pts
@@ -4046,7 +4046,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "da444e9d-c599-4e41-9094-22b3fa4a7485")
+		(uuid "f2fdb3ac-e635-4295-9e6c-1d3865fe7aac")
 	)
 	(wire
 		(pts
@@ -4056,7 +4056,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "7b24b585-057f-40fa-8a42-55986a266a10")
+		(uuid "656c140b-73dc-4b77-9b79-f2bb95b06b4a")
 	)
 	(wire
 		(pts
@@ -4066,7 +4066,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "804ac178-972b-4df1-8ee6-b57b471e65e0")
+		(uuid "5579cf58-a140-48ff-93c2-e953a2bea991")
 	)
 	(wire
 		(pts
@@ -4076,7 +4076,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "5a4f6277-b1d8-4af3-9d1f-8107351cdb53")
+		(uuid "7ce745e2-5f2c-4ef4-becc-afc0de096cf6")
 	)
 	(wire
 		(pts
@@ -4086,7 +4086,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "d00e273f-6e22-41e7-a33a-d860b610a700")
+		(uuid "0f21529f-ed78-4be4-876b-e5256524ec54")
 	)
 	(wire
 		(pts
@@ -4096,7 +4096,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "b232cc82-6daf-479d-831a-e3b75283de0f")
+		(uuid "cdb28f61-1437-4ce5-b384-feb797b1d2ea")
 	)
 	(wire
 		(pts
@@ -4106,7 +4106,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "123e3d9c-ee3f-4d9c-aec4-50d5e4e02d5c")
+		(uuid "8644e6a5-1393-4dbd-9a13-ea5bfb99a4d7")
 	)
 	(wire
 		(pts
@@ -4116,7 +4116,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "66602eee-fbd0-4314-96e2-8323fa81e23b")
+		(uuid "dfd507de-1c30-4268-9366-66775542be37")
 	)
 	(wire
 		(pts
@@ -4126,7 +4126,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "6703799e-2ab1-4765-9b2a-e95350a830ca")
+		(uuid "138fbc9d-4f08-4b59-83a5-b1df0f75c01e")
 	)
 	(wire
 		(pts
@@ -4136,7 +4136,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "f03d1e4f-73ea-41e5-b7a6-ebaf586a411f")
+		(uuid "0d4d2432-4c3c-4ca6-b048-d858180efe15")
 	)
 	(wire
 		(pts
@@ -4146,7 +4146,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "eff94add-093e-4992-9c54-255bdad6a9c7")
+		(uuid "8186c355-d1a1-4960-bee9-ce2824c8f555")
 	)
 	(wire
 		(pts
@@ -4156,7 +4156,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "43ed67c7-7f9c-4635-8bd0-ea66b8425dde")
+		(uuid "45cc53e2-43dc-47c5-9831-b61aa66c8ab4")
 	)
 	(wire
 		(pts
@@ -4166,7 +4166,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "23a6b823-9f30-475a-ae59-e4923e81aa13")
+		(uuid "4232f69d-9c85-4f2f-9368-51f8c6c03cc9")
 	)
 	(wire
 		(pts
@@ -4176,7 +4176,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "d82281bd-ad29-4829-8ada-85cbfb8bea34")
+		(uuid "aa9132ff-40a6-43a3-964e-5500b4a0d6fb")
 	)
 	(wire
 		(pts
@@ -4186,7 +4186,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "630080fb-171d-4e7d-92d1-8ea5b19cf6c9")
+		(uuid "6b48623f-43cf-45f7-b9c7-b5c72ef51ee7")
 	)
 	(wire
 		(pts
@@ -4196,7 +4196,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "a665261b-2258-448c-8f92-51452098630a")
+		(uuid "16f5fe7e-b2c8-497a-8af5-76bc57c5dd9c")
 	)
 	(wire
 		(pts
@@ -4206,7 +4206,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "d8ac9fc8-2912-4cfd-86c6-619e264a471d")
+		(uuid "623d953c-2938-4bc1-b7a2-467f15132fad")
 	)
 	(wire
 		(pts
@@ -4216,7 +4216,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "ff031167-d140-40b4-aea6-d117f850369f")
+		(uuid "35f4b9de-427b-4ecb-a352-b71cceb5ed79")
 	)
 	(wire
 		(pts
@@ -4226,7 +4226,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "af66c804-a5e8-4940-afff-228dd2b71d01")
+		(uuid "c5d45227-4878-40b3-8c64-4e76ae2b2f39")
 	)
 	(wire
 		(pts
@@ -4236,7 +4236,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "00751ba4-a0d4-45ee-a492-6af5665a8e52")
+		(uuid "8e81c61c-4d89-4521-9f54-5c32e20964f6")
 	)
 	(wire
 		(pts
@@ -4246,7 +4246,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "b5ab8dc2-26e3-4ff1-abf0-749ec84175ec")
+		(uuid "84004386-0d50-460d-8947-465a12b3f210")
 	)
 	(wire
 		(pts
@@ -4256,7 +4256,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "8a35a69f-e3f6-4347-8d4e-9a0e40841f43")
+		(uuid "108e2d4e-566b-430d-a1fc-0aaf16ad41bf")
 	)
 	(wire
 		(pts
@@ -4266,7 +4266,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "202e9791-2e34-4452-8c82-a0e28e61b8a2")
+		(uuid "e2b42081-07e4-4da1-87ce-52f404f8d75b")
 	)
 	(wire
 		(pts
@@ -4276,7 +4276,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "2a87769e-fd30-48f1-867b-a452711ac1f0")
+		(uuid "3d1af04a-599d-4895-a8b3-d848127cd2b0")
 	)
 	(wire
 		(pts
@@ -4286,7 +4286,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "cc09c1e6-a8e0-4d46-ba09-5c80953396a7")
+		(uuid "d4797de0-acfa-47ed-aa4f-84c3aa92847d")
 	)
 	(wire
 		(pts
@@ -4296,7 +4296,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "41343503-1de0-4188-812a-39e1a679cf70")
+		(uuid "6829fc2f-d6b6-4059-8aa7-b631ff48f9ff")
 	)
 	(wire
 		(pts
@@ -4306,7 +4306,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "35cf5c77-999f-4318-a7c6-6d32f04bd3fd")
+		(uuid "75492829-5918-4ed9-ac58-7ef0024bb736")
 	)
 	(wire
 		(pts
@@ -4316,7 +4316,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "718da807-edca-4e1b-9442-4e713f49f524")
+		(uuid "3eca38d8-7cf4-4308-9679-e213cce333fc")
 	)
 	(wire
 		(pts
@@ -4326,7 +4326,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "6f5aed66-4af1-4f8e-a27b-fb76d58bde68")
+		(uuid "9186e49e-a1b2-436f-abfd-92babb0ccb4c")
 	)
 	(wire
 		(pts
@@ -4336,7 +4336,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "a4e9a0a5-6124-4c0a-a29f-315702f58c0b")
+		(uuid "282160ee-7a18-46c9-9e39-28245357c201")
 	)
 	(wire
 		(pts
@@ -4346,7 +4346,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "137d866b-57d7-4d2e-be3a-5c3e61f4ac99")
+		(uuid "d3f0fc83-d7ce-43fb-a5bb-2e1c49a400f0")
 	)
 	(wire
 		(pts
@@ -4356,7 +4356,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "6e5a5392-4259-4b55-8676-0d9a7645036b")
+		(uuid "b4a8a8b4-83dc-4b1c-ae4f-f5dc2d2f455e")
 	)
 	(wire
 		(pts
@@ -4366,7 +4366,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "0487f527-8129-4bc0-98a8-b8842046fb46")
+		(uuid "d9b7bd58-324c-4025-aadb-db466725c1fb")
 	)
 	(label "RAIN_AO"
 		(at 266.7 71.12 90)
@@ -4376,7 +4376,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "b976e659-d5e8-4bff-bcf8-66d4c4a605e5")
+		(uuid "788df69d-f022-4b7f-b73b-dada03a67446")
 	)
 	(label "RAIN_AO"
 		(at 307.34 82.55 180)
@@ -4386,7 +4386,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "fb09ce58-38a3-4d15-98b2-06191786c948")
+		(uuid "d22f18b5-f643-4406-bde4-4e1e76a4d70b")
 	)
 	(label "RAIN_AO"
 		(at 48.26 245.11 180)
@@ -4396,10 +4396,10 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "74466bf8-7e05-4fc8-aaa2-c1fb6cb8edca")
+		(uuid "cc12448e-5fe8-470b-9f15-5f5a6e95b7a0")
 	)
 	(hierarchical_label "GPIO25_VSYNC"
-		(shape input)
+		(shape bidirectional)
 		(at 358.14 77.47 180)
 		(effects
 			(font
@@ -4407,10 +4407,10 @@
 			)
 			(justify left)
 		)
-		(uuid "c3eaedb7-8f71-494e-b9d5-d6de6d60c444")
+		(uuid "d5c38423-80dc-4748-9686-9c5cdf39cdc3")
 	)
 	(hierarchical_label "GPIO4_DHT22"
-		(shape input)
+		(shape bidirectional)
 		(at 317.5 154.94 90)
 		(effects
 			(font
@@ -4418,10 +4418,10 @@
 			)
 			(justify left)
 		)
-		(uuid "f24b0075-7919-4f15-9af2-01c686ceb108")
+		(uuid "2292b1be-e4c6-4b36-9bd9-6f36c5e5dccd")
 	)
 	(hierarchical_label "GPIO4_DHT22"
-		(shape input)
+		(shape bidirectional)
 		(at 386.08 163.83 0)
 		(effects
 			(font
@@ -4429,10 +4429,10 @@
 			)
 			(justify left)
 		)
-		(uuid "30c10fd7-1bfe-4de1-8799-928ca0b6457c")
+		(uuid "037595f7-18d5-438b-814f-be84f27df54a")
 	)
 	(hierarchical_label "SCL1"
-		(shape input)
+		(shape bidirectional)
 		(at 358.14 85.09 180)
 		(effects
 			(font
@@ -4440,10 +4440,10 @@
 			)
 			(justify left)
 		)
-		(uuid "1bfa39f1-b9bc-4119-96d4-b05aed1340d8")
+		(uuid "ba2a6720-7aef-4de3-88f5-d82d0cd8fd18")
 	)
 	(hierarchical_label "SCL1"
-		(shape input)
+		(shape bidirectional)
 		(at 53.34 163.83 180)
 		(effects
 			(font
@@ -4451,10 +4451,10 @@
 			)
 			(justify left)
 		)
-		(uuid "a2f47952-cee3-4ba1-b270-205aeec2a217")
+		(uuid "331d9da1-2165-4882-a211-5d9d40a8849f")
 	)
 	(hierarchical_label "SCL1"
-		(shape input)
+		(shape bidirectional)
 		(at 165.1 154.94 90)
 		(effects
 			(font
@@ -4462,10 +4462,10 @@
 			)
 			(justify left)
 		)
-		(uuid "050963ae-0eee-4f45-84e6-5d26b6e71e32")
+		(uuid "42d5bd2c-6e55-4283-91e2-cb2f6316efe9")
 	)
 	(hierarchical_label "SCL1"
-		(shape input)
+		(shape bidirectional)
 		(at 83.82 247.65 0)
 		(effects
 			(font
@@ -4473,10 +4473,10 @@
 			)
 			(justify left)
 		)
-		(uuid "40389225-8dfc-4d96-8631-44610c429125")
+		(uuid "094a7c29-86a3-4903-b0b5-1910534b927a")
 	)
 	(hierarchical_label "SDA1"
-		(shape input)
+		(shape bidirectional)
 		(at 358.14 82.55 180)
 		(effects
 			(font
@@ -4484,10 +4484,10 @@
 			)
 			(justify left)
 		)
-		(uuid "6da7be14-d4ee-4cf2-9d0e-6cac91eeb9ae")
+		(uuid "92b0537e-68ff-40a7-84a4-67679b2c43d0")
 	)
 	(hierarchical_label "SDA1"
-		(shape input)
+		(shape bidirectional)
 		(at 53.34 166.37 180)
 		(effects
 			(font
@@ -4495,10 +4495,10 @@
 			)
 			(justify left)
 		)
-		(uuid "8baa6979-0385-4eed-952e-5eb887b9370f")
+		(uuid "9c84120f-5d09-4c7a-84e6-f6904d681b4d")
 	)
 	(hierarchical_label "SDA1"
-		(shape input)
+		(shape bidirectional)
 		(at 114.3 154.94 90)
 		(effects
 			(font
@@ -4506,10 +4506,10 @@
 			)
 			(justify left)
 		)
-		(uuid "278e5c12-bd96-4cc6-be64-4ca29146d4fd")
+		(uuid "a173044c-57e9-4ea4-a15e-400632783324")
 	)
 	(hierarchical_label "SDA1"
-		(shape input)
+		(shape bidirectional)
 		(at 83.82 250.19 0)
 		(effects
 			(font
@@ -4517,10 +4517,10 @@
 			)
 			(justify left)
 		)
-		(uuid "0ac8080f-bf2b-458f-99ef-33e22a29c60d")
+		(uuid "8156b0e3-e6dc-466c-88d5-506e43e5f310")
 	)
 	(hierarchical_label "SPI0_CE0"
-		(shape input)
+		(shape bidirectional)
 		(at 358.14 67.31 180)
 		(effects
 			(font
@@ -4528,10 +4528,10 @@
 			)
 			(justify left)
 		)
-		(uuid "8f013c34-1313-476c-856c-d33ea9705d27")
+		(uuid "c79f08f9-3807-4183-a817-454d68b9c379")
 	)
 	(hierarchical_label "SPI0_MISO"
-		(shape input)
+		(shape bidirectional)
 		(at 358.14 72.39 180)
 		(effects
 			(font
@@ -4539,10 +4539,10 @@
 			)
 			(justify left)
 		)
-		(uuid "dbf88669-9ac6-4b5b-b457-8756453e388a")
+		(uuid "98674f1f-7b27-4cdb-8456-d6816930222d")
 	)
 	(hierarchical_label "SPI0_MOSI"
-		(shape input)
+		(shape bidirectional)
 		(at 358.14 69.85 180)
 		(effects
 			(font
@@ -4550,10 +4550,10 @@
 			)
 			(justify left)
 		)
-		(uuid "b212a5e6-3dd5-4db0-970b-4084d1f2ad63")
+		(uuid "78e36b01-3e8a-4526-ad59-28d7db2b69ff")
 	)
 	(hierarchical_label "SPI0_SCLK"
-		(shape input)
+		(shape bidirectional)
 		(at 358.14 74.93 180)
 		(effects
 			(font
@@ -4561,58 +4561,58 @@
 			)
 			(justify left)
 		)
-		(uuid "f7b1a849-4fe1-405f-9466-54bd840c93bc")
+		(uuid "d8624689-6b86-4695-99cc-5e591856587e")
 	)
 	(no_connect
 		(at 363.22 80.01)
-		(uuid "64d60d96-9488-4bff-bc70-888ef9567827")
+		(uuid "83a2da8e-5871-4756-875e-45633e4cf223")
 	)
 	(no_connect
 		(at 363.22 87.63)
-		(uuid "0b4904df-3fea-4ea4-966d-79b55b507159")
+		(uuid "dc0e1e24-0196-4943-834f-7740e56accd4")
 	)
 	(no_connect
 		(at 215.9 160.02)
-		(uuid "ffc911f0-687a-4996-a52e-58d2156d73b3")
+		(uuid "849b8e5a-a6f1-4608-b062-d42f538f0dec")
 	)
 	(no_connect
 		(at 363.22 90.17)
-		(uuid "3efb504e-59c9-4e8f-9b61-f9e6a2d883ff")
+		(uuid "ab430709-337e-4e90-9587-5ab657cf3720")
 	)
 	(no_connect
 		(at 266.7 160.02)
-		(uuid "9c195a58-568e-4334-ad39-1d96f117b196")
+		(uuid "d3574b68-7931-49a5-a7a9-19a30325716b")
 	)
 	(no_connect
 		(at 53.34 247.65)
-		(uuid "b1c0a512-56f1-45c3-a746-4d3239a6bf2d")
+		(uuid "a15be844-912c-4773-ae40-e67ff81cd844")
 	)
 	(no_connect
 		(at 53.34 250.19)
-		(uuid "136b222e-7b0a-413d-8446-4b86eed94768")
+		(uuid "1c9a7092-bf66-4aa0-83d0-ec124bd08930")
 	)
 	(no_connect
 		(at 53.34 252.73)
-		(uuid "6aa14571-b26d-499c-bcbd-6a551dc6b582")
+		(uuid "b16e0eac-245b-458a-821f-ff5bac24cffb")
 	)
 	(no_connect
 		(at 73.66 242.57)
-		(uuid "68552a9c-fa97-4805-bfe0-9ab91969882a")
+		(uuid "66b669be-75fd-40cb-8bce-97d4026875ed")
 	)
 	(no_connect
 		(at 58.42 168.91)
-		(uuid "eccc67e2-84c8-45eb-b26e-207784b2a1ad")
+		(uuid "cacc47d2-1c70-436d-ae2c-f32680197cb6")
 	)
 	(no_connect
 		(at 312.42 85.09)
-		(uuid "086b7d59-591f-454a-bebc-353a1c905535")
+		(uuid "993672ef-8320-41de-97d7-33ba1647d53a")
 	)
 	(no_connect
 		(at 363.22 163.83)
-		(uuid "f3ffe244-abb7-4425-886e-353730df7df3")
+		(uuid "dbae3a83-006b-4f73-baba-3c2ee4ba54d7")
 	)
 	(sheet_instances
-		(path "/32a8a524-8308-4327-a4c2-fe779a71d0ce"
+		(path "/6ec6768b-b569-4381-8a3d-e6e832fe942c"
 			(page "5")
 		)
 	)

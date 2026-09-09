@@ -15,6 +15,7 @@ from typing import Final
 
 import kicad_sch_api as ksa
 
+from cad.schematic.multi_sheet import SHEET_PIN_TYPE
 from cad.schematic.schematic import BLOCK_TITLES
 
 ROOT_SHEET_SIZE: Final = (
@@ -117,7 +118,7 @@ def build_root_sheet(
             sch.add_sheet_pin(
                 sheet_uuid=sheet_uuid,
                 name=net_name,
-                pin_type="bidirectional",
+                pin_type=SHEET_PIN_TYPE,
                 edge="left",
                 position_along_edge=along,
             )

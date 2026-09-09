@@ -2,7 +2,7 @@
 	(version 20250114)
 	(generator "eeschema")
 	(generator_version "9.0")
-	(uuid "006f20aa-e6de-45ca-869a-804cb883c933")
+	(uuid "6472ff61-5240-4a8c-a1e1-c967d2308f1e")
 	(paper "A3")
 	(title_block
 		(title "DLR Carrier — ANEMOMETER RS-485")
@@ -1809,7 +1809,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "67b5f1cb-ac12-46de-b6b4-744d6b541ec4")
+		(uuid "40ce0806-c1dc-47f6-bc55-853c938e9ef6")
 		(property "Reference" "C30"
 			(at 64.135 104.14 0.0000)
 			(effects
@@ -1838,14 +1838,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "b8283d96-6c6c-4a8b-b2cd-27d753f21140")
+			(uuid "8ccfdcb7-5838-4a3a-9371-3e3039f67530")
 		)
 		(pin "2"
-			(uuid "0cba2565-23e7-4efe-9989-f95041357727")
+			(uuid "67c698fe-4fed-45e3-a131-17eaa31c874a")
 		)
 		(instances
 			(project "ANEMOMETER RS-485"
-				(path "/006f20aa-e6de-45ca-869a-804cb883c933"
+				(path "/6472ff61-5240-4a8c-a1e1-c967d2308f1e"
 					(reference "C30")
 					(unit 1)
 				)
@@ -1861,7 +1861,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "ac165282-3830-4413-8124-ca95411702ca")
+		(uuid "ad3aee40-2343-43ad-b215-48a8f56b1b17")
 		(property "Reference" "D2"
 			(at 114.3 106.045 0.0000)
 			(effects
@@ -1890,17 +1890,17 @@
 			)
 		)
 		(pin "1"
-			(uuid "7a218320-8ef6-4472-9dd4-d61c453c4cb3")
+			(uuid "7b999798-836a-4393-b3ef-2352bd7452eb")
 		)
 		(pin "2"
-			(uuid "f282010f-2bb1-4570-ab83-987b460d4df7")
+			(uuid "2e2c7fc6-62f2-41cc-9b01-88fb2e7e2b07")
 		)
 		(pin "3"
-			(uuid "b54c7ee0-f791-4ebc-86ce-13206c7e9117")
+			(uuid "020fe760-b4ff-458c-99d9-43d178f97d79")
 		)
 		(instances
 			(project "ANEMOMETER RS-485"
-				(path "/006f20aa-e6de-45ca-869a-804cb883c933"
+				(path "/6472ff61-5240-4a8c-a1e1-c967d2308f1e"
 					(reference "D2")
 					(unit 1)
 				)
@@ -1916,7 +1916,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "5efd1da1-6e35-4875-be67-bd050d5c1d81")
+		(uuid "45236f61-80ed-46bc-9c4a-49337cc576eb")
 		(property "Reference" "D3"
 			(at 165.1 104.14 0.0000)
 			(effects
@@ -1945,14 +1945,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "e162d32c-e6e2-4c8f-9b1a-dd5abab6ef47")
+			(uuid "3ca55cf9-f2ff-4be1-b741-54e2229d1d49")
 		)
 		(pin "2"
-			(uuid "2d734eef-131b-4dc0-8695-9c0638e7a523")
+			(uuid "f2484601-45b7-4aa6-a41d-756ce37e890c")
 		)
 		(instances
 			(project "ANEMOMETER RS-485"
-				(path "/006f20aa-e6de-45ca-869a-804cb883c933"
+				(path "/6472ff61-5240-4a8c-a1e1-c967d2308f1e"
 					(reference "D3")
 					(unit 1)
 				)
@@ -1968,7 +1968,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "ca801176-f1d4-42fa-8da5-9619880c5e3e")
+		(uuid "19b00c83-df52-439c-8527-826d267a7eb3")
 		(property "Reference" "F1"
 			(at 213.36 101.6 90)
 			(effects
@@ -1997,14 +1997,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "1b68a79b-6f45-473d-86f3-8b10f3a97fc9")
+			(uuid "d8972df6-2a15-4199-b9e9-98c82f99ffbb")
 		)
 		(pin "2"
-			(uuid "d12b5119-31c5-4a69-b8b2-1e3846ab22fc")
+			(uuid "168ec6ab-37fa-4818-bbd6-f01e5680c055")
 		)
 		(instances
 			(project "ANEMOMETER RS-485"
-				(path "/006f20aa-e6de-45ca-869a-804cb883c933"
+				(path "/6472ff61-5240-4a8c-a1e1-c967d2308f1e"
 					(reference "F1")
 					(unit 1)
 				)
@@ -2020,7 +2020,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "41b19670-0f7b-46d6-ade9-6e03459e5a68")
+		(uuid "4c5c88e5-dbb1-4982-a8ef-6196624f2c58")
 		(property "Reference" "J13"
 			(at 266.7 109.22 0.0000)
 			(effects
@@ -2049,23 +2049,23 @@
 			)
 		)
 		(pin "1"
-			(uuid "5742e46b-e1da-41f7-ac20-9c896a841f23")
+			(uuid "4dc2739c-8a7c-49a1-b272-1d7d3628a74a")
 		)
 		(pin "2"
-			(uuid "e76b8c17-71d5-4566-835e-d5b5a138f5dc")
+			(uuid "5ea756f3-ac87-4098-9743-ec7a49bd75ad")
 		)
 		(pin "3"
-			(uuid "670e6594-a065-4365-8670-feff3529d7f6")
+			(uuid "25ba1e60-5434-4f1d-b4a9-fe6f8b5b16ce")
 		)
 		(pin "4"
-			(uuid "0d499da7-da8d-43f4-88c7-2710306e1055")
+			(uuid "19ae268d-6f5b-4d8e-87b8-ed58c54bf2b6")
 		)
 		(pin "5"
-			(uuid "f993382a-be0b-492e-9fb7-518c835be0eb")
+			(uuid "3f3a5e7d-6577-4618-bda1-acf2912446c5")
 		)
 		(instances
 			(project "ANEMOMETER RS-485"
-				(path "/006f20aa-e6de-45ca-869a-804cb883c933"
+				(path "/6472ff61-5240-4a8c-a1e1-c967d2308f1e"
 					(reference "J13")
 					(unit 1)
 				)
@@ -2081,7 +2081,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "ab08a5a0-c3aa-433d-bb8d-f7a6b3286b43")
+		(uuid "d2dadfc7-39f0-4818-99f6-75d08a1871a5")
 		(property "Reference" "R14"
 			(at 319.532 101.6 90)
 			(effects
@@ -2110,14 +2110,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "615ab3a6-f4f8-4b26-9a35-ee410e7c7bd6")
+			(uuid "6a4cf890-288b-4588-b77a-f78683cc70a3")
 		)
 		(pin "2"
-			(uuid "ecb0c409-9ed9-478c-9362-79ca53342185")
+			(uuid "dce23fc2-9f81-4e24-a35e-867d351b7e05")
 		)
 		(instances
 			(project "ANEMOMETER RS-485"
-				(path "/006f20aa-e6de-45ca-869a-804cb883c933"
+				(path "/6472ff61-5240-4a8c-a1e1-c967d2308f1e"
 					(reference "R14")
 					(unit 1)
 				)
@@ -2133,7 +2133,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "f5c182dc-0d43-4bbc-8313-1da09da49960")
+		(uuid "f861a9af-7cac-4943-b8e0-05f97e3ceaf9")
 		(property "Reference" "R15"
 			(at 370.332 101.6 90)
 			(effects
@@ -2162,14 +2162,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "f7f5b196-210f-4bf5-a973-95de6d05f1f9")
+			(uuid "f6963ca3-fe4a-40a5-ac73-87a9d321a591")
 		)
 		(pin "2"
-			(uuid "3a5b3918-5415-4c87-9e5c-4387d5c10ed8")
+			(uuid "41cc41bc-1222-46b3-8c48-2537a86c84fd")
 		)
 		(instances
 			(project "ANEMOMETER RS-485"
-				(path "/006f20aa-e6de-45ca-869a-804cb883c933"
+				(path "/6472ff61-5240-4a8c-a1e1-c967d2308f1e"
 					(reference "R15")
 					(unit 1)
 				)
@@ -2185,7 +2185,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "cfac4ef9-d9c8-4c5c-9f9e-d17240db4e41")
+		(uuid "60b04da9-b08d-4858-86fa-267c360e170b")
 		(property "Reference" "R16"
 			(at 65.532 228.6 90)
 			(effects
@@ -2214,14 +2214,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "e7109393-276a-489c-894d-43ae94d8b0bc")
+			(uuid "4e5e7ca5-80e1-47c4-aac4-0f981b082e15")
 		)
 		(pin "2"
-			(uuid "6586543d-9d74-4d08-aa09-c8cb237874ff")
+			(uuid "0842ab30-a43d-4436-bc08-58f8c4458284")
 		)
 		(instances
 			(project "ANEMOMETER RS-485"
-				(path "/006f20aa-e6de-45ca-869a-804cb883c933"
+				(path "/6472ff61-5240-4a8c-a1e1-c967d2308f1e"
 					(reference "R16")
 					(unit 1)
 				)
@@ -2237,7 +2237,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "2c8f136b-5236-4899-8271-3b0acb967ee7")
+		(uuid "b49a39d1-7f60-42aa-af62-11f85666001d")
 		(property "Reference" "U7"
 			(at 106.68 242.57 0.0000)
 			(effects
@@ -2266,32 +2266,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "6617ba2b-3a54-432a-aae6-6d0c92019176")
+			(uuid "35211ce5-f0b3-4a53-8201-3fed2664c46c")
 		)
 		(pin "2"
-			(uuid "b0806711-ff49-4490-9c29-32f408eb1c79")
+			(uuid "6997990d-d384-41d3-971c-a0af7c031ad2")
 		)
 		(pin "3"
-			(uuid "de0afe87-13d5-4743-873d-3116d0ba32a3")
+			(uuid "cc3ed2dc-2dad-4b10-9da5-2c4dddedc8f7")
 		)
 		(pin "4"
-			(uuid "c9eb3b1c-c841-448e-91fa-da08c24e642f")
+			(uuid "851ec5df-2af9-4a5b-9815-dfcacde5b5fa")
 		)
 		(pin "5"
-			(uuid "d94c0792-cfb5-44bb-802d-0f95428b4243")
+			(uuid "db7efec2-86aa-4e75-a279-22878bf5f2d8")
 		)
 		(pin "6"
-			(uuid "c8f8adee-77d5-4648-9950-3d4559663361")
+			(uuid "9429611a-5780-4f3b-ab68-99023ebe126c")
 		)
 		(pin "7"
-			(uuid "2a629bea-dd56-4f9d-a2a2-84ba7b88ac78")
+			(uuid "4dde2359-6d53-4411-aa72-5a30c0b5e0bc")
 		)
 		(pin "8"
-			(uuid "19c93f88-5719-440e-bd05-cce0cc2d09b2")
+			(uuid "a7618bd1-9d2a-4297-9dd4-db665ef92b95")
 		)
 		(instances
 			(project "ANEMOMETER RS-485"
-				(path "/006f20aa-e6de-45ca-869a-804cb883c933"
+				(path "/6472ff61-5240-4a8c-a1e1-c967d2308f1e"
 					(reference "U7")
 					(unit 1)
 				)
@@ -2307,7 +2307,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "41e45ba4-2c42-4c47-bd39-0d154e7d82e0")
+		(uuid "e68ca73a-1bf8-4403-999a-749747389a87")
 		(property "Reference" "#PWR001"
 			(at 63.5 86.36 0.0000)
 			(effects
@@ -2327,11 +2327,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "6cb07fda-8fbd-4ec6-8eb1-3510a85ff027")
+			(uuid "5593cdb5-36c0-4326-8fcd-ca2dd0b4e8bb")
 		)
 		(instances
 			(project "ANEMOMETER RS-485"
-				(path "/006f20aa-e6de-45ca-869a-804cb883c933"
+				(path "/6472ff61-5240-4a8c-a1e1-c967d2308f1e"
 					(reference "#PWR001")
 					(unit 1)
 				)
@@ -2347,7 +2347,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "38083966-1d92-4080-aac6-fdd3eda62289")
+		(uuid "a9638fb7-e792-4b22-87c9-c3d44dd47d53")
 		(property "Reference" "#PWR002"
 			(at 368.3 86.36 0.0000)
 			(effects
@@ -2367,11 +2367,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "c204f657-f988-4bf3-9309-0761efddc02e")
+			(uuid "26197a89-e006-420d-81fd-935fb17027cb")
 		)
 		(instances
 			(project "ANEMOMETER RS-485"
-				(path "/006f20aa-e6de-45ca-869a-804cb883c933"
+				(path "/6472ff61-5240-4a8c-a1e1-c967d2308f1e"
 					(reference "#PWR002")
 					(unit 1)
 				)
@@ -2387,7 +2387,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "f50cade4-71b5-4046-b5f5-05965e5a5608")
+		(uuid "a925f83b-a995-4e31-8fb4-22b07e4bca96")
 		(property "Reference" "#PWR003"
 			(at 114.3 201.93 0.0000)
 			(effects
@@ -2407,11 +2407,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "1219c220-bed0-4c06-b600-512d3abaa712")
+			(uuid "76f2690d-04cd-4363-a6ce-b3adadee0aaf")
 		)
 		(instances
 			(project "ANEMOMETER RS-485"
-				(path "/006f20aa-e6de-45ca-869a-804cb883c933"
+				(path "/6472ff61-5240-4a8c-a1e1-c967d2308f1e"
 					(reference "#PWR003")
 					(unit 1)
 				)
@@ -2427,7 +2427,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "e01aec7e-d5e8-4ba1-ad55-8674409bfc3d")
+		(uuid "32ae0c81-e9d7-4fe9-8cbf-7d53bc6cdf57")
 		(property "Reference" "#PWR004"
 			(at 63.5 106.68 0.0000)
 			(effects
@@ -2447,11 +2447,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "9bf1fdad-a332-4695-a95e-009682239389")
+			(uuid "3a66be0e-ecad-4533-892c-bc31b55bd767")
 		)
 		(instances
 			(project "ANEMOMETER RS-485"
-				(path "/006f20aa-e6de-45ca-869a-804cb883c933"
+				(path "/6472ff61-5240-4a8c-a1e1-c967d2308f1e"
 					(reference "#PWR004")
 					(unit 1)
 				)
@@ -2467,7 +2467,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "148cdb77-f832-43b2-a4bf-d61c06a5273c")
+		(uuid "f39a5096-a699-443f-a825-958cb841ed10")
 		(property "Reference" "#PWR005"
 			(at 137.16 101.6 90)
 			(effects
@@ -2487,11 +2487,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "d6cbb471-4107-4831-8d5a-1b4325893a7b")
+			(uuid "cfaaa2fd-07d4-492d-9020-02c6873aa7a9")
 		)
 		(instances
 			(project "ANEMOMETER RS-485"
-				(path "/006f20aa-e6de-45ca-869a-804cb883c933"
+				(path "/6472ff61-5240-4a8c-a1e1-c967d2308f1e"
 					(reference "#PWR005")
 					(unit 1)
 				)
@@ -2507,7 +2507,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "2dca96ed-3f5d-4709-9c2f-62311c169c49")
+		(uuid "d4ba281c-f4c1-4264-9233-a2f6f2b25a23")
 		(property "Reference" "#PWR006"
 			(at 182.88 101.6 90)
 			(effects
@@ -2527,11 +2527,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "d8a68fb0-d191-45c6-99b0-0213e740c678")
+			(uuid "804a2417-f422-436d-a46c-4fff3aafcdb1")
 		)
 		(instances
 			(project "ANEMOMETER RS-485"
-				(path "/006f20aa-e6de-45ca-869a-804cb883c933"
+				(path "/6472ff61-5240-4a8c-a1e1-c967d2308f1e"
 					(reference "#PWR006")
 					(unit 1)
 				)
@@ -2547,7 +2547,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "4862c08a-2540-445d-b79e-3197858be209")
+		(uuid "c1b41a70-8a9a-4ea0-ae10-c122015a4967")
 		(property "Reference" "#PWR007"
 			(at 247.65 99.06 270)
 			(effects
@@ -2567,11 +2567,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "25279080-cd21-48c6-91b5-f926fddd7d60")
+			(uuid "fd4576ff-6756-4289-beaa-1b9ecbaee10e")
 		)
 		(instances
 			(project "ANEMOMETER RS-485"
-				(path "/006f20aa-e6de-45ca-869a-804cb883c933"
+				(path "/6472ff61-5240-4a8c-a1e1-c967d2308f1e"
 					(reference "#PWR007")
 					(unit 1)
 				)
@@ -2587,7 +2587,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "e864b995-bae8-4f76-844d-3b39c4ce4622")
+		(uuid "050394c8-2b3e-4493-8828-8aee316e8056")
 		(property "Reference" "#PWR008"
 			(at 247.65 106.68 270)
 			(effects
@@ -2607,11 +2607,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "1319a1a8-b4c2-469a-8cf9-5d22260a404d")
+			(uuid "ec9593e9-cedd-472d-88dd-7b8804408d8b")
 		)
 		(instances
 			(project "ANEMOMETER RS-485"
-				(path "/006f20aa-e6de-45ca-869a-804cb883c933"
+				(path "/6472ff61-5240-4a8c-a1e1-c967d2308f1e"
 					(reference "#PWR008")
 					(unit 1)
 				)
@@ -2627,7 +2627,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "5faf2ea4-662e-48b2-bfbc-1a7444e78e86")
+		(uuid "7ae1f109-c240-421a-ae04-e94ea063f5e4")
 		(property "Reference" "#PWR009"
 			(at 63.5 233.68 0.0000)
 			(effects
@@ -2647,11 +2647,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "2d52cf41-7d7e-4055-9929-aef569483315")
+			(uuid "32a88d92-5585-4bda-a383-6f4df0f0c177")
 		)
 		(instances
 			(project "ANEMOMETER RS-485"
-				(path "/006f20aa-e6de-45ca-869a-804cb883c933"
+				(path "/6472ff61-5240-4a8c-a1e1-c967d2308f1e"
 					(reference "#PWR009")
 					(unit 1)
 				)
@@ -2667,7 +2667,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced no)
-		(uuid "f1cbcfc1-e522-4df3-b9c9-def4c6eaa5c6")
+		(uuid "1860e718-663d-4ab2-a848-a96a59286761")
 		(property "Reference" "#PWR010"
 			(at 114.3 245.11 0.0000)
 			(effects
@@ -2687,11 +2687,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "cb81f29c-698d-442d-9f3c-1510db9a9e4f")
+			(uuid "e0a74253-d9c5-4256-a0e4-44af5ed06e4a")
 		)
 		(instances
 			(project "ANEMOMETER RS-485"
-				(path "/006f20aa-e6de-45ca-869a-804cb883c933"
+				(path "/6472ff61-5240-4a8c-a1e1-c967d2308f1e"
 					(reference "#PWR010")
 					(unit 1)
 				)
@@ -2706,7 +2706,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "aa325d55-562e-4164-a2bd-f10cce55f6fa")
+		(uuid "1faf55f7-05f9-411c-9a3f-62f8456aea6f")
 	)
 	(wire
 		(pts
@@ -2716,7 +2716,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "49a17477-c61a-48fa-99e1-f1009e78a425")
+		(uuid "151fb271-ab3e-4da7-98e4-744de39933d0")
 	)
 	(wire
 		(pts
@@ -2726,7 +2726,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "c798959b-f835-46c2-845d-a5e2071614d6")
+		(uuid "6ee89f0f-c3e5-4baf-b7c4-32525389b3e8")
 	)
 	(wire
 		(pts
@@ -2736,7 +2736,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "3152b6e8-91b4-4240-a633-fb4e93eb03a1")
+		(uuid "65c25fea-7635-4125-a596-68911ba4efea")
 	)
 	(wire
 		(pts
@@ -2746,7 +2746,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "3cd68161-9960-4968-9370-9df99c468357")
+		(uuid "3e224eb4-ac24-47da-96ad-c1d24a5d7199")
 	)
 	(wire
 		(pts
@@ -2756,7 +2756,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "07e4e7dc-7d0b-4f6d-97ee-6816ccd364fd")
+		(uuid "017c7c57-6239-4554-90a2-ee9211b78c43")
 	)
 	(wire
 		(pts
@@ -2766,7 +2766,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "f710dfdf-7ee6-449b-b1bb-2622eb33b3cf")
+		(uuid "8c157101-320d-48fb-8911-a5a2782d1a2b")
 	)
 	(wire
 		(pts
@@ -2776,7 +2776,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "e805a3db-8cd3-4b86-8266-1b4b7e0ac62d")
+		(uuid "d601be48-ca4d-4cd2-9fa9-e84c648d7792")
 	)
 	(wire
 		(pts
@@ -2786,7 +2786,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "1f5fa33c-ff17-46db-bade-b909acc18322")
+		(uuid "f685642f-b0ce-4ada-b020-d2781e4a3bad")
 	)
 	(wire
 		(pts
@@ -2796,7 +2796,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "ec03d158-9cc4-43ee-9423-bb99f7ea0228")
+		(uuid "f7065efe-b5d6-4973-8850-720cc3c69598")
 	)
 	(wire
 		(pts
@@ -2806,7 +2806,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "0f79b618-294e-45f0-96e8-9066837eeb1b")
+		(uuid "2209c1fb-db7a-4657-8f9e-8659e377291b")
 	)
 	(wire
 		(pts
@@ -2816,7 +2816,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "f10cbb61-a0fc-4172-8ad9-0a4bc9d37329")
+		(uuid "573d1dfa-7ab5-4e7e-9cad-7738a66f7bbc")
 	)
 	(wire
 		(pts
@@ -2826,7 +2826,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "e672816b-f3ab-432f-949f-59a3c42be6f6")
+		(uuid "8fd7443a-b5eb-4d23-a027-e533fd4ac057")
 	)
 	(wire
 		(pts
@@ -2836,7 +2836,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "160ff0dd-33ee-4bbd-baa5-baab20bc3187")
+		(uuid "90b0d1bf-3dc4-4e22-b6ce-ebb007c14e44")
 	)
 	(wire
 		(pts
@@ -2846,7 +2846,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "ba94f992-b44c-4b7f-8155-491632795db6")
+		(uuid "3ed9be00-9afc-4594-a0b4-ac79e333c906")
 	)
 	(wire
 		(pts
@@ -2856,7 +2856,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "d8b38680-895c-4b7e-81a3-91c92bb69576")
+		(uuid "5b570053-e4f8-4f3d-a254-6f1c58ea1f3d")
 	)
 	(wire
 		(pts
@@ -2866,7 +2866,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "be4967e4-e597-40da-a6e5-c814af98c2d3")
+		(uuid "8a3ec9f6-abf4-4eda-9c4d-3da3cc0d435c")
 	)
 	(wire
 		(pts
@@ -2876,7 +2876,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "eba94285-c7a9-4db4-90d0-be581e938be8")
+		(uuid "03fb9f21-edf8-4511-bb95-15cae54ddd29")
 	)
 	(wire
 		(pts
@@ -2886,7 +2886,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "de9d32d4-3d30-40f3-8f67-e5ed829e7d36")
+		(uuid "7a037f22-224d-4792-a5df-b00860cf776d")
 	)
 	(wire
 		(pts
@@ -2896,7 +2896,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "eb160069-d1ff-4ee9-99d5-99791d0b91e4")
+		(uuid "c136885b-e9cc-4edb-a1b2-d6a529fe922b")
 	)
 	(wire
 		(pts
@@ -2906,7 +2906,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "78729cc0-06f4-48ee-b08b-804ffbc36b87")
+		(uuid "a82a3628-c1c0-46fa-92fb-eac9e128781a")
 	)
 	(wire
 		(pts
@@ -2916,7 +2916,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "fe197c84-851b-4c4d-a4da-c6ac0df36027")
+		(uuid "6fcf0ce1-819e-4a5e-80d3-99def69049d8")
 	)
 	(wire
 		(pts
@@ -2926,7 +2926,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "dd0e5387-a6a0-44f6-bb0e-74e6ecf4bc94")
+		(uuid "411219a4-2efb-410e-b496-bf30495c8c16")
 	)
 	(wire
 		(pts
@@ -2936,7 +2936,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "c537c6a1-0c25-4be4-af0a-2d82702b55e5")
+		(uuid "b887b9cb-7e03-46c5-8e33-bb07c239f5de")
 	)
 	(wire
 		(pts
@@ -2946,7 +2946,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "168ccd85-0f6a-4a62-ac8c-2878a8c9849d")
+		(uuid "290a4906-d7d6-470f-9812-e557e7f16185")
 	)
 	(wire
 		(pts
@@ -2956,7 +2956,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "a053c8ab-4580-4c48-83aa-52c2b30962e9")
+		(uuid "66eb1309-699c-4842-b4a6-630c3184554f")
 	)
 	(wire
 		(pts
@@ -2966,7 +2966,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "bae33418-a3b1-456c-bd29-03242f12f20f")
+		(uuid "16e994d0-cf08-45c2-8a50-4bd28868a921")
 	)
 	(wire
 		(pts
@@ -2976,7 +2976,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "d46b2f19-1cc9-4f73-98b9-5005809b49e0")
+		(uuid "802b009c-6702-429e-aede-d15cd020ba2b")
 	)
 	(label "ANEMO_RS485_A"
 		(at 100.33 101.6 180)
@@ -2986,7 +2986,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "8cb8cc42-0ad1-4c72-9677-b5f99d5f9e6e")
+		(uuid "c82bf05b-7892-4ec3-b437-9e5c1065e3be")
 	)
 	(label "ANEMO_RS485_A"
 		(at 256.54 101.6 180)
@@ -2996,7 +2996,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "8db63ace-f058-4f20-8cea-30e3a7812990")
+		(uuid "3c59659a-d0cf-468f-b742-0851c4dafcf1")
 	)
 	(label "ANEMO_RS485_A"
 		(at 317.5 92.71 90)
@@ -3006,7 +3006,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "eaa31e86-2f07-459e-99e2-25a9a10da72f")
+		(uuid "fcf8ad5c-765e-4b69-8504-4e6c9cf07f01")
 	)
 	(label "ANEMO_RS485_A"
 		(at 368.3 115.57 270)
@@ -3016,7 +3016,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "b03a4905-45b8-4c0b-86ce-8b77f4c2bc8a")
+		(uuid "f6c4a901-5414-4255-ad11-e39e1aead08a")
 	)
 	(label "ANEMO_RS485_A"
 		(at 134.62 220.98 0)
@@ -3026,7 +3026,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "c427adad-e4cc-47ff-b1d8-d4bb500c151d")
+		(uuid "65dcaaab-58f3-44e5-a67e-889b2828810d")
 	)
 	(label "ANEMO_RS485_B"
 		(at 114.3 115.57 270)
@@ -3036,7 +3036,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "d124e138-3c6c-4695-8a60-102a06496e73")
+		(uuid "8733ac73-dc18-4666-ac39-a7accde4d5a4")
 	)
 	(label "ANEMO_RS485_B"
 		(at 256.54 104.14 180)
@@ -3046,7 +3046,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "99700d11-b51f-42e4-b47f-310b398c7e89")
+		(uuid "31a4e1c2-0c81-4d38-bdb0-faf279c89a1e")
 	)
 	(label "ANEMO_RS485_B"
 		(at 317.5 115.57 270)
@@ -3056,7 +3056,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "b1a613f0-0688-4913-a0dc-c63d5b16164f")
+		(uuid "054a9766-a383-4b10-8ff6-a1aad5f7d933")
 	)
 	(label "ANEMO_RS485_B"
 		(at 63.5 219.71 90)
@@ -3066,7 +3066,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "d1ca7497-7237-4771-b8f6-77e855c98114")
+		(uuid "cd63df2a-d14a-48d8-8cff-2b629afff02b")
 	)
 	(label "ANEMO_RS485_B"
 		(at 134.62 226.06 0)
@@ -3076,7 +3076,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "10de2ac0-75a5-4a1c-9f3a-667aa8b2ebdc")
+		(uuid "80526feb-180d-4533-bee9-4d6821921b13")
 	)
 	(label "ANEMO_V_SENSOR"
 		(at 156.21 101.6 180)
@@ -3086,7 +3086,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "a401610f-c41d-4d3d-9217-1206863b64bd")
+		(uuid "c3149c97-e9f3-4947-a790-ff130264b07a")
 	)
 	(label "ANEMO_V_SENSOR"
 		(at 215.9 115.57 270)
@@ -3096,7 +3096,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "52548dea-0d14-4f5d-8249-6399c13f34d4")
+		(uuid "46569b11-14bf-4a67-98c1-e50597d14dcd")
 	)
 	(label "ANEMO_V_SENSOR"
 		(at 256.54 96.52 180)
@@ -3106,10 +3106,10 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "906cb1a8-2137-4023-8f65-3eacae31f6e9")
+		(uuid "bde4ddec-2ca3-41d1-aa4d-f6276d2ad374")
 	)
 	(hierarchical_label "ANEMO_DE"
-		(shape input)
+		(shape bidirectional)
 		(at 99.06 226.06 180)
 		(effects
 			(font
@@ -3117,10 +3117,10 @@
 			)
 			(justify left)
 		)
-		(uuid "4a901ed3-383f-4145-b9d7-8df80fede143")
+		(uuid "94d6b4d9-0fd2-43b3-aba9-d4f923dbea0d")
 	)
 	(hierarchical_label "ANEMO_DE"
-		(shape input)
+		(shape bidirectional)
 		(at 99.06 228.6 180)
 		(effects
 			(font
@@ -3128,10 +3128,10 @@
 			)
 			(justify left)
 		)
-		(uuid "b78745ff-6394-40a1-b648-72f64934aaff")
+		(uuid "62931aeb-b423-4897-9283-99d97418eaa8")
 	)
 	(hierarchical_label "ANEMO_UART_RX"
-		(shape input)
+		(shape bidirectional)
 		(at 99.06 223.52 180)
 		(effects
 			(font
@@ -3139,10 +3139,10 @@
 			)
 			(justify left)
 		)
-		(uuid "6cf47892-e9a6-4105-b9a1-19ec974e1837")
+		(uuid "54ed1518-9c42-4efd-a6a7-172e235239e6")
 	)
 	(hierarchical_label "ANEMO_UART_TX"
-		(shape input)
+		(shape bidirectional)
 		(at 99.06 233.68 180)
 		(effects
 			(font
@@ -3150,10 +3150,10 @@
 			)
 			(justify left)
 		)
-		(uuid "793612b4-f939-46f9-a4fd-e43b999977ea")
+		(uuid "4037bc03-801f-486c-90f0-d56df8c8933d")
 	)
 	(hierarchical_label "VBAT"
-		(shape input)
+		(shape bidirectional)
 		(at 215.9 92.71 90)
 		(effects
 			(font
@@ -3161,10 +3161,10 @@
 			)
 			(justify left)
 		)
-		(uuid "09e861f6-857a-4c67-9ea0-2ac7551e783d")
+		(uuid "db1c2466-13f6-44fe-a6d5-47bb0bfe8c3a")
 	)
 	(sheet_instances
-		(path "/64c7dfcb-bbfe-4df6-be89-9cb123185c21"
+		(path "/e3ea6974-3a36-4b21-b0e6-499ff9f9e43f"
 			(page "8")
 		)
 	)
