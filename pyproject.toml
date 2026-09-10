@@ -45,9 +45,11 @@ setup-asm = { cmd = "/usr/bin/python3 -m cad.drawing.board_setup", env = { PYTHO
 route-asm = { cmd = "/usr/bin/python3 -m cad.drawing.route_pcb", env = { PYTHONPATH = "." } }
 stitch-asm = { cmd = "/usr/bin/python3 -m cad.drawing.stitch_planes", env = { PYTHONPATH = "." } }
 close-gaps = { cmd = "/usr/bin/python3 -m cad.drawing.close_gaps", env = { PYTHONPATH = "." } }
+escape-pins = { cmd = "/usr/bin/python3 -m cad.drawing.escape_pins", env = { PYTHONPATH = "." } }
+rip-up = { cmd = "/usr/bin/python3 -m cad.drawing.rip_up", env = { PYTHONPATH = "." } }
 layout-asm = [
     "build", "sync-asm", "place-asm", "setup-asm",
-    "route-asm", "stitch-asm", "close-gaps", "validate-asm",
+    "route-asm", "stitch-asm", "close-gaps", "escape-pins", "rip-up", "validate-asm",
 ]
 inspect-model = "bash -c 'nohup eeschema cad/dlr_carrier.kicad_sch &>/dev/null &'"
 # Count "; error" lines in the report rather than trusting --exit-code-violations:

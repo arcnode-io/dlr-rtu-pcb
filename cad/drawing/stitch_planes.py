@@ -32,6 +32,9 @@ PCB_PATH = Path("cad/dlr_carrier.kicad_pcb")
 TRACE_WIDTH_MM: Final = 0.3
 # Reason: try close first (short stub = low inductance), then step outward
 GAP_STEPS_MM: Final = (0.25, 0.45, 0.7, 1.0, 1.4)
+# Reason: two 0.3 mm drills whose centres are closer than this break into each other;
+# it is the board's own min-hole-to-hole rule plus the drill diameter.
+HOLE_TO_HOLE_MM_IU: Final = pcbnew.FromMM(0.55)
 
 
 def _outward(footprint: pcbnew.FOOTPRINT, pad: pcbnew.PAD) -> pcbnew.VECTOR2I:
@@ -58,6 +61,42 @@ def _corridor_is_clear(
     return corridor_is_clear(board, pad.GetPosition(), centre, pad.GetNetCode(), width)
 
 
+def dedupe_vias(board: pcbnew.BOARD) -> int:
+    """Drop same-net vias that land on top of each other. Returns how many went.
+
+    Reason: the stitch list is built from the board as it was, so two pads whose
+    outward step lands on the same point each add a via there. One hole drilled
+    several times is a fab defect the board file happily carries — and a near miss
+    is worse than an exact hit, because the drills break into each other.
+    """
+    kept: list[pcbnew.PCB_VIA] = []
+    doomed = []
+    for track in _items(board.Tracks()):
+        if track.GetClass() != "PCB_VIA":
+            continue
+        position = track.GetPosition()
+        clash = any(
+            other.GetNetCode() == track.GetNetCode()
+            and (other.GetPosition() - position).EuclideanNorm() < HOLE_TO_HOLE_MM_IU
+            for other in kept
+        )
+        (doomed if clash else kept).append(track)
+    for track in doomed:
+        board.Remove(track)
+    return len(doomed)
+
+
+def _via_site_free(board: pcbnew.BOARD, centre: pcbnew.VECTOR2I) -> bool:
+    """True when no existing via is close enough to clash with one at `centre`."""
+    reach = pcbnew.FromMM(VIA_DIAMETER_MM + 0.15)
+    for track in _items(board.Tracks()):
+        if track.GetClass() != "PCB_VIA":
+            continue
+        if (track.GetPosition() - centre).EuclideanNorm() < reach:
+            return False
+    return True
+
+
 def _has_via_nearby(board: pcbnew.BOARD, pad: pcbnew.PAD) -> bool:
     """True when this net already has a via close enough to serve as the pad's plane drop."""
     reach = pcbnew.FromMM(2.0)
@@ -74,6 +113,7 @@ def _has_via_nearby(board: pcbnew.BOARD, pad: pcbnew.PAD) -> bool:
 def stitch() -> None:
     """Add a stitching via for every SMD pad sitting on a plane net."""
     board = pcbnew.LoadBoard(str(PCB_PATH))
+    removed = dedupe_vias(board)
     plane_nets = {z.GetNetname() for z in _items(board.Zones())}
     plane_codes = {board.FindNet(n).GetNetCode(): board.FindNet(n) for n in plane_nets}
 
@@ -97,7 +137,9 @@ def stitch() -> None:
                 pad.GetPosition().x + direction.x * step,
                 pad.GetPosition().y + direction.y * step,
             )
-            if not _corridor_is_clear(board, pad, centre):
+            if not _corridor_is_clear(board, pad, centre) or not _via_site_free(
+                board, centre
+            ):
                 continue
             board.Add(make_via(board, centre, net))
             board.Add(
@@ -120,6 +162,7 @@ def stitch() -> None:
     board.Save(str(PCB_PATH))
     print(
         f"plane nets {sorted(plane_nets)}: {stitched} of {len(todo)} SMD pads stitched"
+        f"; {removed} duplicate vias removed"
     )
     if failed:
         print(f"no room for a via at: {failed}")

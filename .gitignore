@@ -52,3 +52,6 @@ fp-info-cache
 
 # Brainstorming visual companion (per-session screens)
 .superpowers/
+
+# KiCad 10 local history (nested git repo of editor snapshots)
+cad/.history/
