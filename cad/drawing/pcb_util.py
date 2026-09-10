@@ -17,6 +17,9 @@ import pcbnew
 CLEARANCE_MM: Final = 0.15
 VIA_DIAMETER_MM: Final = 0.6
 VIA_DRILL_MM: Final = 0.3
+# Reason: the drill plus the board's min hole-to-hole rule. Net membership does not
+# enter into it — two drills this close break into each other whoever owns them.
+HOLE_TO_HOLE_MM: Final = VIA_DRILL_MM + 0.25
 
 
 def items(container) -> list:
@@ -26,18 +29,6 @@ def items(container) -> list:
     so `list(board.Tracks())` raises AttributeError.
     """
     return [container[i] for i in range(len(container))]
-
-
-def corridor_box(
-    a: pcbnew.VECTOR2I, b: pcbnew.VECTOR2I, width_mm: float
-) -> pcbnew.BOX2I:
-    """Bounding box of the segment a->b, grown by half its width plus clearance."""
-    margin = pcbnew.FromMM(width_mm / 2 + CLEARANCE_MM)
-    left, right = min(a.x, b.x) - margin, max(a.x, b.x) + margin
-    top, bottom = min(a.y, b.y) - margin, max(a.y, b.y) + margin
-    return pcbnew.BOX2I(
-        pcbnew.VECTOR2I(left, top), pcbnew.VECTOR2I(right - left, bottom - top)
-    )
 
 
 def _point_segment_distance(
@@ -139,7 +130,12 @@ def corridor_is_clear(
     layer: int | None = None,
 ) -> bool:
     """True when everything of another net stays clear of the corridor from a to b."""
-    box = corridor_box(a, b, width_mm)
+    # Reason: a cheap box to skip everything nowhere near the corridor; the real test
+    # is the segment distance below.
+    pad = pcbnew.FromMM(width_mm / 2 + CLEARANCE_MM)
+    corner = pcbnew.VECTOR2I(min(a.x, b.x) - pad, min(a.y, b.y) - pad)
+    span = pcbnew.VECTOR2I(abs(a.x - b.x) + 2 * pad, abs(a.y - b.y) + 2 * pad)
+    box = pcbnew.BOX2I(corner, span)
     half = pcbnew.FromMM(width_mm / 2)
     reach = half + pcbnew.FromMM(CLEARANCE_MM)
     return _pads_clear(board, a, b, net_code, box, reach) and _tracks_clear(
@@ -155,7 +151,18 @@ def via_site_is_clear(
     Reason: a through via occupies all copper layers, so it must be checked against
     all of them. Testing it only on the layer being routed is how a GND via ends up
     sitting on a signal trace on the opposite side.
+
+    The hole check deliberately ignores `net_code`. Clearance rules let a trace run
+    along its own net's copper, so the copper test skips same-net items — but a second
+    drill 0.1 mm from the first is a broken-out hole even when both are ground.
     """
+    reach = pcbnew.FromMM(HOLE_TO_HOLE_MM)
+    for track in items(board.Tracks()):
+        if (
+            track.GetClass() == "PCB_VIA"
+            and (track.GetPosition() - centre).EuclideanNorm() < reach
+        ):
+            return False
     return corridor_is_clear(
         board, centre, centre, net_code, VIA_DIAMETER_MM, layer=None
     )

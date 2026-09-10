@@ -172,3 +172,28 @@ def own_copper_mask(item, window: Window, layer: int) -> np.ndarray:
         pcbnew.ToMM(item.GetWidth()) / 2,
     )
     return distance <= 0.0
+
+
+def hole_field(board: pcbnew.BOARD, window: Window) -> np.ndarray:
+    """Distance from every grid point to the nearest drilled hole, on any net.
+
+    Reason: clearance is per-net — a trace may run along its own net's copper, so the
+    copper fields hold foreign copper only. Drills are not: a via stacked on its own
+    net's via is a broken-out hole no copper field can see.
+    """
+    gx, gy = window.centres()
+    field = np.full(gx.shape, 1e6)
+    drilled = [
+        t.GetPosition() for t in items(board.Tracks()) if t.GetClass() == "PCB_VIA"
+    ] + [
+        pad.GetPosition()
+        for footprint in items(board.Footprints())
+        for pad in items(footprint.Pads())
+        if pad.GetAttribute() in (pcbnew.PAD_ATTRIB_PTH, pcbnew.PAD_ATTRIB_NPTH)
+    ]
+    for centre in drilled:
+        field = np.minimum(
+            field,
+            np.hypot(gx - pcbnew.ToMM(centre.x), gy - pcbnew.ToMM(centre.y)),
+        )
+    return field

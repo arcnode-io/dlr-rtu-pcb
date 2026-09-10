@@ -23,10 +23,16 @@ from typing import Final
 import numpy as np
 import pcbnew
 
-from cad.drawing.maze_field import clearance_fields, own_copper_mask
+from cad.drawing.maze_field import clearance_fields, hole_field, own_copper_mask
 from cad.drawing.maze_grid import GRID_MM, Window, window_around
 from cad.drawing.maze_search import LAYERS, corners_of, draw, search
-from cad.drawing.pcb_util import CLEARANCE_MM, VIA_DIAMETER_MM, items, make_via
+from cad.drawing.pcb_util import (
+    CLEARANCE_MM,
+    HOLE_TO_HOLE_MM,
+    VIA_DIAMETER_MM,
+    items,
+    make_via,
+)
 
 WIDTHS_MM: Final = (0.25, 0.2)
 MARGIN_MM: Final = 7.0
@@ -97,8 +103,10 @@ def route_pair(board: pcbnew.BOARD, start_item, goal_item, width_mm: float) -> b
     passable = {layer: fields[layer] >= reach + AXIS_SAFETY_MM for layer in LAYERS}
     diagonal = {layer: fields[layer] >= reach + DIAG_SAFETY_MM for layer in LAYERS}
     via_reach = CLEARANCE_MM + VIA_DIAMETER_MM / 2 + DIAG_SAFETY_MM
-    via_ok = (inner >= via_reach) & np.logical_and.reduce(
-        [fields[layer] >= via_reach for layer in LAYERS]
+    via_ok = (
+        (inner >= via_reach)
+        & np.logical_and.reduce([fields[layer] >= via_reach for layer in LAYERS])
+        & (hole_field(board, window) >= HOLE_TO_HOLE_MM)
     )
     copper = {layer: np.zeros((window.ny, window.nx), dtype=bool) for layer in LAYERS}
     on_plane = False

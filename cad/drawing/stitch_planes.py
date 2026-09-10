@@ -21,6 +21,7 @@ from typing import Final
 import pcbnew
 
 from cad.drawing.pcb_util import (
+    HOLE_TO_HOLE_MM,
     VIA_DIAMETER_MM,
     corridor_is_clear,
     items as _items,
@@ -32,9 +33,6 @@ PCB_PATH = Path("cad/dlr_carrier.kicad_pcb")
 TRACE_WIDTH_MM: Final = 0.3
 # Reason: try close first (short stub = low inductance), then step outward
 GAP_STEPS_MM: Final = (0.25, 0.45, 0.7, 1.0, 1.4)
-# Reason: two 0.3 mm drills whose centres are closer than this break into each other;
-# it is the board's own min-hole-to-hole rule plus the drill diameter.
-HOLE_TO_HOLE_MM_IU: Final = pcbnew.FromMM(0.55)
 
 
 def _outward(footprint: pcbnew.FOOTPRINT, pad: pcbnew.PAD) -> pcbnew.VECTOR2I:
@@ -77,7 +75,8 @@ def dedupe_vias(board: pcbnew.BOARD) -> int:
         position = track.GetPosition()
         clash = any(
             other.GetNetCode() == track.GetNetCode()
-            and (other.GetPosition() - position).EuclideanNorm() < HOLE_TO_HOLE_MM_IU
+            and (other.GetPosition() - position).EuclideanNorm()
+            < pcbnew.FromMM(HOLE_TO_HOLE_MM)
             for other in kept
         )
         (doomed if clash else kept).append(track)

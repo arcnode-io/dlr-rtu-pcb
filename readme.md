@@ -246,6 +246,7 @@ Fully scripted — no GUI step. KiCad's "Update PCB from Schematic" is GUI-only,
       sync-asm    footprints + pad nets  <- replaces the GUI "Update PCB from Schematic"
       place-asm   positions from cad/pcb_placement.yaml
       setup-asm   4-layer stack, design rules, net classes, GND + 5V planes
+      fanout-asm  escape vias for the 0.4 mm connector, assigned before routing
       route-asm   Specctra DSN -> Freerouting -> SES import -> zone fill
       stitch-asm  vias from surface pads to their plane
       validate-asm DRC, 0 violations
@@ -277,14 +278,22 @@ DRC error, so the gerbers in `output/` stay a preview until it closes.
 other pin gets a via in the first row. The pins that miss out have to reach a second,
 deeper row — but two 0.6 mm vias 0.75 mm apart leave a 0.15 mm slot, and a 0.2 mm trace
 with 0.15 mm clearance needs 0.5 mm. **Once the first row is populated the second row is
-unreachable.** Rows have to be assigned before any routing happens, alternating between
-the inter-row gap and the outside of the connector; `escape_pins` assigns them greedily
-as it goes and finishes one slot short. Three ways to close it, cheapest first:
+unreachable.** Via rows have to be assigned before any routing happens; a router that
+picks the nearest free site per pin always finishes one slot short.
 
-1. A fanout pass that assigns every DF40 pin a via row and side up front, then routes.
-2. 0.45 / 0.25 mm vias for signals — JLCPCB's advanced tier, and under the 0.13 mm
-   annular-ring rule this board sets, so both would have to move together.
-3. Six layers, which is what a full-width CM4 carrier normally uses.
+`cad/drawing/fanout.py` does that assignment: it clears the connector's fanout band and
+alternates along each pad row, one pin into the inter-row gap, the next out the back, so
+same-side vias land 0.8 mm apart. It places all 39 escapes on J5 with zero clearance,
+short or drill violations — the geometry works.
+
+What is *not* done is the rebuild. Run on a board that is already routed, the pass has
+to clear 223 tracks and vias to own its band, and `escape_pins` rebuilds only 23 of the
+35 connections that leaves open — a net regression against the 2 here. Its place is
+before Freerouting, where a full-strength router does the reconnection, which is where
+`poe layout-asm` now calls it. **That path has not been run end to end yet**, so the
+board in this repo is still the pre-fanout one. Closing the last two means either that
+full regeneration, or 0.45 / 0.25 mm vias (JLCPCB advanced tier, and the 0.13 mm
+annular-ring rule would have to come down with them), or six layers.
 
 ### Toolchain
 
@@ -345,6 +354,7 @@ Unbroken ground plane under the Lepton is critical — SPI runs at 20 MHz and th
 │   │   ├── place_pcb.py        # Positions from pcb_placement.yaml
 │   │   ├── board_setup.py      # 4-layer stack, rules, net classes, planes
 │   │   ├── route_pcb.py        # DSN -> Freerouting -> SES -> fill
+│   │   ├── fanout.py           # Pre-assigned escape vias for fine-pitch connectors
 │   │   ├── stitch_planes.py    # Surface-pad vias into the planes
 │   │   ├── close_gaps.py       # L-shaped hops across the autorouter's leftovers
 │   │   ├── maze_grid.py        # Grid window shared by the escape router
