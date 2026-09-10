@@ -503,3 +503,38 @@ More output capacitance cannot fix a sustained deficit — the cap only buys tim
 ### Consequences
 - The readme power-budget table's "Peak" column is a worst-case sum, not a supported operating point; annotated accordingly.
 - The LMR33630 internal loop crossover with ~9× the recommended C_out is unpublished; bench Bode / load-step test before production is a hard requirement (SNVSAN3F §9.2.2.5).
+
+---
+
+## ADR-018: Finish the Routing in Code, Not in pcbnew
+
+**Status:** Accepted **Date:** 2026-09-09
+
+### Context
+Freerouting routes ~99% of this board and `close_gaps` closes most of the remainder, but a handful of connections always survive both. Every one of them is the same shape: a pin on a 0.4 mm-pitch DF40 or a 0.5 mm-pitch VQFN/MSOP whose only exit is straight out of its own pad, past a neighbour's 0.6 mm escape via or a 0.6 mm power trace. `close_gaps` can only draw L-shapes, so it cannot express the path even when one exists; and where no path exists, the fix is to move the neighbour, which no amount of searching will do.
+
+Hand-routing those in pcbnew works — the interactive router shoves neighbours out of the way — but it is a GUI step, and the pipeline's whole claim is that the board is regenerated from the netlist with no GUI step. A board finished by hand cannot be rebuilt after a schematic change.
+
+### Decision
+Finish the routing in code, in three layers:
+
+* `maze_field` / `maze_search` / `maze_escape` — a windowed A* over a 0.05 mm grid on F.Cu and B.Cu with via layer changes. Clearance comes from analytic distance fields built from the copper shapes; **only copper of other nets is an obstacle**, so a pin may leave through its own pad. Each route is checked against KiCad's own connectivity and torn out again unless the two islands really joined.
+* `escape_pins` — drives that off the DRC report, widest trace first (0.25 mm, then 0.2 mm).
+* `rip_up` / `rip_targets` — when a pin is boxed in, delete the blocking net's copper (or the whole fanout corner) within 1.3 mm, re-run the escape router over everything that opened up, and keep the result only if DRC comes out strictly better. Every attempt is rolled back byte for byte otherwise.
+
+### Rationale
+The stranded pins are a *placement* problem disguised as a routing problem: a 0.4 mm pad pitch only fits an escape via on every other pin, so the middle pin's via has to sit in a second, deeper row. A grid search finds that automatically once the corner is cleared, because the near via sites are already taken. Encoding that as a rip-and-retry loop with DRC as the accept test means the board is never left worse than it was found, and the whole result is reproducible from `poe layout-asm`.
+
+### Alternatives Considered
+| Option | Tradeoff |
+|---|---|
+| Hand-route in pcbnew (shove mode) | Works, and fast for a human; unreproducible, and the next netlist change loses it |
+| Re-run Freerouting with narrower net classes | Would relieve congestion globally, but rips up and re-lays 1000+ good segments to fix 3 connections |
+| 0.5 / 0.25 mm signal vias to ease the DF40 fanout | Leaves a 0.125 mm annular ring, under the 0.13 mm rule; tried and reverted (see `board_setup.py`) |
+| 6-layer stack | Solves the fanout outright; roughly doubles bare-board cost for a 40-pin connector |
+
+### Consequences
+- Escapes past a fine-pitch pad neck down to 0.25 / 0.2 mm, below the `power` net class's 0.6 mm. These are millimetre-scale stubs into a pin, so the current rating of the trunk is unaffected; JLCPCB's standard 4-layer process holds 0.1 mm trace and space, so 0.2 mm is well inside it.
+- `rip_up` is slow — it re-runs DRC and the escape router for every candidate — but it only runs when the board is otherwise finished.
+- `stitch_planes` gained a duplicate-via guard: it used to build its work list up front, so two pads whose outward step landed on the same point each added a via there, and the drill file carried the hole several times. The guard rejects a near miss as well as an exact hit — two 0.3 mm drills 0.03 mm apart break into each other, which is worse than one hole drilled twice.
+- The tooling took the board from 5 open connections to 2, both of them redundant ground pins on the DF40, with no clearance, short, annular-ring or hole error left. The last two are a **fanout-capacity limit, not a search failure**: a row of 0.6 mm escape vias needs 0.75 mm centre to centre, so a 0.4 mm pad pitch only fits a via on every other pin, and the 0.15 mm slot left between two adjacent vias cannot pass the 0.2 mm trace (plus 0.15 mm clearance either side) that a second, deeper row would need. Via rows have to be assigned before routing, alternating gap-side and outward; a greedy per-pin router always finishes one slot short. Closing it needs a fanout pass, 0.45 / 0.25 mm vias, or six layers — see the board-status section of readme.md.

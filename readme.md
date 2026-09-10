@@ -259,19 +259,32 @@ Fully scripted — no GUI step. KiCad's "Update PCB from Schematic" is GUI-only,
 
 ### Board status
 
-ERC is 0. DRC is clean of clearance, short, annular-ring and courtyard errors, with
-**5 connections still open** out of 457 pads — all of them escapes on the three
-finest-pitch parts, where Freerouting and `close_gaps` both run out of room:
+ERC is 0. DRC is clean of clearance, short, annular-ring, hole and courtyard errors —
+what is left is 7 silkscreen-overlap warnings and **2 open connections** out of 457
+pads, both of them ground pins on J5 (Hirose DF40, 0.4 mm pitch):
 
-| Net | At (mm) | Part |
+| Net | Pad | At (mm) |
 |---|---|---|
-| 3V3 | 154.09, 140.00 | trace island to the sensor-block 3V3 run |
-| 3V3 | 144.52, 148.00 | U6 (ADS1115, MSOP-10) pin 8 |
-| 3V3 | 197.40, 97.54 | J5 (DF40, 0.4 mm) pin 17 |
-| GND | 197.80, 94.46 | J5 pin 20 |
-| BAT_SRP | 140.06, 101.20 | U8 (BQ24650, VQFN) pin 10 |
+| GND | J5.20 | 197.80, 94.46 |
+| GND | J5.25 | 199.00, 97.54 |
 
-Until these are routed the gerbers in `output/` are a preview, not a fab release.
+Both are redundant pins — the CM4 bonds its grounds internally — so what is missing is
+return-path quality at that corner of the connector, not a broken net. It is still a
+DRC error, so the gerbers in `output/` stay a preview until it closes.
+
+**Why they are open.** It is a fanout-capacity limit, not a search failure. A row of
+0.6 mm escape vias needs 0.75 mm centre to centre, so on a 0.4 mm pad pitch only every
+other pin gets a via in the first row. The pins that miss out have to reach a second,
+deeper row — but two 0.6 mm vias 0.75 mm apart leave a 0.15 mm slot, and a 0.2 mm trace
+with 0.15 mm clearance needs 0.5 mm. **Once the first row is populated the second row is
+unreachable.** Rows have to be assigned before any routing happens, alternating between
+the inter-row gap and the outside of the connector; `escape_pins` assigns them greedily
+as it goes and finishes one slot short. Three ways to close it, cheapest first:
+
+1. A fanout pass that assigns every DF40 pin a via row and side up front, then routes.
+2. 0.45 / 0.25 mm vias for signals — JLCPCB's advanced tier, and under the 0.13 mm
+   annular-ring rule this board sets, so both would have to move together.
+3. Six layers, which is what a full-width CM4 carrier normally uses.
 
 ### Toolchain
 
@@ -280,8 +293,8 @@ Until these are routed the gerbers in `output/` are a preview, not a fab release
 runner gets 10.x from Flatpak. The schematic is format `20250114`, which both
 versions read.
 
-ERC is a blocking gate in CI. DRC runs and reports but does not gate yet — the
-punch list above is real errors; the `|| true` comes off once they are routed.
+ERC is a blocking gate in CI. DRC runs and reports but does not gate yet — the two
+open ground pins above are real errors; the `|| echo` comes off once they are closed.
 
 ## Layer Stack
 
@@ -294,7 +307,7 @@ punch list above is real errors; the `|| true` comes off once they are routed.
 | In2.Cu | 5V_RAIL plane — CM4, both LDOs and the Lepton feed off it via drops |
 | B.Cu | Signal — low-speed (I2C, GPIO, UART) |
 
-Signals are confined to F.Cu / B.Cu: the router is told the inner layers are `power` type, so nothing slices a plane. VBAT, 3V3 and 3V8 run as 0.6 mm traces (`power` net class); signal vias are 0.5/0.25 mm so they fan out between the DF40's 0.4 mm pads, power vias 0.6/0.3 mm.
+Signals are confined to F.Cu / B.Cu: the router is told the inner layers are `power` type, so nothing slices a plane. VBAT, 3V3 and 3V8 run as 0.6 mm traces (`power` net class), necked to 0.25/0.2 mm where an escape has to squeeze past a 0.4 mm-pitch pad. Every via is 0.6/0.3 mm: a 0.5/0.25 mm via would ease the DF40 fanout but leaves a 0.125 mm annular ring, under the 0.13 mm rule.
 
 Unbroken ground plane under the Lepton is critical — SPI runs at 20 MHz and the thermal imager is noise-sensitive. USB2.0 to the BG770A is differential-routed at 90Ω matched impedance with GND directly below. Analog traces from YL-83 to ADS1115 are guard-ringed on F.Cu. Cellular antenna is 50Ω microstrip to a u.FL connector.
 
@@ -332,7 +345,15 @@ Unbroken ground plane under the Lepton is critical — SPI runs at 20 MHz and th
 │   │   ├── place_pcb.py        # Positions from pcb_placement.yaml
 │   │   ├── board_setup.py      # 4-layer stack, rules, net classes, planes
 │   │   ├── route_pcb.py        # DSN -> Freerouting -> SES -> fill
-│   │   └── stitch_planes.py    # Surface-pad vias into the planes
+│   │   ├── stitch_planes.py    # Surface-pad vias into the planes
+│   │   ├── close_gaps.py       # L-shaped hops across the autorouter's leftovers
+│   │   ├── maze_grid.py        # Grid window shared by the escape router
+│   │   ├── maze_field.py       # Analytic clearance fields (foreign copper only)
+│   │   ├── maze_search.py      # Grid A*, 8-way, with via layer changes
+│   │   ├── maze_escape.py      # Route + verify one connection, or tear it out again
+│   │   ├── escape_pins.py      # Drives the escape router off the DRC report
+│   │   ├── rip_targets.py      # Finds a stranded pin's blockers; performs the rip
+│   │   └── rip_up.py           # Rip / re-route / keep-only-if-better loop
 │   ├── lepton_daughter/        # Second PCB (per ADR-013) — Lepton + bracket
 │   ├── assembly/               # CadQuery → GLB pipeline (build_assembly.py)
 │   ├── layout_spec.yaml        # Schematic block layout
