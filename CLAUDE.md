@@ -449,7 +449,7 @@ Vendor split: ITAR-domestic (defense) vs JLCPCB/PCBWay (commercial).
 | 🤖 ai-engineer | ems-analyst-agent, ems-analyst-mcp, ems-analyst-server |
 | 📊 ml-engineer | ems-analyst-model |
 | 🛰️ embedded-engineer | dlr-operating-envelope, dlr-pst-sim |
-| 📟 electronics-engineer | dlr-pcb |
+| 📟 electronics-engineer | dlr-rtu-pcb |
 | 🧔 devops-engineer | ~/engineering-with-ai/tooling-playbooks |
 
 

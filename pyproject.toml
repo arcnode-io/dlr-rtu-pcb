@@ -1,5 +1,5 @@
 [project]
-name = "dlr-pcb"
+name = "dlr-rtu-pcb"
 version = "1.0.0-beta"
 requires-python = ">=3.13,<3.14"
 dependencies = [

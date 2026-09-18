@@ -497,7 +497,7 @@ wheels = [
 ]
 
 [[package]]
-name = "dlr-pcb"
+name = "dlr-rtu-pcb"
 version = "1.0.0b0"
 source = { virtual = "." }
 dependencies = [

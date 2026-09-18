@@ -1,7 +1,7 @@
-# DLR PCB 🌡️⚡
+# DLR RTU PCB 🌡️⚡
 
-![](https://img.shields.io/gitlab/pipeline-status/arcnode-io/dlr-pcb?branch=main&logo=gitlab)
-![](https://gitlab.com/arcnode-io/dlr-pcb/badges/main/coverage.svg)
+![](https://img.shields.io/gitlab/pipeline-status/arcnode-io/dlr-rtu-pcb?branch=main&logo=gitlab)
+![](https://gitlab.com/arcnode-io/dlr-rtu-pcb/badges/main/coverage.svg)
 ![](https://img.shields.io/badge/3.13-gray?logo=python)
 ![](https://img.shields.io/badge/cad-kicad-314CB0)
 ![](https://img.shields.io/badge/material-FR4_1.6mm_4L-gray)
@@ -158,7 +158,7 @@ NMEA 0183 (`$..MWV`) over RS-485, so the firmware driver is talker-agnostic.
 
 | Component | High-wind kit (`DLR-CRN-HW`) | Low-wind kit (`DLR-CRN-LW`) |
 |-----------|------------------------------|------------------------------|
-| PCB | `dlr-pcb-v1` (same) | `dlr-pcb-v1` (same) |
+| PCB | `dlr-rtu-pcb-v1` (same) | `dlr-rtu-pcb-v1` (same) |
 | Firmware | `dlr-operating-envelope` (same binary) | `dlr-operating-envelope` (same binary) |
 | Sensor | Calypso ULP STD | Vaisala WMT702 |
 | Sensor wire protocol | NMEA `$IIMWV` over RS-485 | NMEA `$WIMWV` over RS-485 |
