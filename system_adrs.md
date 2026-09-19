@@ -488,7 +488,7 @@ A solid GND plane is what the SPI / USB / RF analyses assume; a 5 V plane makes 
 theory.ipynb §7 and `sim/test_spice.py` (ngspice, averaged current-mode model of the LMR33630 with SNVSAN3F §7.5 current limits and the placed 470 µF polymer bank) show that the readme's coincident 3.92 A peak — CM4 boot + Lepton shutter + modem TX — exceeds the regulator's worst-case I_OUT,max of 3.375 A. The rail falls to ≈ 3.86 V and sits under the CM4's 4.75 V floor (CM4 datasheet §5.1) for ≈ 0.9 ms of every 1 ms of coincidence. The CM4 boot peak alone (3.0 A) holds ≈ 4.95 V.
 
 ### Decision
-The hardware guarantees 3.0 A transients on the 5 V rail, not 3.92 A. Firmware in `dlr-operating-envelope` must (1) keep the BG770A disabled (LP5907 EN, GPIO17) and never trigger a Lepton shutter until CM4 boot is complete, and (2) never schedule a Lepton shutter concurrently with a modem TX burst. Handed off to the embedded engineer (`/tmp/handoff_embedded-engineer_load-sequencing.md`).
+The hardware guarantees 3.0 A transients on the 5 V rail, not 3.92 A. Firmware in `dlr-rtu-firmware` must (1) keep the BG770A disabled (LP5907 EN, GPIO17) and never trigger a Lepton shutter until CM4 boot is complete, and (2) never schedule a Lepton shutter concurrently with a modem TX burst. Handed off to the embedded engineer (`/tmp/handoff_embedded-engineer_load-sequencing.md`).
 
 ### Rationale
 More output capacitance cannot fix a sustained deficit — the cap only buys time (≈ 0.2 ms per 250 mV at 0.55 A). A larger regulator (4 A-class) or a second stage would add cost and board area for a peak that is entirely avoidable in software.

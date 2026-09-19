@@ -6,7 +6,7 @@
 ![](https://img.shields.io/badge/cad-kicad-314CB0)
 ![](https://img.shields.io/badge/material-FR4_1.6mm_4L-gray)
 
-> Single-PCB CM4 carrier for a solar-powered, cellular-connected RTU — mounts to a transmission tower cross-arm, integrates SoM + cellular modem + IEEE 738 sensor suite + solar/LiFePO4 power management. Feeds [`dlr-operating-envelope`](https://gitlab.com/arcnode-io/dlr-operating-envelope).
+> Single-PCB CM4 carrier for a solar-powered, cellular-connected RTU — mounts to a transmission tower cross-arm, integrates SoM + cellular modem + IEEE 738 sensor suite + solar/LiFePO4 power management. Feeds [`dlr-rtu-firmware`](https://gitlab.com/arcnode-io/dlr-rtu-firmware).
 
 Solar-powered remote terminal unit (RTU) deployed unattended on transmission tower cross-arms. A ~20W solar panel and ~50Wh LiFePO4 battery keep the CM4 running indefinitely with cellular PSM idle. A soldered Quectel BG770A (LTE Cat-M1) publishes sensor data and dynamic ratings to the MQTT broker — no site WiFi or wired backhaul required. The unit is designed for 30-year conductor-adjacent deployment with no scheduled maintenance.
 
@@ -30,7 +30,7 @@ rectangle transmission_tower {
 }
 
 queue mqtt_broker
-rectangle dlr_pst_sim
+rectangle dlr_tap_regulator_sim
 
 solar_panel -d- power_mgmt: PV input
 power_mgmt -l- lifepo4_battery: charge / discharge
@@ -39,10 +39,10 @@ conductor -u- sensors: thermal view\n(FLIR Lepton)
 sensors -r- cm4_som: SPI / I2C / GPIO
 cm4_som -r- cellular_module: UART + USB2
 cellular_module -r- mqtt_broker: LTE Cat-M1
-mqtt_broker -r- dlr_pst_sim: tap \n adjustment \n commands
+mqtt_broker -r- dlr_tap_regulator_sim: tap \n adjustment \n commands
 ```
 
-The carrier is the physical sensing + edge-compute layer of the DLR feedback loop. Every measurement flows through the IEEE 738 calculation in [`dlr-operating-envelope`](https://gitlab.com/arcnode-io/dlr-operating-envelope) and ultimately determines whether the phase shift transformer adjusts its tap position.
+The carrier is the physical sensing + edge-compute layer of the DLR feedback loop. Every measurement flows through the IEEE 738 calculation in [`dlr-rtu-firmware`](https://gitlab.com/arcnode-io/dlr-rtu-firmware) and ultimately determines whether the phase shift transformer adjusts its tap position.
 
 ## Board Spec
 
@@ -159,7 +159,7 @@ NMEA 0183 (`$..MWV`) over RS-485, so the firmware driver is talker-agnostic.
 | Component | High-wind kit (`DLR-CRN-HW`) | Low-wind kit (`DLR-CRN-LW`) |
 |-----------|------------------------------|------------------------------|
 | PCB | `dlr-rtu-pcb-v1` (same) | `dlr-rtu-pcb-v1` (same) |
-| Firmware | `dlr-operating-envelope` (same binary) | `dlr-operating-envelope` (same binary) |
+| Firmware | `dlr-rtu-firmware` (same binary) | `dlr-rtu-firmware` (same binary) |
 | Sensor | Calypso ULP STD | Vaisala WMT702 |
 | Sensor wire protocol | NMEA `$IIMWV` over RS-485 | NMEA `$WIMWV` over RS-485 |
 | Sensor accuracy (V<2 m/s) | ±5 % + 0.2 m/s offset (1 m/s threshold) | **±0.1 m/s** (0.01 m/s threshold) |
