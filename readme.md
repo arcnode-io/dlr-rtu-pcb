@@ -30,7 +30,7 @@ rectangle transmission_tower {
 }
 
 queue mqtt_broker
-rectangle dlr_line_loading_sim
+rectangle dispatch_api
 
 solar_panel -d- power_mgmt: PV input
 power_mgmt -l- lifepo4_battery: charge / discharge
@@ -39,10 +39,10 @@ conductor -u- sensors: thermal view\n(FLIR Lepton)
 sensors -r- cm4_som: SPI / I2C / GPIO
 cm4_som -r- cellular_module: UART + USB2
 cellular_module -r- mqtt_broker: LTE Cat-M1
-mqtt_broker -r- dlr_line_loading_sim: tap \n adjustment \n commands
+mqtt_broker -r- dispatch_api: dynamic line rating\n(utility/dlr/...)
 ```
 
-The carrier is the physical sensing + edge-compute layer of the DLR feedback loop. Every measurement flows through the IEEE 738 calculation in [`dlr-rtu-firmware`](https://gitlab.com/arcnode-io/dlr-rtu-firmware) and ultimately determines whether the phase shift transformer adjusts its tap position.
+The carrier is the physical sensing + edge-compute layer of the DLR feedback loop. Every measurement flows through the IEEE 738 calculation in [`dlr-rtu-firmware`](https://gitlab.com/arcnode-io/dlr-rtu-firmware), which publishes the resulting dynamic line rating for `mock-derms-dispatch-api`'s DER curtailment trigger.
 
 ## Board Spec
 
